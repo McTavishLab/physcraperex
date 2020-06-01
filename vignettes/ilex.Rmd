@@ -1,0 +1,94 @@
+---
+title: "Physcraper Examples: the Hollies"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ilex}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+
+```
+## I. Finding a tree to update
+
+### With the Open Tree of Life website
+
+The state of genus *Ilex* on the Open Tree of Life synthetic tree, at the middle of year 2020.
+
+```{r ilex-tree-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+# library(webshot)
+# webshot("https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex", "ilex-tree-opentree.png")
+
+# webshot did not work on opentree website
+knitr::include_graphics("ilex-tree-opentree-2020-05-31.png")
+```
+
+Navigating into the tree, we notice that there might be two studies associated to this portion of the Open Tree synthetic tree.
+
+```{r ilex-tree-opentree-2, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("ilex-tree-opentree-2020-05-31-2.png")
+```
+
+Studies matching the word 'ilex' on the curator database, at the middle of year 2020. Some of them are not actually about the hollies, but other genus that have the species epitet *ilex*.
+
+```{r ilex-curation-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+knitr::include_graphics("ilex-curation-opentree-2020-05-31.png")
+```
+
+### With the package `rotl`
+
+<!-- ```{r} -->
+<!-- ilex <- rotl::tnrs_match_names(names = "ilex") -->
+<!-- ``` -->
+
+<!-- ```{r, results='asis', echo=FALSE} -->
+<!-- knitr::kable(ilex, caption = "Taxonomic Name Resolution information for the genus *Ilex*") -->
+<!-- ``` -->
+
+<!-- Can we use the *OTT id* to get some trees or studies? -->
+
+<!-- ```{r} -->
+<!-- rotl::studies_properties() -->
+<!-- ``` -->
+
+Explain what a focal clade is.
+
+There is a handy function that will search a taxon among the focal clades reported across trees.
+
+```{r}
+ilex <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Ilex")
+```
+
+```{r, results='asis', echo=FALSE}
+knitr::kable(ilex, caption = "Studies with the genus *Ilex* as focal clade.")
+```
+
+It seems like only one tree is on the Open Tree of Life synthetic tree:
+
+```{r ilex-pg_2827-tree6577, eval = TRUE, fig.retina = 2, fig.width = 2}
+ape::plot.phylo(ape::ladderize(my_trees[[1]]), type = "phylogram", cex = 0.2) 
+```
+
+## II. Getting the underlying alignment
+
+### Using physcraper
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -o ../physcraperex/data-raw/pg_2827_tree6577
+```
+
+### Downloading it manually
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a ../physcraperex/data-raw/alignments/T1281-M2478.nex -o ../physcraperex/data/pg_2827_tree6577
+```
+
