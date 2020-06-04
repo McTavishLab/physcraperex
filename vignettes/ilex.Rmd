@@ -36,7 +36,7 @@ This is how the genus *Ilex* is represented on the Open Tree of Life synthetic t
 knitr::include_graphics("ilex-tree-opentree-2020-05-31.png")
 ```
 
-=====================================
+***
 
 Navigating into the tree, we notice that there might be two studies associated to this portion of the Open Tree synthetic tree.
 
@@ -45,7 +45,8 @@ Navigating into the tree, we notice that there might be two studies associated t
 knitr::include_graphics("ilex-tree-opentree-2020-05-31-2.png")
 ```
 
-=======================
+***
+
 Let's verify that on the [study curator of OToL](https://tree.opentreeoflife.org/curator).
 
 Studies matching the word 'ilex' on the curator database, at the middle of year 2020. Some of these studies are not actually about the hollies, but other taxa that have the species epithet *ilex*.
@@ -54,7 +55,7 @@ Studies matching the word 'ilex' on the curator database, at the middle of year 
 knitr::include_graphics("ilex-curation-opentree-2020-05-31.png")
 ```
 
-### With the package `rotl`
+### Finding a tree to update using the R package rotl
 
 <!-- ```{r} -->
 <!-- ilex <- rotl::tnrs_match_names(names = "ilex") -->
@@ -81,12 +82,33 @@ ilex <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="
 ```{r, results='asis', echo=FALSE}
 knitr::kable(ilex, caption = "Studies with the genus *Ilex* as focal clade.")
 ```
-
-It seems like only one tree is on the Open Tree of Life synthetic tree:
-
-```{r ilex-pg_2827-tree6577, eval = TRUE, fig.retina = 2, fig.width = 2}
-# ape::plot.phylo(ape::ladderize(my_trees[[1]]), type = "phylogram", cex = 0.2) 
+```{r, echo = FALSE}
+study2003 <-  ilex$study_doi %in% "http://dx.doi.org/10.3732/ajb.92.2.352"
 ```
+
+It seems like the oldest tree, *`r ilex$candidate[study2003]`* from study *`r ilex$study_ids[study2003]`*, is in the Open Tree of Life synthetic tree.
+
+Let's get it and plot it here:
+
+```{r,include=FALSE}
+par(mar=c(0,1,0,0), xpd=NA)  # adjust margins for all plots after this
+```
+```{r ilex-pg_2827-tree6577, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%"}
+ilex2003 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577")
+ape::plot.phylo(ape::ladderize(ilex2003), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5) 
+```
+
+*** 
+
+Now, let's look at some properties of the tree:
+
+```{r}
+ape::Ntip(ilex2003)  # gets the number of tips
+ape::is.rooted(ilex2003)  # check that it is rooted
+ape::is.binary(ilex2003)  # check that it is fully resolved
+datelife::phylo_has_brlen(ilex2003)  # checks that it has branch lengths
+```
+The tree has `r ape::Ntip(ilex2003)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noted. Also, labels correspond to the labels reported on the original study [here](`r ilex$study_doi[study2003]`). Other labels are available to use as tip labels. For example, you can plot the tree using other labels, like the unified taxonomic names, or the taxonomic ids.
 
 
 ## II. Getting the underlying alignment
@@ -97,11 +119,11 @@ It seems like only one tree is on the Open Tree of Life synthetic tree:
 physcraper_run.py -s pg_2827 -t tree6577 -no-est -o data/pg_2827_tree6577
 ```
 
-### Downloading it manually
+### Downloading it manually from TreeBASE
 
 
 
-## III. Making a run
+## III. Starting a physcraper a run
 
 
 ```
@@ -118,7 +140,7 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex 
 physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db Volumes/ADATA\ HV620/local_blast_db/ -o data/pg_2827_tree6577 
 ```
 
-## IV. Reading the results
+## IV. Reading physcraper results
 
 ### The physcraper tag
 
@@ -126,8 +148,8 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex 
 
 ### Run files
 
-The trees are reconstructed using RAxML, with taxon labels corresponding to taxon ids (e.g., otu42009) and not taxon names (e.g., *Helwingia japonica*). Branch lengths are proportional to relative substitution rates.
-The RAxML tree with taxon names as taxon labels is saved on the `outputs_tag` folder.
+The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
+The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
 
 ```{r,include=FALSE}
 par(mar=c(1,1,1,1), xpd=NA)  # adjust margins for all plots after this
@@ -138,6 +160,12 @@ ape::plot.phylo(ape::ladderize(ilex_new_tree), type = "fan", cex = 0.25, label.o
 ```
 
 ### Output files
+
+A nexson tree with all types of tip labels is saved in here.
+From this tree, a tree with any kind of label can be produced.
+By default, the updtaed tree with taxon names as tip labels is saved 
+in the `output_tag` folder as `updated_taxonname.tre`.
+
 
 ```{r, echo=TRUE, out.width='100%', fig.height= 15, fig.retina=3, dpi=300}
 ilex_new_tree_labeled <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_T1281-M2478/updated_taxonname.tre")
