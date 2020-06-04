@@ -1,0 +1,30 @@
+---
+title: "TODO"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{todo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+```
+
+# Next:
+
+- [] add merced cluster nsf grant to acknowledgments
+- [] can we get the ingroup of an otol stored tree with rotl?
+- [] alignment section:
+  - [] explain where the alignment is saved when downloaded with physcraper
+  - [] add a screen snippet of it
+  - [] add screenshots of treebase finding the alignment from the original tree
+- [] add a comparison section
+
+

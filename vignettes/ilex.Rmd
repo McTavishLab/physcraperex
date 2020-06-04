@@ -119,7 +119,7 @@ The tree has `r ape::Ntip(ilex2003)` tips, is rooted, has no branch lengths and 
 physcraper_run.py -s pg_2827 -t tree6577 -no-est -o data/pg_2827_tree6577
 ```
 
-### Downloading it manually from TreeBASE
+### Downloading the alignment manually from TreeBASE
 
 
 
