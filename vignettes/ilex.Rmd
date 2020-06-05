@@ -151,7 +151,14 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw//alignments/T1281-M2478.nex
 
 ### Input files
 
+Physcraper rewrites input files for a couple reasons: reproducibility, taxon name matching, and taxon reconciliation.
+It writes the config file down if none was provided
+
 ### Run files
+
+Files in here are also automatically written down by physcraper.
+
+blast runs, alignments, raxml trees, bootstrap
 
 The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
 The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
@@ -159,12 +166,14 @@ The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` fold
 ```{r,include=FALSE}
 par(mar=c(1,1,1,1), xpd=NA)  # adjust margins for all plots after this
 ```
-```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300}
+```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300, out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
 ilex_new_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_T1281-M2478/RAxML_bestTree.2020-06-02")
 ape::plot.phylo(ape::ladderize(ilex_new_tree), type = "fan", cex = 0.25, label.offset = 0.02, edge.width = 0.5)
 ```
 
 ### Output files
+
+A number of files is automatically written down by physcraper.
 
 A nexson tree with all types of tip labels is saved in here.
 From this tree, a tree with any kind of label can be produced.
@@ -182,3 +191,17 @@ par(mar=c(1.8,1.7,1.5,1.7), xpd=NA)  # adjust margins for all plots after this
 ```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
 ape::plot.phylo(ape::ladderize(ilex_new_tree_labeled), type = "fan", cex = 0.2, label.offset = 0.02, edge.width = 0.5)
 ```
+
+## IV. Comparing trees
+
+### Robinson foulds
+
+### Resolved nodes
+
+### Conflicting nodes
+
+## V. Citation
+
+## VI. Acknowledgments
+
+University of California, Merced cluster, MERCED (Multi-Environment Research Computer for Exploration and Discovery) supported by the National Science Foundation (Grant No. ACI-1429783).

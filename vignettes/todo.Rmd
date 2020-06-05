@@ -19,13 +19,19 @@ knitr::opts_chunk$set(
 
 # Next:
 
-- [] add merced cluster nsf grant to acknowledgments
+- [] references
+  - [] yaml
+  - [] add bib file
+  - [] add physcraper citation
+  - [] add references section
 - [] describe the output trees in number of tips, root, branch lengths, resolved nodes, etc.
 - [] can we get the ingroup of an otol stored tree with rotl?
 - [] alignment section:
   - [] explain where the alignment is saved when downloaded with physcraper
   - [] add a screen snippet of it
   - [] add screenshots of treebase finding the alignment from the original tree
-- [] add a comparison section
 
+# Done:
 
+- [X] add merced cluster nsf grant to acknowledgments
+- [X] add a comparison section
