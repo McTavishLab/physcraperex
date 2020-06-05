@@ -121,6 +121,11 @@ physcraper_run.py -s pg_2827 -t tree6577 -no-est -o data/pg_2827_tree6577
 
 ### Downloading the alignment manually from TreeBASE
 
+The alignments are here <https://treebase.org/treebase-web/search/study/matrices.html?id=1091>
+
+```
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M2478?format=nexus" -o data-raw/alignments/T1281-M2478.nex
+```
 
 
 ## III. Starting a physcraper a run
@@ -137,7 +142,7 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex 
 ### Using a local BLAST database
 
 ```
-physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db Volumes/ADATA\ HV620/local_blast_db/ -o data/pg_2827_tree6577 
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw//alignments/T1281-M2478.nex -as nexus -db /local_blast_db -o examples/pg_2827_tree6577 
 ```
 
 ## IV. Reading physcraper results
