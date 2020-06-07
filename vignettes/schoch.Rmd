@@ -1,0 +1,104 @@
+---
+title: "Physcraper Examples: the Dothideomycetes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ilex}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+knitr::opts_knit$set(
+  global.par = TRUE
+  )
+```
+
+```{r setup, echo=FALSE}
+
+```
+## I. Finding a tree to update
+
+### With the Open Tree of Life website
+
+Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up the taxon 
+Dothideomycetes.
+
+Oh no... it seems like the Dothideomycetes are not represented as a clade on the Open Tree of Life synthetic tree (at the middle of year 2020):
+
+```{r dothideomycetes-tree-opentree, echo=FALSE, fig.cap="Go to the website and look at it [here](https://tree.opentreeoflife.org/opentree/argus/ottol@346120/Dothideomycetes)", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("dothideomycetes-tree-opentree-2020-06-06.png")
+```
+
+***
+
+What is the MRCA of the "broken" Dothideomycetes in the synthetic tree?
+follow the ["View the MRCA of the members of this taxon in the synthetic tree"](https://tree.opentreeoflife.org/opentree/argus/ottol@439373/Ascomycota) link.
+
+```{r ascomycota-tree-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("ascomycota-tree-opentree-2020-06-06.png")
+```
+
+It is the Ascomycota, which has more than 1.5k species. 
+
+It is time now to ask the question, do we want to update an alignment for all the Ascomycota???
+
+***
+
+Why are the Dothideomycetes "broken"?
+
+go to the ["Show this tree's conflicts in the study curation tool"](https://tree.opentreeoflife.org/curator/study/view/ot_1477/?tab=home&tree=Tr25846&conflict=ott) link.
+
+```{r dothideomycetes-conflict-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("dothideomycetes-conflict-opentree-2020-06-06.png")
+```
+
+There is a published tree that is conflicting with the taxonomy.
+
+***
+
+Let's get more information about the taxonomy of the Dothideomycetes, follow the ["View this taxon in the taxonomy browser"](https://tree.opentreeoflife.org/taxonomy/browse?id=346120) link. 
+
+```{r dothideomycetes-taxonomy-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("dothideomycetes-taxonomy-opentree-2020-06-06.png")
+```
+
+So, it seems like it is a taxon in NCBI. To verify this, go to the section "Taxon details", and follow the [ncbi:147541](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=147541) link. 
+
+```{r dothideomycetes-ncbi, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("dothideomycetes-ncbi-2020-06-06.png")
+```
+
+Maybe we can just enrich that part of the tree on the updating step.
+
+***
+
+Let's verify that on the [study curator of OToL](https://tree.opentreeoflife.org/curator).
+
+Studies matching the word 'dothideomycetes' on the curator database, at the middle of year 2020. Some of these studies are not actually about this taxon.
+
+```{r dothideomycetes-curation-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+knitr::include_graphics(c("dothideomycetes-curation-opentree-1-2020-06-06.png", "dothideomycetes-curation-opentree-2-2020-06-06.png", "dothideomycetes-curation-opentree-3-2020-06-06.png"))
+```
+
+### Finding a tree to update using the R package rotl
+
+Explain what a focal clade is.
+
+There is a handy function that will search a taxon among the focal clades reported across trees.
+
+```{r}
+doth <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="dothideomycetes")
+```
+
+```{r, results='asis', echo=FALSE}
+knitr::kable(doth, caption = "Studies with the class *Dothideomycetes* as focal clade.")
+```

@@ -123,6 +123,7 @@ physcraper_run.py -s pg_2827 -t tree6577 -no-est -o data/pg_2827_tree6577
 
 The alignments are here <https://treebase.org/treebase-web/search/study/matrices.html?id=1091>
 
+On a mac you would do:
 ```
 wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M2478?format=nexus" -o data-raw/alignments/T1281-M2478.nex
 ```
