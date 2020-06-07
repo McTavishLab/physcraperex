@@ -1,0 +1,71 @@
+---
+title: "Plotting TreeBASE trees"
+author: "Luna L. Sanchez Reyes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plots-treebase}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse = TRUE,
+  comment = "#>",
+  root.dir= "/Users/luna/pj_physcraper/physcraperex"
+)
+
+source("../R/plots.R")
+```
+
+This function gets the tree file names saved in `data-raw/trees/treebase/studyid` folder, and returns the name of the file with all the tree file names:
+
+```{r}
+treefiles_file <- get_file_names(studyid = "S1091")
+treefiles_file
+```
+
+Now read that file into R to get the names of the tree files:
+
+```{r}
+all_treefiles <- read.csv(treefiles_file, header = FALSE, colClasses = "character" )
+is.character(all_treefiles[,1])
+```
+
+```
+mkdir S1091-pdf
+```
+
+Let's plot everything 
+```{r}
+sapply(all_treefiles[,1], function(x) trenex2pdf(x))
+```
+
+
+```
+mkdir data-raw/trees/treebase/S2137
+mkdir data-raw/trees/treebase/S2137-pdf
+```
+
+```
+wget "http://purl.org/phylo/treebase/phylows/tree/TB2:Tr5277?format=nexus"
+mv TB2:Tr5277?format=nexus data-raw/trees/treebase/S2137/Tr5277.nex
+
+wget "http://purl.org/phylo/treebase/phylows/tree/TB2:Tr5276?format=nexus"
+mv TB2:Tr5276?format=nexus data-raw/trees/treebase/S2137/Tr5276.nex
+```
+
+```{r}
+treefiles_file <- get_file_names(studyid = "S2137")
+treefiles_file
+all_treefiles <- read.csv(treefiles_file, header = FALSE, colClasses = "character" )
+is.character(all_treefiles[,1])
+sapply(all_treefiles[,1], function(x) trenex2pdf(x, ))
+```
+
+
+
+
+

@@ -1,0 +1,79 @@
+#NEXUS
+
+[!This data set was downloaded from TreeBASE, a relational database of phylogenetic knowledge. TreeBASE has been supported by the NSF, Harvard University, Yale University, SDSC and UC Davis. Please do not remove this acknowledgment from the Nexus file.
+
+
+Generated on May 31, 2020; 8:15 GMT
+
+TreeBASE (cc) 1994-2008
+
+Study reference:
+Gottlieb A., Giberti G., & Poggio L. 2003. Molecular analyses of the genus Ilex (Aquifoliaceae)
+in southern South America, evidence from AFLP and ITS sequence data.
+American Journal of Botany, null.
+
+TreeBASE Study URI:  http://purl.org/phylo/treebase/phylows/study/TB2:S1091]
+
+BEGIN TAXA;
+        TITLE  TaxonLabelSet11365;
+        DIMENSIONS NTAX=48;
+        TAXLABELS
+            Helwingia_chinensis
+            Helwingia_japonica
+            Ilex_amelanchier
+            Ilex_anomala
+            Ilex_argentina
+            Ilex_argentina_Gbk
+            Ilex_beecheyi
+            Ilex_brasiliensis
+            Ilex_brevicuspis
+            Ilex_buergeri
+            Ilex_canariensis
+            Ilex_cassine
+            Ilex_collina
+            Ilex_cornuta
+            Ilex_crenata
+            Ilex_decidua
+            Ilex_dimorphophylla
+            Ilex_dumosa_dumosa
+            Ilex_dumosa_guaranina
+            Ilex_glabra
+            Ilex_integerrima
+            Ilex_integra
+            Ilex_kiusiana
+            Ilex_latifolia
+            Ilex_liukiuensis
+            Ilex_macropoda
+            Ilex_maximowicziana
+            Ilex_mertensii
+            Ilex_micrococca
+            Ilex_microdonta
+            Ilex_microdonta_Gbk
+            Ilex_mitis
+            Ilex_mucronata
+            Ilex_mutchagara
+            Ilex_opaca
+            Ilex_paraguariensis
+            Ilex_pedunculosa
+            Ilex_percoriacea
+            Ilex_pseudobuxus
+            Ilex_rotunda
+            Ilex_rugosa
+            Ilex_serrata
+            Ilex_taubertiana
+            Ilex_theezans
+            Ilex_theezans_Gbk
+            Ilex_vomitoria
+            Ilex_warburgii
+            Ilex_yunnanensis
+            ;
+END;
+
+BEGIN TREES;
+      TITLE Tb6718;
+      LINK TAXA = TaxonLabelSet11365;
+      TREE strict_241 = [&R] (Helwingia_japonica,(Helwingia_chinensis,(Ilex_anomala,((Ilex_rugosa,((Ilex_integra,(Ilex_kiusiana,(Ilex_beecheyi,Ilex_mertensii,Ilex_percoriacea))),((Ilex_maximowicziana,(Ilex_cornuta,Ilex_dimorphophylla)),(Ilex_buergeri,Ilex_latifolia,(Ilex_liukiuensis,Ilex_warburgii))))),(((Ilex_amelanchier,Ilex_mucronata),((Ilex_collina,(Ilex_decidua,Ilex_vomitoria)),((Ilex_opaca,(Ilex_argentina_Gbk,Ilex_cassine)),(Ilex_paraguariensis,((Ilex_crenata,Ilex_mutchagara),(Ilex_dumosa_dumosa,Ilex_dumosa_guaranina)))))),(Ilex_pedunculosa,((Ilex_canariensis,Ilex_glabra),((Ilex_rotunda,Ilex_serrata),(Ilex_yunnanensis,(Ilex_mitis,(Ilex_macropoda,Ilex_micrococca)))),(Ilex_argentina,(((Ilex_brasiliensis,Ilex_theezans),(Ilex_integerrima,Ilex_theezans_Gbk)),((Ilex_brevicuspis,Ilex_taubertiana),(Ilex_microdonta,(Ilex_pseudobuxus,Ilex_microdonta_Gbk))))))))))));
+[!  TreeBASE tree URI: http://purl.org/phylo/treebase/phylows/tree/TB2:Tr1271]
+
+
+END;

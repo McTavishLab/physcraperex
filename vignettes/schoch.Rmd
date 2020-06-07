@@ -96,9 +96,71 @@ Explain what a focal clade is.
 There is a handy function that will search a taxon among the focal clades reported across trees.
 
 ```{r}
-doth <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="dothideomycetes")
+doth <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Dothideomycetes")
+
 ```
 
+<!-- ```{bash} -->
+<!-- curl -X POST https://api.opentreeoflife.org/v3/studies/find_studies \ -->
+<!-- -H "content-type:application/json" -d \ -->
+<!-- '{"property":"ot:studyId","value":"pg_254","verbose":true}' -->
+
+<!-- curl -X POST https://api.opentreeoflife.org/v3/studies/find_studies \ -->
+<!-- -H "content-type:application/json" -d \ -->
+<!-- '{"property":"ot:focalCladeOTTTaxonName","value":"Ilex","verbose":true}' -->
+
+<!-- curl -X POST https://api.opentreeoflife.org/v3/studies/find_studies \ -->
+<!-- -H "content-type:application/json" -d \ -->
+<!-- '{"property":"ot:focalCladeTaxonName","value":"ilex","verbose":true}' -->
+<!-- ``` -->
+
 ```{r, results='asis', echo=FALSE}
-knitr::kable(doth, caption = "Studies with the class *Dothideomycetes* as focal clade.")
+# knitr::kable(doth, caption = "Studies with the class **Dothideomycetes** as focal clade.")
+library(DT)
+issue_title <- doth[,"study_ids"] %in% "ot_465"
+doth[issue_title, "title"] <- "Resolving Tiarosporella spp. allied to Botryosphaeriaceae and Phacidiaceae"
+datatable(doth, class = 'order-column hover compact row-border', options = list(dom = 't'), rownames = FALSE, editable = FALSE) # %>%
 ```
+
+It seems like the tree *tree137* from study *pg_254*, is **not** in the Open Tree of Life synthetic tree.
+
+Let's get it and plot it here:
+
+
+```{r,include=FALSE}
+par(mar=c(0,1,0,0), xpd=NA)  # adjust margins for all plots after this
+```
+```{r schoch-pg_254-tree137, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%", fig.height = 20}
+schoch2009 <- rotl::get_study_tree(study_id = "pg_254", tree_id = "tree137")
+ape::plot.phylo(ape::ladderize(schoch2009), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5) 
+```
+
+
+The alignment is here <https://treebase.org/treebase-web/search/study/matrices.html?id=10245>.
+
+```
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M4727?format=nexus" mv TB2:M4727?format=nexus data-raw/alignments/T6859-M4727.nex
+```
+
+It seems like the tree *tree* from study *pg_254*, is **not** in the Open Tree of Life synthetic tree.
+
+Ascomycota alignments here <https://treebase.org/treebase-web/search/study/matrices.html?id=2137>.
+
+```
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3939?format=nexus"
+mv TB2:M3939?format=nexus data-raw/alignments/Tr5276-M3939.nex
+
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3938?format=nexus"
+mv TB2:M3938?format=nexus data-raw/alignments/Tr5276-M3938.nex
+
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3802?format=nexus"
+mv TB2:M3802?format=nexus data-raw/alignments/Tr5276-M3802.nex
+
+wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3956?format=nexus"
+mv TB2:M3956?format=nexus data-raw/alignments/Tr5276-M3956.nex
+```
+
+```
+
+```
+
