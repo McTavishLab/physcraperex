@@ -1,0 +1,29 @@
+#! /bin/bash -l
+
+#SBATCH --nodes=4
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1G
+#
+#SBATCH --partition std.q
+#SBATCH --time=0-23:00:00     # 23 hrs
+#
+#SBATCH --output=schoch_ascomycota_3_2020.06.06_%j.stdout
+#
+#SBATCH --job-name=physcraper
+#SBATCH --export=ALL
+
+# This submission file will run a simple set of commands. All stdout will be
+# captured in mmyjob_XXXX.stdout (as specified in the Slurm command above).
+# This job file uses a shared-memory parallel environment and requests 1 cores
+# on a single node.This script loads PGI compiler module named "pgi"
+
+whoami
+echo "Schoch Ascomycota 3"
+cd pj_physcraper/physcraper
+git checkout bootstrap
+source venv-physcraper/bin/activate
+pwd
+date
+physcraper_run.py -s pg_238 -t tree109 -a ../physcraperex/data-raw/alignments/Tr5276-M3802-mod.nex -as nexus  -db /branchinecta/shared/local_blast_db -o ../physcraperex/data/schoch_ascomycota_3_2020.06.06 -nt 4
+date
