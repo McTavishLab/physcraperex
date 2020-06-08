@@ -18,7 +18,7 @@ knitr::opts_knit$set(
 ```
 
 ```{r setup, echo=FALSE}
-
+library(DT)
 ```
 ## I. Finding a tree to update
 
@@ -116,7 +116,6 @@ doth <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="
 
 ```{r, results='asis', echo=FALSE}
 # knitr::kable(doth, caption = "Studies with the class **Dothideomycetes** as focal clade.")
-library(DT)
 issue_title <- doth[,"study_ids"] %in% "ot_465"
 doth[issue_title, "title"] <- "Resolving Tiarosporella spp. allied to Botryosphaeriaceae and Phacidiaceae"
 datatable(doth, class = 'order-column hover compact row-border', options = list(dom = 't'), rownames = FALSE, editable = FALSE) # %>%
@@ -142,7 +141,15 @@ The alignment is here <https://treebase.org/treebase-web/search/study/matrices.h
 wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M4727?format=nexus" mv TB2:M4727?format=nexus data-raw/alignments/T6859-M4727.nex
 ```
 
-It seems like the tree *tree* from study *pg_254*, is **not** in the Open Tree of Life synthetic tree.
+# Ascomycota
+
+```{r}
+asco <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Ascomycota")
+datatable(asco, class = 'order-column hover compact row-border', options = list(dom = 't'), rownames = FALSE, editable = FALSE)
+knitr::kable(asco, caption = "Studies with the **Ascomycota** as focal clade.")
+```
+
+It seems like the tree *tree109* from study *pg_238*, is **not** in the Open Tree of Life synthetic tree.
 
 Ascomycota alignments here <https://treebase.org/treebase-web/search/study/matrices.html?id=2137>.
 
@@ -160,6 +167,7 @@ wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3956?format=nexus"
 mv TB2:M3956?format=nexus data-raw/alignments/Tr5276-M3956.nex
 ```
 
+Downloading them with 
 ```
 
 ```

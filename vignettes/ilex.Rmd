@@ -113,13 +113,15 @@ The tree has `r ape::Ntip(ilex2003)` tips, is rooted, has no branch lengths and 
 
 ## II. Getting the underlying alignment
 
-### Using physcraper
+### TreeBASE
+
+#### Using physcraper and the argument `-no-est`
 
 ```
 physcraper_run.py -s pg_2827 -t tree6577 -no-est -o data/pg_2827_tree6577
 ```
 
-### Downloading the alignment directly from TreeBASE
+#### Downloading the alignment directly from a repository
 
 The alignments are here <https://treebase.org/treebase-web/search/study/matrices.html?id=1091>
 
@@ -127,6 +129,9 @@ On a mac you can do:
 ```
 wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M2478?format=nexus" -o data-raw/alignments/T1281-M2478.nex
 ```
+
+
+### Other repos
 
 
 ## III. Starting a physcraper a run
