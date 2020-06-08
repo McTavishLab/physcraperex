@@ -25,5 +25,5 @@ git checkout bootstrap
 source venv-physcraper/bin/activate
 pwd
 date
-physcraper_run.py -s pg_2827 -t tree6577 -a ../physcraperex/data-raw/alignments/Tr5276-M3939-mod.nex -as nexus  -db /branchinecta/shared/local_blast_db -o ../physcraperex/data/schoch_ascomycota_1_2020.06.06
+physcraper_run.py -s pg_238 -t tree109 -a ../physcraperex/data-raw/alignments/Tr5276-M3939-mod.nex -as nexus  -db /branchinecta/shared/local_blast_db -o ../physcraperex/data/schoch_ascomycota_1_2020.06.06 -nt 4
 date

@@ -167,8 +167,8 @@ wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M3956?format=nexus"
 mv TB2:M3956?format=nexus data-raw/alignments/Tr5276-M3956.nex
 ```
 
-Downloading them with 
+Downloading them with physcraper
 ```
-
+physcraper_run.py -s pg_2827 -t tree6577 -no-est -o ../physcraperex/data/schoch_ascomycota_2020.06.06
 ```
 
