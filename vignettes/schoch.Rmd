@@ -172,3 +172,8 @@ Downloading them with physcraper
 physcraper_run.py -s pg_238 -t tree109 -tb -no_est -o ../physcraperex/data/schoch_ascomycota_0_2020.06.06
 ```
 
+# Current run
+```
+physcraper_run.py -s pg_238 -t tree109 -a ../physcraperex/data-raw/alignments/Tr5276-M3939-mod.nex -as nexus -o ../physcraperex/data/schoch_ascomycota_1_2020.06.06
+```
+
