@@ -1,0 +1,49 @@
+otu_id	^ot:ottTaxonName	^ot:ottId	^ncbi:taxon	^ncbi:accession	^physcraper:last_blasted	^physcraper:ingroup	^physcraper:status	^ot:originalLabel	^ncbi:title
+otu420099	Helwingia chinensis	468906	146502	-	None	False	original	Helwingia_chinensis	-
+otu420083	Helwingia japonica	1030991	16915	-	None	False	original	Helwingia_japonica	-
+otu420106	Ilex paraguariensis	589430	185542	-	None	True	original	Ilex_paraguariensis	-
+otu420069	Ilex mucronata	224625	185535	-	None	True	original	Ilex_mucronata	-
+otu420113	Ilex amelanchier	432615	53196	-	None	True	original	Ilex_amelanchier	-
+otu420084	Ilex collina	468913	146504	-	None	True	original	Ilex_collina	-
+otu420092	Ilex decidua	676165	53201	-	None	True	original	Ilex_decidua	-
+otu420079	Ilex vomitoria	727576	4297	-	None	True	original	Ilex_vomitoria	-
+otu420076	Ilex anomala	432613	53197	-	None	True	original	Ilex_anomala	-
+otu420085	Ilex rugosa	1015271	53212	-	None	True	original	Ilex_rugosa	-
+otu420098	Ilex maximowicziana	89476	58292	-	None	True	original	Ilex_maximowicziana	-
+otu420072	Ilex cornuta	468915	146505	-	None	True	original	Ilex_cornuta	-
+otu420095	Ilex dimorphophylla	89483	58296	-	None	True	original	Ilex_dimorphophylla	-
+otu420075	Ilex buergeri	89480	58297	-	None	True	original	Ilex_buergeri	-
+otu420112	Ilex latifolia	676217	53205	-	None	True	original	Ilex_latifolia	-
+otu420103	Ilex warburgii	89485	58299	-	None	True	original	Ilex_warburgii	-
+otu420086	Ilex liukiuensis	796105	58303	-	None	True	original	Ilex_liukiuensis	-
+otu420073	Ilex x kiusiana	5144136	58298	-	None	True	original	Ilex_kiusiana	-
+otu420077	Ilex integra	751453	53204	-	None	True	original	Ilex_integra	-
+otu420080	Ilex beecheyi	796111	58300	-	None	True	original	Ilex_beecheyi	-
+otu420101	Ilex percoriacea	796107	58302	-	None	True	original	Ilex_percoriacea	-
+otu420094	Ilex mertensii	796109	58301	-	None	True	original	Ilex_mertensii	-
+otu420088	Ilex rotunda	1015268	53211	-	None	True	original	Ilex_rotunda	-
+otu420087	Ilex serrata	796121	58304	-	None	True	original	Ilex_serrata	-
+otu420070	Ilex glabra	458761	109210	-	None	True	original	Ilex_glabra	-
+otu420108	Ilex macropoda	796117	58305	-	None	True	original	Ilex_macropoda	-
+otu420109	Ilex micrococca	676195	53206	-	None	True	original	Ilex_micrococca	-
+otu420114	Ilex yunnanensis	1015274	53213	-	None	True	original	Ilex_yunnanensis	-
+otu420090	Ilex mitis	676179	53207	-	None	True	original	Ilex_mitis	-
+otu420074	Ilex canariensis	676173	53200	-	None	True	original	Ilex_canariensis	-
+otu420081	Ilex taubertiana	967825	224368	-	None	True	original	Ilex_taubertiana	-
+otu420100	Ilex brevicuspis	432620	53199	-	None	True	original	Ilex_brevicuspis	-
+otu420089	Ilex microdonta	222016	185533	-	None	True	original	Ilex_microdonta_Gbk	-
+otu420096	Ilex pseudobuxus	1015266	53210	-	None	True	original	Ilex_pseudobuxus	-
+otu420107	Ilex microdonta	222016	185533	-	None	True	original	Ilex_microdonta	-
+otu420082	Ilex brasiliensis	432622	53198	-	None	True	original	Ilex_brasiliensis	-
+otu420104	Ilex theezans	68451	185555	-	None	True	original	Ilex_theezans	-
+otu420071	Ilex theezans	68451	185555	-	None	True	original	Ilex_theezans_Gbk	-
+otu420093	Ilex integerrima	171374	185519	-	None	True	original	Ilex_integerrima	-
+otu420078	Ilex argentina	302247	185491	-	None	True	original	Ilex_argentina	-
+otu420097	Ilex pedunculosa	751461	53208	-	None	True	original	Ilex_pedunculosa	-
+otu420102	Ilex cassine	468907	146503	-	None	True	original	Ilex_cassine	-
+otu420110	Ilex argentina	302247	185491	-	None	True	original	Ilex_argentina_Gbk	-
+otu420067	Ilex opaca	660052	101729	-	None	True	original	Ilex_opaca	-
+otu420091	Ilex dumosa var. guaranina	967823	224369	-	None	True	original	Ilex_dumosa_guaranina	-
+otu420111	Ilex dumosa var. dumosa	967819	224367	-	None	True	original	Ilex_dumosa_dumosa	-
+otu420105	Ilex mutchagara	89474	58293	-	None	True	original	Ilex_mutchagara	-
+otu420068	Ilex crenata	671004	4296	-	None	True	original	Ilex_crenata	-
