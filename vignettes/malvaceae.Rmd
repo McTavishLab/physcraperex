@@ -175,8 +175,8 @@ The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` fold
 
 
 ```{r, echo=TRUE, out.width='90%', fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"'}
-updated_tree <- ape::read.tree(file = "../data/pg_55/run_pg_55tree5864_ndhf/RAxML_bestTree.2020-06-09")
-ape::plot.phylo(ape::ladderize(updated_tree), type = "phylogram", cex = 0.25, label.offset = 0.001, edge.width = 0.5)
+updated_tree_otus <- ape::read.tree(file = "../data/pg_55/run_pg_55tree5864_ndhf/RAxML_bestTree.2020-06-09")
+ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "phylogram", cex = 0.25, label.offset = 0.001, edge.width = 0.5)
 ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
 mtext("Updated tree - otu tags as labels", side = 3)
 ```
@@ -219,9 +219,16 @@ updated_tree_otus_pruned <- ape::read.tree(
 Now plot them face to face
 ```{r cotree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
 cotree <-  phytools::cophylo(original_tree_otus, updated_tree_otus_pruned, rotate.multi =TRUE)
-phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .005))
+phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.2,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Original tr.   Pruned updated tr.", cex = 0.1)
+```
+
+```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+cotree2 <-  phytools::cophylo(original_tree_otus, updated_tree_otus, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.5, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
 title("Original tree      Updated tree", cex = 0.1)
 ```
+
 
 # References
 
