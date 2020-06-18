@@ -1,0 +1,78 @@
+
+
+IMPORTANT WARNING: Sequences otu376439 and otuPS35 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otu376452 and otuPS42 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otu376420 and otuPS49 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otu376430 and otuPS40 are exactly identical
+
+IMPORTANT WARNING
+Found 4 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+An alignment file with sequence duplicates removed has already
+been printed to file /home/ejmctavish/projects/otapi/data_physcraper/output_pg55_local_new/run_pg_55tree5864_ndhf/physcraper_pg_55tree5864_ndhf.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 457 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 3.64%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 100 non-parametric bootstrap inferences
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 457
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+/usr/bin/raxmlHPC-PTHREADS-AVX -T 4 -m GTRCAT -s /home/ejmctavish/projects/otapi/data_physcraper/output_pg55_local_new/run_pg_55tree5864_ndhf/physcraper_pg_55tree5864_ndhf.fas -p 1 -b 1 -# 100 -n BOOT2020-06-09 
+
+
+Bootstrap[0]: Time 50.294792 seconds, bootstrap likelihood -5577.548504, best rearrangement setting 5
+Bootstrap[1]: Time 15.218403 seconds, bootstrap likelihood -5742.059328, best rearrangement setting 5
+Bootstrap[2]: Time 21.936099 seconds, bootstrap likelihood -5604.406142, best rearrangement setting 5
+Bootstrap[3]: Time 24.699267 seconds, bootstrap likelihood -6185.730703, best rearrangement setting 5
+Bootstrap[4]: Time 20.901151 seconds, bootstrap likelihood -5927.181903, best rearrangement setting 5
+Bootstrap[5]: Time 16.025480 seconds, bootstrap likelihood -5588.986057, best rearrangement setting 5

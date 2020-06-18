@@ -30,7 +30,7 @@ This is how the genus *Ilex* is represented on the Open Tree of Life synthetic t
 
 ```{r ilex-tree-opentree, echo=FALSE, fig.cap="Go to the website and look at it [here](https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex)", out.width = '100%', fig.retina= 2}
 # library(webshot)
-# webshot("https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex", "ilex-tree-opentree.png")
+# webshot("https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex", "ilex-tree-opentree.png", delay = 1)
 
 # webshot did not work on opentree website
 knitr::include_graphics("ilex-tree-opentree-2020-05-31.png")
@@ -173,7 +173,7 @@ The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` fold
 par(mar=c(1,1,1,1), xpd=NA)  # adjust margins for all plots after this
 ```
 ```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300, out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
-ilex_new_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_T1281-M2478/RAxML_bestTree.2020-06-02")
+ilex_new_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_T1281-M2478/RAxML_bestTree.2020-06-05")
 ape::plot.phylo(ape::ladderize(ilex_new_tree), type = "fan", cex = 0.25, label.offset = 0.02, edge.width = 0.5)
 ```
 
@@ -200,11 +200,40 @@ ape::plot.phylo(ape::ladderize(ilex_new_tree_labeled), type = "fan", cex = 0.2, 
 
 ## IV. Comparing trees
 
+Compare the original tree with the pruned updated tree
+```{r}
+tree1 <- ape::read.tree(file = "")
+tree2 <-
+```
+Concatenate the two trees
+```{r}
+trees <-  c(tree1, tree2)
+```
+Make sure they are class multiphylo
+```{r}
+class(trees) <- "multiPhylo"
+```
+
+Run the densitree plot
+```{r densitree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%", fig.height = 20, results="asis"}
+phangorn::densiTree(x = trees)
+```
+
+Let's plot them face to face
+```{r}
+cotree <-  phytools::cophylo(ilex2003, ilex_new_tree_labeled)
+phytools::plot.cophylo(x = cotree)
+```
+
 ### Robinson foulds
 
 ### Resolved nodes
 
 ### Conflicting nodes
+
+Plot the node labels from conflict tree and maybe color them according to status
+
+ape::plot.phylo()
 
 ## V. Citation
 
