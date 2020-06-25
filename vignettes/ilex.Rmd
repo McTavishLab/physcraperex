@@ -10,7 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "ilex-images/"
 )
 knitr::opts_knit$set(
   global.par = TRUE
@@ -18,8 +19,13 @@ knitr::opts_knit$set(
 ```
 
 ```{r setup, echo=FALSE}
-
+library(webshot)
 ```
+
+```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
+knitr::include_graphics("images/holly-snow.jpg")
+```
+
 ## I. Finding a tree to update
 
 ### With the Open Tree of Life website
@@ -76,40 +82,46 @@ Explain what a focal clade is.
 There is a handy function that will search a taxon among the focal clades reported across trees.
 
 ```{r}
-ilex <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Ilex")
+studies <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Ilex")
 ```
 
 ```{r, results='asis', echo=FALSE}
-knitr::kable(ilex, caption = "Studies with the genus *Ilex* as focal clade.")
-```
-```{r, echo = FALSE}
-study2003 <-  ilex$study_doi %in% "http://dx.doi.org/10.3732/ajb.92.2.352"
+knitr::kable(studies, caption = "Studies with the genus *Ilex* as focal clade.")
 ```
 
-It seems like the oldest tree, *`r ilex$candidate[study2003]`* from study *`r ilex$study_ids[study2003]`*, is in the Open Tree of Life synthetic tree.
+```{r, echo = FALSE}
+study2003 <-  studies$study_doi %in% "http://dx.doi.org/10.3732/ajb.92.2.352"
+```
+
+It seems like the oldest tree, *`r studies$candidate[study2003]`* from study *`r studies$study_ids[study2003]`*, is in the Open Tree of Life synthetic tree.
 
 Let's get it and plot it here:
 
 ```{r,include=FALSE}
 par(mar=c(0,1,0,0), xpd=NA)  # adjust margins for all plots after this
 ```
-```{r ilex-pg_2827-tree6577, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%"}
-ilex2003 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577")
-ape::plot.phylo(ape::ladderize(ilex2003), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5) 
+```{r oroginal-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%"}
+original_tree <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577")
+ape::plot.phylo(ape::ladderize(original_tree), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
 ```
 
-*** 
+***
 
 Now, let's look at some properties of the tree:
 
 ```{r}
-ape::Ntip(ilex2003)  # gets the number of tips
-ape::is.rooted(ilex2003)  # check that it is rooted
-ape::is.binary(ilex2003)  # check that it is fully resolved
-datelife::phylo_has_brlen(ilex2003)  # checks that it has branch lengths
+ape::Ntip(original_tree)  # gets the number of tips
+ape::is.rooted(original_tree)  # check that it is rooted
+ape::is.binary(original_tree)  # check that it is fully resolved
+datelife::phylo_has_brlen(original_tree)  # checks that it has branch lengths
 ```
-The tree has `r ape::Ntip(ilex2003)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noted. Also, labels correspond to the labels reported on the original study [here](`r ilex$study_doi[study2003]`). Other labels are available to use as tip labels. For example, you can plot the tree using other labels, like the unified taxonomic names, or the taxonomic ids.
+The tree has `r ape::Ntip(original_tree)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noted. Also, labels correspond to the labels reported on the original study [here](`r studies$study_doi[study2003]`). Other labels are available to use as tip labels. For example, you can plot the tree using the unified taxonomic names, or the taxonomic ids.
 
+### Finding a tree in the Open Tree of Life phylesystem with at least one tip label belonging to the group of interest.
+
+```
+find_trees.py "Ilex"
+```
 
 ## II. Getting the underlying alignment
 
@@ -155,6 +167,8 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw//alignments/T1281-M2478.nex
 
 ### The physcraper tag
 
+T1281-M2478
+
 ### Input files
 
 Physcraper rewrites input files for a couple reasons: reproducibility, taxon name matching, and taxon reconciliation.
@@ -172,9 +186,11 @@ The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` fold
 ```{r,include=FALSE}
 par(mar=c(1,1,1,1), xpd=NA)  # adjust margins for all plots after this
 ```
-```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300, out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
-ilex_new_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_T1281-M2478/RAxML_bestTree.2020-06-05")
-ape::plot.phylo(ape::ladderize(ilex_new_tree), type = "fan", cex = 0.25, label.offset = 0.02, edge.width = 0.5)
+```{r updated-tree-otus, echo=TRUE, out.width='100%', fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"', fig.height=5}
+updated_tree_otus <- ape::read.tree(file = "../data/pg_2827_tree6577/run_T1281-M2478/RAxML_bestTree.2020-06-05")
+ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "phylogram", cex = 0.25, label.offset = 0.001, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - otu tags as labels", side = 3)
 ```
 
 ### Output files
@@ -183,60 +199,56 @@ A number of files is automatically written down by physcraper.
 
 A nexson tree with all types of tip labels is saved in here.
 From this tree, a tree with any kind of label can be produced.
-By default, the updtaed tree with taxon names as tip labels is saved 
+By default, the updtaed tree with taxon names as tip labels is saved
 in the `output_tag` folder as `updated_taxonname.tre`.
 
 
-```{r, echo=TRUE, out.width='100%', fig.height= 15, fig.retina=3, dpi=300}
-ilex_new_tree_labeled <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_T1281-M2478/updated_taxonname.tre")
-# ape::plot.phylo(ape::ladderize(ilex_new_tree_labeled), cex = 0.35)
+```{r read-updated-tree-taxonname, echo=TRUE, out.width='100%', fig.height= 15, fig.retina=3, dpi=300}
+updated_tree_taxonname <- ape::read.tree(
+  file = "../data/pg_2827_tree6577/outputs_T1281-M2478/updated_taxonname.tre")
+# ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
 ```
 ```{r,include=FALSE}
 par(mar=c(1.8,1.7,1.5,1.7), xpd=NA)  # adjust margins for all plots after this
 ```
-```{r, echo=TRUE, out.width='100%', fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
-ape::plot.phylo(ape::ladderize(ilex_new_tree_labeled), type = "fan", cex = 0.2, label.offset = 0.02, edge.width = 0.5)
+```{r updated-tree-taxonname, echo=TRUE, out.width='100%', fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
+ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "phylogram", cex = 0.2, label.offset = 0.001, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - Taxon names as labels", side = 3)
 ```
 
-## IV. Comparing trees
+## IV. Analyzing the physcraper results
 
 Compare the original tree with the pruned updated tree
 ```{r}
-tree1 <- ape::read.tree(file = "")
-tree2 <-
-```
-Concatenate the two trees
-```{r}
-trees <-  c(tree1, tree2)
-```
-Make sure they are class multiphylo
-```{r}
-class(trees) <- "multiPhylo"
+original_tree_otus <- ape::read.tree(file = "../data/pg_2827_tree6577/inputs_T1281-M2478/physcraper_T1281-M2478.tre")
+updated_tree_otus_pruned <- ape::read.tree(
+  file = "../data/pg_2827_tree6577/pruned_updated.tre"
+)
 ```
 
-Run the densitree plot
-```{r densitree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%", fig.height = 20, results="asis"}
-phangorn::densiTree(x = trees)
+
+Now plot them face to face
+
+We can prune the updated tree, so it is a straight forward comparison:
+```{r cotree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+cotree <-  phytools::cophylo(original_tree_otus, updated_tree_otus_pruned, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.2,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Original tr.   Pruned updated tr.", cex = 0.1)
 ```
 
-Let's plot them face to face
-```{r}
-cotree <-  phytools::cophylo(ilex2003, ilex_new_tree_labeled)
-phytools::plot.cophylo(x = cotree)
+But it is more interesting to plot it with all the new tips, so we see exactly where the new things are:
+```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+original_tree_taxonname <- ape::read.tree(file = "../data/pg_2827_tree6577/inputs_T1281-M2478/taxonname.tre")
+cotree2 <-  phytools::cophylo(original_tree_taxonname, updated_tree_taxonname, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Original tree      Updated tree", cex = 0.1)
 ```
-
-### Robinson foulds
-
-### Resolved nodes
-
-### Conflicting nodes
-
-Plot the node labels from conflict tree and maybe color them according to status
-
-ape::plot.phylo()
 
 ## V. Citation
 
 ## VI. Acknowledgments
 
 University of California, Merced cluster, MERCED (Multi-Environment Research Computer for Exploration and Discovery) supported by the National Science Foundation (Grant No. ACI-1429783).
+
+Holly Image by <a href="https://pixabay.com/es/users/WolfBlur-2503887/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Wolfgang Claussen</a> at <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Pixabay</a>

@@ -7,10 +7,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r opts, include = FALSE, echo=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "malvaceae-images/"
 )
 knitr::opts_knit$set(
   global.par = TRUE
@@ -22,7 +23,7 @@ library(webshot)
 ```
 
 ```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
-knitr::include_graphics("malvaceae-plant.jpg")
+knitr::include_graphics("images/malvaceae-plant.jpg")
 ```
 
 ## I. Finding a tree to update
@@ -68,12 +69,12 @@ knitr::kable(studies, caption = "Studies with the genus *Malvaceae* as focal cla
 
 None of these trees are in the synthetic tree. Still, the family does not appear as a politomy and has phylogenetic information in the Open Tree of Life synthetic tree. Where is this information coming from?
 
-It is probbaly coming from studies with focal clades that might be either above or below the particular clade you are interested in! 
+It is probbaly coming from studies with focal clades that might be either above or below the particular clade you are interested in!
 
 You can get supporting trees with the Open Tree of Life API, and you can currently do it now using some hidden `rotl` functions:
 
 ```{r}
-res <- rotl:::.tol_subtree(ott_id=279960)  
+res <- rotl:::.tol_subtree(ott_id=279960)
 studies <- rotl:::studies_from_otl(res)
 studies
 ```
@@ -94,7 +95,7 @@ pg_55_meta$nexml$treesById
 unlist(pg_55_meta$nexml$treesById)[1]
 # rotl::taxonomy_taxon_info(pg_55_meta$nexml$"^ot:focalClade")
 ```
-*** 
+***
 
 The focal clade of study is **`r unlist(unname(pg_55_meta$nexml$"^ot:focalCladeOTTTaxonName"))
 `.** Is this taxon in the synthetic tree? `r rotl::is_in_tree(pg_55_meta$nexml$"^ot:focalClade")`
@@ -106,12 +107,12 @@ par(mar=c(0,1,1,0), xpd=NA)  # adjust margins for all plots after this
 ```
 ```{r get-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="90%", out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
 pg_55 <- rotl::get_study_tree(study_id = "pg_55", tree_id = "tree5864")
-ape::plot.phylo(ape::ladderize(pg_55), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5) 
+ape::plot.phylo(ape::ladderize(pg_55), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
 mtext("Original tree - original labels", side = 3, cex = 0.6)
 
 ```
 
-*** 
+***
 
 Now, let's look at some properties of the tree:
 
@@ -170,7 +171,7 @@ Files in here are also automatically written down by physcraper.
 
 blast runs, alignments, raxml trees, bootstrap
 
-The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
+The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Ceiba*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
 The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
 
 
@@ -187,7 +188,7 @@ A number of files is automatically written down by physcraper.
 
 A nexson tree with all types of tip labels is saved in here.
 From this tree, a tree with any kind of label can be produced.
-By default, the updtaed tree with taxon names as tip labels is saved 
+By default, the updtaed tree with taxon names as tip labels is saved
 in the `output_tag` folder as `updated_taxonname.tre`.
 
 
@@ -217,18 +218,36 @@ updated_tree_otus_pruned <- ape::read.tree(
 
 
 Now plot them face to face
-```{r cotree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+
+We can prune the updated tree, so it is a straight forward comparison:
+```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
 cotree <-  phytools::cophylo(original_tree_otus, updated_tree_otus_pruned, rotate.multi =TRUE)
 phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.2,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
 title("Original tr.   Pruned updated tr.", cex = 0.1)
 ```
 
+But it is more interesting to plot it with all the new tips, so we see exactly where the new things are:
 ```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
-cotree2 <-  phytools::cophylo(original_tree_otus, updated_tree_otus, rotate.multi =TRUE)
-phytools::plot.cophylo(x = cotree2, fsize = 0.5, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+original_tree_taxonname <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_ndhf/taxonname.tre")
+cotree2 <-  phytools::cophylo(original_tree_taxonname, updated_tree_taxonname, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
 title("Original tree      Updated tree", cex = 0.1)
 ```
 
+We can also plot the updated tree against the synthetic subtree of Malvaceae, to visualize how it updates our current knowledge of the phylogeentic relationships within the family:
+
+```{r get-tol-subtree, message=FALSE, warning=FALSE}
+tolsubtree <- rotl::tol_subtree(ott_id = 279960)
+ape::Ntip(tolsubtree)
+grep("Pterygota_alata", tolsubtree$tip.label)
+updated_tree_taxonname$tip.label
+```
+Eliminate ott and otu tags before comparison, othrwise nothing matches
+```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
+cotree2 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Tol subtree      Updated tree", cex = 0.1)
+```
 
 # References
 
