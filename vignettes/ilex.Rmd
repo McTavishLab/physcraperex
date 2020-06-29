@@ -160,7 +160,7 @@ physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex 
 ### Using a local BLAST database
 
 ```
-physcraper_run.py -s pg_2827 -t tree6577 -a data-raw//alignments/T1281-M2478.nex -as nexus -db /Volumes/ADATA\ HV620/local_blast_db -o data/ilex
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw//alignments/T1281-M2478.nex -as nexus -db local_blast_db -o data/ilex
 ```
 
 ## IV. Reading physcraper results
