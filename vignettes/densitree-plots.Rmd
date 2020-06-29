@@ -1,0 +1,13 @@
+
+<!-- To run the densitree plot we need the consensus tree, see datelife https://github.com/phylotastic/datelife/tree/master/R#L556 and datelifeweb https://github.com/phylotastic/datelifeweb/blob/master/query/server.R-->
+<!-- Concatenate the two trees -->
+<!-- ```{r} -->
+<!-- trees <-  c(original_tree_otus, updated_tree_otus_pruned) -->
+<!-- ``` -->
+<!-- Make sure they are class multiphylo -->
+<!-- ```{r} -->
+<!-- class(trees) <- "multiPhylo" -->
+<!-- ``` -->
+<!-- ```{r densitree-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis"} -->
+<!-- phangorn::densiTree(x = trees, cex = 0.2) -->
+<!-- ``` -->

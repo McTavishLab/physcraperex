@@ -1,0 +1,254 @@
+---
+title: "Physcraper Examples: the Malvaceae"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ilex}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r opts, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "malvaceae-images/"
+)
+knitr::opts_knit$set(
+  global.par = TRUE
+  )
+```
+
+```{r setup, echo=FALSE}
+library(webshot)
+```
+
+```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
+knitr::include_graphics("images/malvaceae-plant.jpg")
+```
+
+## I. Finding a tree to update
+
+### With the Open Tree of Life website
+
+Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up the taxon **Malvaceae**.
+
+This is how the genus **Malvaceae** is represented on the Open Tree of Life synthetic tree at the middle of year 2020:
+
+```{r tree-opentree, echo=FALSE, fig.cap="See this live on the website at <https://tree.opentreeoflife.org/opentree/argus/ottol@279960/Malvaceae>", out.width = '100%', fig.retina= 3}
+# webshot::webshot("https://tree.opentreeoflife.org/opentree/argus/ottol@279960/Malvaceae", file = "malvaceae-tree-opentree.png", delay = 1.5, zoom = 1, vwidth = 1400, vheight=1200)
+
+knitr::include_graphics("malvaceae-tree-opentree.png")
+```
+
+***
+
+Let's go to the [study curator of OToL](https://tree.opentreeoflife.org/curator) and look up for uploaded studies for the **Malvaceae**
+
+Studies matching the word 'malvaceae' on the curator database, at the middle of year 2020. Some of these studies are not actually about the Malvaceae, but other taxa that have the keyword *malvaceae*.
+
+```{r curation-opentree, echo=FALSE, fig.cap="See this live on the curator app at <https://tree.opentreeoflife.org/curator/?match=malvaceae>", out.width = '100%', fig.retina= 3}
+# webshot::webshot("https://tree.opentreeoflife.org/curator/?match=malvaceae", file = "malvaceae-curation-opentree.png", delay = 1, zoom = 1, vwidth = 1400)
+knitr::include_graphics("malvaceae-curation-opentree.png")
+```
+
+***
+
+### Finding a tree to update using the R package rotl
+
+Explain what a focal clade is.
+
+There is a handy function that will search a taxon among the focal clades reported across trees.
+
+```{r}
+studies <- rotl::studies_find_studies(property="ot:focalCladeOTTTaxonName", value="Malvaceae")
+```
+
+```{r, results='asis', echo=FALSE}
+knitr::kable(studies, caption = "Studies with the genus *Malvaceae* as focal clade.")
+```
+
+None of these trees are in the synthetic tree. Still, the family does not appear as a politomy and has phylogenetic information in the Open Tree of Life synthetic tree. Where is this information coming from?
+
+It is probbaly coming from studies with focal clades that might be either above or below the particular clade you are interested in!
+
+You can get supporting trees with the Open Tree of Life API, and you can currently do it now using some hidden `rotl` functions:
+
+```{r}
+res <- rotl:::.tol_subtree(ott_id=279960)
+studies <- rotl:::studies_from_otl(res)
+studies
+```
+
+
+# Updating study `pg_55`
+
+```{r study-curation-opentree, echo=FALSE, fig.cap="See this live on the curator app at <https://tree.opentreeoflife.org/curator/study/view/pg_55>", out.width = '100%', fig.retina= 3}
+# webshot::webshot("https://tree.opentreeoflife.org/curator/study/view/pg_55", file = "pg_55-curation-opentree.png", delay = 1, zoom = 1, vwidth = 1400)
+knitr::include_graphics("pg_55-curation-opentree.png")
+```
+
+<!-- Get study data and tree id with rotl -->
+```{r results = "hold"}
+pg_55_meta = rotl::get_study_meta(study_id = "pg_55")
+ls(pg_55_meta$nexml)
+pg_55_meta$nexml$treesById
+unlist(pg_55_meta$nexml$treesById)[1]
+# rotl::taxonomy_taxon_info(pg_55_meta$nexml$"^ot:focalClade")
+```
+***
+
+The focal clade of study is **`r unlist(unname(pg_55_meta$nexml$"^ot:focalCladeOTTTaxonName"))
+`.** Is this taxon in the synthetic tree? `r rotl::is_in_tree(pg_55_meta$nexml$"^ot:focalClade")`
+
+Let's get the original tree and plot it here:
+
+```{r,include=FALSE}
+par(mar=c(0,1,1,0), xpd=NA)  # adjust margins for all plots after this
+```
+```{r get-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="90%", out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
+pg_55 <- rotl::get_study_tree(study_id = "pg_55", tree_id = "tree5864")
+ape::plot.phylo(ape::ladderize(pg_55), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
+mtext("Original tree - original labels", side = 3, cex = 0.6)
+
+```
+
+***
+
+Now, let's look at some properties of the tree:
+
+```{r}
+ape::Ntip(pg_55)  # gets the number of tips
+ape::is.rooted(pg_55)  # check that it is rooted
+ape::is.binary(pg_55)  # check that it is fully resolved
+datelife::phylo_has_brlen(pg_55)  # checks that it has branch lengths
+```
+The tree has `r ape::Ntip(pg_55)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noticed. Also, labels correspond to the labels reported on the original study [here](`r unlist(unname(pg_55_meta$nexml$"^ot:studyPublication"))
+`). Other labels are available to use as tip labels. For example, you can plot the tree using other labels, like the unified taxonomic names, or the taxonomic ids.
+
+## II. Getting the underlying alignment
+
+### Using physcraper and the arguments `-tb` and `-no_est`
+
+This will download the alignment directly from TreeBASE:
+
+```
+physcraper_run.py -s pg_55 -t tree5864 -tb -no_est -o data/pg_55
+```
+The alignment will be saved as `pg_55tree5864.aln` and `physcraper_pg_55tree5864.fas` in the inputs folder.
+
+### Downloading the alignment directly from a repository
+
+We know that the alignments are in the TreeBASE repo at <https://treebase.org/treebase-web/search/study/matrices.html?id=1361>
+
+Let's save them to a file named `TB2:Tr240.nex` in the `data-raw/alignments` folder:
+
+```
+wget -O data-raw/alignments/TB2:Tr240.nex "http://purl.org/phylo/treebase/phylows/tree/TB2:Tr240?format=nexus"
+```
+
+## III. Starting a physcraper run
+
+We ran this example using the command:
+
+```
+physcraper_run.py -s pg_55 -t tree5864 -a data-raw/alignments/TB2:Tr240.nex -as nexus -o data/pg_55
+```
+
+## IV. Reading the physcraper results
+
+### The physcraper tag
+
+pg_55tree5864_ndhf
+
+### Input files
+
+Physcraper rewrites input files for a couple reasons: reproducibility, taxon name matching, and taxon reconciliation.
+It writes the config file down if none was provided. Everything is written into the inputs_tag folder.
+
+### Run files
+
+Files in here are also automatically written down by physcraper.
+
+blast runs, alignments, raxml trees, bootstrap
+
+The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Ceiba*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
+The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
+
+
+```{r, echo=TRUE, out.width='90%', fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"'}
+updated_tree_otus <- ape::read.tree(file = "../data/pg_55/run_pg_55tree5864_ndhf/RAxML_bestTree.2020-06-09")
+ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "phylogram", cex = 0.25, label.offset = 0.001, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - otu tags as labels", side = 3)
+```
+
+### Output files
+
+A number of files is automatically written down by physcraper.
+
+A nexson tree with all types of tip labels is saved in here.
+From this tree, a tree with any kind of label can be produced.
+By default, the updtaed tree with taxon names as tip labels is saved
+in the `output_tag` folder as `updated_taxonname.tre`.
+
+
+```{r, echo=TRUE, out.width='100%', fig.height= 15, fig.retina=3, dpi=300}
+updated_tree_taxonname <- ape::read.tree(
+  file = "../data/pg_55/outputs_pg_55tree5864_ndhf/updated_taxonname.tre")
+```
+```{r,include=FALSE}
+par(mar=c(1.8,1.7,1.5,1.7), xpd=NA)  # adjust margins for all plots after this
+```
+```{r, echo=TRUE, out.width='90%', fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
+ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "phylogram", cex = 0.2, label.offset = 0.001, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - Taxon names as labels", side = 3)
+
+```
+
+## IV. Analyzing the physcraper results
+
+Compare the original tree with the pruned updated tree
+```{r}
+original_tree_otus <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_ndhf/physcraper_pg_55tree5864_ndhf.tre")
+updated_tree_otus_pruned <- ape::read.tree(
+  file = "../data/pg_55/pruned_updated.tre"
+)
+```
+
+
+Now plot them face to face
+
+We can prune the updated tree, so it is a straight forward comparison:
+```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+cotree <-  phytools::cophylo(original_tree_otus, updated_tree_otus_pruned, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.2,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Original tr.   Pruned updated tr.", cex = 0.1)
+```
+
+But it is more interesting to plot it with all the new tips, so we see exactly where the new things are:
+```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+original_tree_taxonname <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_ndhf/taxonname.tre")
+cotree2 <-  phytools::cophylo(original_tree_taxonname, updated_tree_taxonname, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Original tree      Updated tree", cex = 0.1)
+```
+
+We can also plot the updated tree against the synthetic subtree of Malvaceae, to visualize how it updates our current knowledge of the phylogeentic relationships within the family:
+
+```{r get-tol-subtree, message=FALSE, warning=FALSE}
+tolsubtree <- rotl::tol_subtree(ott_id = 279960)
+ape::Ntip(tolsubtree)
+grep("Pterygota_alata", tolsubtree$tip.label)
+updated_tree_taxonname$tip.label
+```
+Eliminate ott and otu tags before comparison, othrwise nothing matches
+```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
+cotree2 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
+phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+title("Tol subtree      Updated tree", cex = 0.1)
+```
+
+# References
+
+Trick for the cophylo titles and margins from https://cran.r-project.org/web/packages/phangorn/vignettes/IntertwiningTreesAndNetworks.html
