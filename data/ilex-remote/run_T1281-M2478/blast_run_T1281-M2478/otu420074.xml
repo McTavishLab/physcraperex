@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastn</BlastOutput_program>
+  <BlastOutput_version>BLASTN 2.10.1+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>nt</BlastOutput_db>
+  <BlastOutput_query-ID>Query_2453</BlastOutput_query-ID>
+  <BlastOutput_query-def>No definition line</BlastOutput_query-def>
+  <BlastOutput_query-len>601</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_sc-match>2</Parameters_sc-match>
+      <Parameters_sc-mismatch>-3</Parameters_sc-mismatch>
+      <Parameters_gap-open>5</Parameters_gap-open>
+      <Parameters_gap-extend>2</Parameters_gap-extend>
+      <Parameters_filter>L;m;</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_2453</Iteration_query-ID>
+  <Iteration_query-def>No definition line</Iteration_query-def>
+  <Iteration_query-len>601</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>gi|52850808|emb|AJ786501.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 90_2</Hit_def>
+  <Hit_accession>AJ786501</Hit_accession>
+  <Hit_len>685</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>999.451</Hsp_bit-score>
+      <Hsp_score>1107</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>601</Hsp_identity>
+      <Hsp_positive>601</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>gi|11414830|emb|AJ275339.1|</Hit_id>
+  <Hit_def>Ilex canariensis chloroplast 5.8S rRNA gene, internal transcribed spacer 1 (ITS1) and internal transcribed spacer 2 (ITS2)</Hit_def>
+  <Hit_accession>AJ275339</Hit_accession>
+  <Hit_len>690</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>999.451</Hsp_bit-score>
+      <Hsp_score>1107</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>601</Hsp_identity>
+      <Hsp_positive>601</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>gi|52850739|emb|AJ786432.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 20_3</Hit_def>
+  <Hit_accession>AJ786432</Hit_accession>
+  <Hit_len>685</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>972.4</Hsp_bit-score>
+      <Hsp_score>1077</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>595</Hsp_identity>
+      <Hsp_positive>595</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACACAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||||||||||| ||||||||||| |||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>gi|52850735|emb|AJ786428.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 17</Hit_def>
+  <Hit_accession>AJ786428</Hit_accession>
+  <Hit_len>685</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>972.4</Hsp_bit-score>
+      <Hsp_score>1077</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>595</Hsp_identity>
+      <Hsp_positive>595</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTGTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>gi|52850734|emb|AJ786427.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 16</Hit_def>
+  <Hit_accession>AJ786427</Hit_accession>
+  <Hit_len>673</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>956.17</Hsp_bit-score>
+      <Hsp_score>1059</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>591</Hsp_identity>
+      <Hsp_positive>591</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACWGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAAAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCGAGTCTATGGCGAGCTCCGTCCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||| ||||||| ||||||||||| ||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||| ||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>gi|52850736|emb|AJ786429.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 19</Hit_def>
+  <Hit_accession>AJ786429</Hit_accession>
+  <Hit_len>680</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>929.12</Hsp_bit-score>
+      <Hsp_score>1029</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>585</Hsp_identity>
+      <Hsp_positive>585</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCYTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACCCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACTGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCAAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAAAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCTTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACACATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATTGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCGAGTCTATGGCGAGCTCCGTCCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||| ||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||                                             |||||||||||||||| ||||||| ||||||||||| ||||||||||||||||||||| ||||| |||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||| ||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>gi|52850733|emb|AJ786426.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 15</Hit_def>
+  <Hit_accession>AJ786426</Hit_accession>
+  <Hit_len>680</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>918.299</Hsp_bit-score>
+      <Hsp_score>1017</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>659</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>582</Hsp_identity>
+      <Hsp_positive>582</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCTTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACCCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACTGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAAAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCTAACCCCAATGCCTGGCTAGCCGGGTATTGCGGGAGTTGGGGCGAAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAAAAAANGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCGAGTCTRTGGCGAGCTCCGWCCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||| ||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||| ||||||| ||||||||||| ||||||||||||||||||||| ||||| ||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||| ||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||| ||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||| |||||||||||| ||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>gi|52850745|emb|AJ786438.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 22_4</Hit_def>
+  <Hit_accession>AJ786438</Hit_accession>
+  <Hit_len>684</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>905.676</Hsp_bit-score>
+      <Hsp_score>1003</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>658</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>581</Hsp_identity>
+      <Hsp_positive>581</Hsp_positive>
+      <Hsp_gaps>46</Hsp_gaps>
+      <Hsp_align-len>646</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCGGCGAACCCGTTAAAACATGCCTGGGGGTTTGAGAAGGGGCGCGCAAGCCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAACATGCTTGGGGGTTTGAGAAGGGGCGCGCGAGCCCCCCGACCCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACTGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGG-AGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAAGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCTAACCCCAATGCCTGGCTAGCCGGGTATTGCGGGAGGTGGGGCGGAAATTGGCCTCCCGTCCACAGGGCCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCGAGTCTGTGGCGAGCTCCGACCGCGACCCTGCGCACCCTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||| ||||||||||||| ||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||| ||||| ||| |||||||||||||||||||||||||||| |||||||||||||| ||||||||||||||||||||||||||| ||||||| |||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||| |||||||||||||||| |||||||||||| ||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>gi|52850811|emb|AJ786504.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 90_9</Hit_def>
+  <Hit_accession>AJ786504</Hit_accession>
+  <Hit_len>610</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>813.704</Hsp_bit-score>
+      <Hsp_score>901</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>61</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>584</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>525</Hsp_identity>
+      <Hsp_positive>525</Hsp_positive>
+      <Hsp_gaps>47</Hsp_gaps>
+      <Hsp_align-len>586</Hsp_align-len>
+      <Hsp_qseq>CCCCCCGACGCACTCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>CCCCCCGACCTACTCCCCCACCCCC-GGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACNCAAGTTGCGCCCGAANCCGTTAGGCCAAGGGCACGTCTGCCTAGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCAGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAA-AAAAGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCGAGTCTGTGGCGAGCTCTGACCGCGACCCTGCGCACCCTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||  |||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||||||||||| ||||||||||| |||||||| ||||||||||||||| |||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||| ||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||| |||||||||| ||||| |||||||||||| ||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>gi|52850746|emb|AJ786439.1|</Hit_id>
+  <Hit_def>Ilex canariensis partial ITS1, 5.8S rRNA gene and partial ITS2, isolate 23_1</Hit_def>
+  <Hit_accession>AJ786439</Hit_accession>
+  <Hit_len>599</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>813.704</Hsp_bit-score>
+      <Hsp_score>901</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>74</Hsp_query-from>
+      <Hsp_query-to>601</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>573</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>516</Hsp_identity>
+      <Hsp_positive>516</Hsp_positive>
+      <Hsp_gaps>45</Hsp_gaps>
+      <Hsp_align-len>573</Hsp_align-len>
+      <Hsp_qseq>TCCCCCACCCCCCGGGGGTTTGGCTTGGGTTCCCCTAGCGGGGACCCGGTCAGGCTCCCGGCAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGCGAACCATCGAGCTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGGGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_qseq>
+      <Hsp_hseq>TCCCCCACCCCCCGGTGGTTTGGCTAGCGTTCCCCTAGCGGGGACTCGTTCAGGCTTCTGGCAACGAACCCGGGCGCTGTCTGTGCCAAGGAACCTTAACAGAAGAGCTGGCCCCCCGGTGTCCCCGTTCGCGGTGTGCACTGGGAGGCATTTGCGTCTTTCGAATCTGAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCGAAGCCGTTAGGCCAAGGGCACGTCTGCCTGGGCGTCACCCATCACGTCGCCCCCAACCCCAATGCCTGGCTAGCCGGGTATCGCGGGAGTTGGGGCGGAAATTGGCCTCCCGTCCACAGGACCGTGCGCGGTTGGCCCAAAAAACAAATGAGTTCCTGACGATGGGCGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGGGGCACCGAGTCTATGGCGAGCTCCGACCGCGACCCTGCGCACACTCCTCCGGGGGATGGTGCTCCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||| ||||||||| | ||||||||||||||||| || ||||||| | |||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                                             |||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>2765</Statistics_db-num>
+      <Statistics_db-len>6414311</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>0.41</Statistics_kappa>
+      <Statistics_lambda>0.625</Statistics_lambda>
+      <Statistics_entropy>0.78</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>

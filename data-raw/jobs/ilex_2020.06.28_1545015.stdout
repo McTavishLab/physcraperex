@@ -1,0 +1,1230 @@
+lsanchezreyes2
+Ilex
+/home/lsanchezreyes2/pj_physcraper/physcraper
+Sun Jun 28 20:07:27 PDT 2020
+/courses/ejmctavish/qsb244/bin/raxmlHPC
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+IMPORTANT WARNING: Alignment column 529 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 531 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 534 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 545 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 546 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 547 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 548 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 549 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 550 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 551 contains only undetermined values which will be treated as missing data
+
+IMPORTANT WARNING
+Found 10 columns that contain only undetermined values which will be treated as missing data.
+Normally these columns should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+undetermined columns removed is printed to file /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/physcraper_T1281-M2478.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+Alignment has 10 completely undetermined sites that will be automatically removed from the input data
+
+
+
+This is RAxML version 8.2.11 released by Alexandros Stamatakis on June 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 663 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 29.81%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 user-specified trees
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 663
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -m GTRCAT -s /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/physcraper_T1281-M2478.fas -t /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/random_resolve.tre -p 1 -n 2020-06-29 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.213 0.293 0.287 0.206 
+
+You provided an incomplete starting tree 48 alignmnet has 188 taxa
+Inference[0]: Time 80.188845 CAT-based likelihood -9888.072754, best rearrangement setting 10
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -10912.134384 tree written to file /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_result.2020-06-29
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -10912.134384 .... 
+
+Final GAMMA-based Score of best tree -10896.971087
+
+Program execution info written to /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_info.2020-06-29
+Best-scoring ML tree written to: /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_bestTree.2020-06-29
+
+Overall execution time: 158.476774 secs or 0.044021 hours or 0.001834 days
+
+/courses/ejmctavish/qsb244/bin/raxmlHPC
+Option -T does not have any effect with the sequential or parallel MPI version.
+It is used to specify the number of threads for the Pthreads-based parallelization
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+IMPORTANT WARNING: Alignment column 529 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 531 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 534 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 545 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 546 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 547 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 548 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 549 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 550 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 551 contains only undetermined values which will be treated as missing data
+
+IMPORTANT WARNING
+Found 10 columns that contain only undetermined values which will be treated as missing data.
+Normally these columns should be excluded from the analysis.
+
+An alignment file with undetermined columns removed has already
+been printed to file /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/physcraper_T1281-M2478.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+Alignment has 10 completely undetermined sites that will be automatically removed from the input data
+
+
+
+This is RAxML version 8.2.11 released by Alexandros Stamatakis on June 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 663 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 29.81%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 100 non-parametric bootstrap inferences
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 663
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -T 4 -m GTRCAT -s /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/physcraper_T1281-M2478.fas -p 1 -b 1 -# 100 -n BOOT2020-06-29 
+
+
+Bootstrap[0]: Time 54.430684 seconds, bootstrap likelihood -9255.480660, best rearrangement setting 10
+Bootstrap[1]: Time 44.965101 seconds, bootstrap likelihood -9577.937794, best rearrangement setting 15
+Bootstrap[2]: Time 74.125482 seconds, bootstrap likelihood -9975.208525, best rearrangement setting 20
+Bootstrap[3]: Time 30.601515 seconds, bootstrap likelihood -9764.821339, best rearrangement setting 5
+Bootstrap[4]: Time 35.322018 seconds, bootstrap likelihood -10010.580216, best rearrangement setting 10
+Bootstrap[5]: Time 46.123803 seconds, bootstrap likelihood -9253.475071, best rearrangement setting 15
+Bootstrap[6]: Time 43.584644 seconds, bootstrap likelihood -9653.246333, best rearrangement setting 5
+Bootstrap[7]: Time 41.517732 seconds, bootstrap likelihood -9684.952624, best rearrangement setting 10
+Bootstrap[8]: Time 50.657820 seconds, bootstrap likelihood -9281.965754, best rearrangement setting 5
+Bootstrap[9]: Time 49.811106 seconds, bootstrap likelihood -9433.163975, best rearrangement setting 10
+Bootstrap[10]: Time 37.030784 seconds, bootstrap likelihood -9213.074151, best rearrangement setting 5
+Bootstrap[11]: Time 47.062364 seconds, bootstrap likelihood -9495.562047, best rearrangement setting 5
+Bootstrap[12]: Time 71.843697 seconds, bootstrap likelihood -8966.715875, best rearrangement setting 15
+Bootstrap[13]: Time 25.571414 seconds, bootstrap likelihood -9033.553920, best rearrangement setting 5
+Bootstrap[14]: Time 41.557714 seconds, bootstrap likelihood -9848.400848, best rearrangement setting 10
+Bootstrap[15]: Time 48.096002 seconds, bootstrap likelihood -9207.117284, best rearrangement setting 10
+Bootstrap[16]: Time 45.691900 seconds, bootstrap likelihood -9625.490691, best rearrangement setting 5
+Bootstrap[17]: Time 32.066486 seconds, bootstrap likelihood -9252.247306, best rearrangement setting 5
+Bootstrap[18]: Time 33.395178 seconds, bootstrap likelihood -8546.914068, best rearrangement setting 5
+Bootstrap[19]: Time 37.827840 seconds, bootstrap likelihood -10080.685560, best rearrangement setting 10
+Bootstrap[20]: Time 26.764873 seconds, bootstrap likelihood -9510.939380, best rearrangement setting 5
+Bootstrap[21]: Time 38.311601 seconds, bootstrap likelihood -9861.489495, best rearrangement setting 10
+Bootstrap[22]: Time 105.222567 seconds, bootstrap likelihood -9288.529207, best rearrangement setting 15
+Bootstrap[23]: Time 78.827153 seconds, bootstrap likelihood -9675.158331, best rearrangement setting 15
+Bootstrap[24]: Time 46.379719 seconds, bootstrap likelihood -9616.399318, best rearrangement setting 10
+Bootstrap[25]: Time 35.631465 seconds, bootstrap likelihood -10151.514789, best rearrangement setting 5
+Bootstrap[26]: Time 48.234383 seconds, bootstrap likelihood -9439.549048, best rearrangement setting 10
+Bootstrap[27]: Time 49.881733 seconds, bootstrap likelihood -9491.661622, best rearrangement setting 15
+Bootstrap[28]: Time 68.128309 seconds, bootstrap likelihood -10015.991484, best rearrangement setting 10
+Bootstrap[29]: Time 60.124728 seconds, bootstrap likelihood -10312.179602, best rearrangement setting 15
+Bootstrap[30]: Time 46.050886 seconds, bootstrap likelihood -10088.969906, best rearrangement setting 15
+Bootstrap[31]: Time 45.026793 seconds, bootstrap likelihood -9127.137811, best rearrangement setting 10
+Bootstrap[32]: Time 50.009291 seconds, bootstrap likelihood -9622.023614, best rearrangement setting 10
+Bootstrap[33]: Time 60.852622 seconds, bootstrap likelihood -10034.980731, best rearrangement setting 5
+Bootstrap[34]: Time 46.152072 seconds, bootstrap likelihood -9820.082788, best rearrangement setting 5
+Bootstrap[35]: Time 44.486256 seconds, bootstrap likelihood -9222.207460, best rearrangement setting 10
+Bootstrap[36]: Time 50.946002 seconds, bootstrap likelihood -9351.411073, best rearrangement setting 15
+Bootstrap[37]: Time 74.924375 seconds, bootstrap likelihood -9909.640092, best rearrangement setting 10
+Bootstrap[38]: Time 48.117201 seconds, bootstrap likelihood -9113.172520, best rearrangement setting 10
+Bootstrap[39]: Time 58.983165 seconds, bootstrap likelihood -9537.402913, best rearrangement setting 20
+Bootstrap[40]: Time 55.270021 seconds, bootstrap likelihood -9756.071925, best rearrangement setting 10
+Bootstrap[41]: Time 50.781385 seconds, bootstrap likelihood -9704.346412, best rearrangement setting 10
+Bootstrap[42]: Time 69.467407 seconds, bootstrap likelihood -9428.604272, best rearrangement setting 15
+Bootstrap[43]: Time 72.951104 seconds, bootstrap likelihood -10109.274968, best rearrangement setting 20
+Bootstrap[44]: Time 46.841248 seconds, bootstrap likelihood -9638.742037, best rearrangement setting 5
+Bootstrap[45]: Time 95.761085 seconds, bootstrap likelihood -9709.437034, best rearrangement setting 10
+Bootstrap[46]: Time 31.809992 seconds, bootstrap likelihood -10285.020960, best rearrangement setting 5
+Bootstrap[47]: Time 59.682304 seconds, bootstrap likelihood -9830.219423, best rearrangement setting 20
+Bootstrap[48]: Time 50.715370 seconds, bootstrap likelihood -10398.457790, best rearrangement setting 10
+Bootstrap[49]: Time 58.208462 seconds, bootstrap likelihood -9419.597290, best rearrangement setting 15
+Bootstrap[50]: Time 61.560633 seconds, bootstrap likelihood -9835.723700, best rearrangement setting 5
+Bootstrap[51]: Time 54.929990 seconds, bootstrap likelihood -9377.277441, best rearrangement setting 10
+Bootstrap[52]: Time 46.232041 seconds, bootstrap likelihood -9269.737594, best rearrangement setting 10
+Bootstrap[53]: Time 62.920100 seconds, bootstrap likelihood -9354.522265, best rearrangement setting 15
+Bootstrap[54]: Time 55.861836 seconds, bootstrap likelihood -9356.625950, best rearrangement setting 20
+Bootstrap[55]: Time 37.871073 seconds, bootstrap likelihood -9954.017598, best rearrangement setting 10
+Bootstrap[56]: Time 38.712044 seconds, bootstrap likelihood -9233.236619, best rearrangement setting 10
+Bootstrap[57]: Time 49.320513 seconds, bootstrap likelihood -9075.803203, best rearrangement setting 10
+Bootstrap[58]: Time 63.192940 seconds, bootstrap likelihood -9148.921821, best rearrangement setting 10
+Bootstrap[59]: Time 38.073799 seconds, bootstrap likelihood -9239.888549, best rearrangement setting 10
+Bootstrap[60]: Time 41.973017 seconds, bootstrap likelihood -9110.890285, best rearrangement setting 10
+Bootstrap[61]: Time 37.167173 seconds, bootstrap likelihood -10026.245872, best rearrangement setting 10
+Bootstrap[62]: Time 64.933700 seconds, bootstrap likelihood -10082.725870, best rearrangement setting 15
+Bootstrap[63]: Time 43.928464 seconds, bootstrap likelihood -8638.550529, best rearrangement setting 10
+Bootstrap[64]: Time 38.315722 seconds, bootstrap likelihood -9389.380920, best rearrangement setting 10
+Bootstrap[65]: Time 42.569438 seconds, bootstrap likelihood -8898.768767, best rearrangement setting 10
+Bootstrap[66]: Time 59.166080 seconds, bootstrap likelihood -9340.580555, best rearrangement setting 20
+Bootstrap[67]: Time 50.032725 seconds, bootstrap likelihood -9343.797244, best rearrangement setting 10
+Bootstrap[68]: Time 34.392791 seconds, bootstrap likelihood -8889.210566, best rearrangement setting 10
+Bootstrap[69]: Time 47.360702 seconds, bootstrap likelihood -8525.913026, best rearrangement setting 15
+Bootstrap[70]: Time 39.632336 seconds, bootstrap likelihood -10452.817249, best rearrangement setting 10
+Bootstrap[71]: Time 62.933530 seconds, bootstrap likelihood -10092.235516, best rearrangement setting 10
+Bootstrap[72]: Time 51.971180 seconds, bootstrap likelihood -10073.224452, best rearrangement setting 15
+Bootstrap[73]: Time 55.173160 seconds, bootstrap likelihood -9415.181843, best rearrangement setting 5
+Bootstrap[74]: Time 51.386418 seconds, bootstrap likelihood -9863.056558, best rearrangement setting 15
+Bootstrap[75]: Time 46.696459 seconds, bootstrap likelihood -9479.352060, best rearrangement setting 10
+Bootstrap[76]: Time 51.273015 seconds, bootstrap likelihood -8799.539581, best rearrangement setting 10
+Bootstrap[77]: Time 48.779063 seconds, bootstrap likelihood -8943.948946, best rearrangement setting 15
+Bootstrap[78]: Time 47.459214 seconds, bootstrap likelihood -9571.642761, best rearrangement setting 10
+Bootstrap[79]: Time 33.732361 seconds, bootstrap likelihood -8907.317066, best rearrangement setting 5
+Bootstrap[80]: Time 45.594257 seconds, bootstrap likelihood -9472.251357, best rearrangement setting 15
+Bootstrap[81]: Time 60.973234 seconds, bootstrap likelihood -9459.707128, best rearrangement setting 10
+Bootstrap[82]: Time 45.535607 seconds, bootstrap likelihood -9272.527175, best rearrangement setting 15
+Bootstrap[83]: Time 44.179061 seconds, bootstrap likelihood -9789.051427, best rearrangement setting 15
+Bootstrap[84]: Time 45.896908 seconds, bootstrap likelihood -10013.025371, best rearrangement setting 5
+Bootstrap[85]: Time 59.374807 seconds, bootstrap likelihood -9759.808059, best rearrangement setting 15
+Bootstrap[86]: Time 55.883873 seconds, bootstrap likelihood -9867.370011, best rearrangement setting 10
+Bootstrap[87]: Time 46.049438 seconds, bootstrap likelihood -9555.200343, best rearrangement setting 15
+Bootstrap[88]: Time 60.628596 seconds, bootstrap likelihood -10308.357638, best rearrangement setting 15
+Bootstrap[89]: Time 60.504454 seconds, bootstrap likelihood -9875.273677, best rearrangement setting 20
+Bootstrap[90]: Time 41.287468 seconds, bootstrap likelihood -9131.286639, best rearrangement setting 10
+Bootstrap[91]: Time 40.184463 seconds, bootstrap likelihood -10135.804333, best rearrangement setting 10
+Bootstrap[92]: Time 30.643342 seconds, bootstrap likelihood -9617.242999, best rearrangement setting 5
+Bootstrap[93]: Time 49.104485 seconds, bootstrap likelihood -10199.133338, best rearrangement setting 10
+Bootstrap[94]: Time 60.838855 seconds, bootstrap likelihood -10012.006564, best rearrangement setting 25
+Bootstrap[95]: Time 53.370295 seconds, bootstrap likelihood -10002.478395, best rearrangement setting 10
+Bootstrap[96]: Time 52.243580 seconds, bootstrap likelihood -9505.702176, best rearrangement setting 20
+Bootstrap[97]: Time 36.697805 seconds, bootstrap likelihood -9366.006711, best rearrangement setting 10
+Bootstrap[98]: Time 37.809155 seconds, bootstrap likelihood -9270.314759, best rearrangement setting 5
+Bootstrap[99]: Time 37.473073 seconds, bootstrap likelihood -9306.648263, best rearrangement setting 10
+
+
+Overall Time for 100 Bootstraps 4987.759189
+
+
+Average Time per Bootstrap 49.877592
+All 100 bootstrapped trees written to: /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_bootstrap.BOOT2020-06-29
+/==========================================================================\
+|                                 SumTrees                                 |
+|                     Phylogenetic Tree Summarization                      |
+|                              Version 4.4.0                               |
+|                   By Jeet Sukumaran and Mark T. Holder                   |
+|        Using: DendroPy 4.4.0 (main-bc20409, 2020-06-23 20:32:39)         |
++--------------------------------------------------------------------------+
+|                                 Citation                                 |
+|                                 ~~~~~~~~                                 |
+| If any stage of your work or analyses relies on code or programs from    |
+| this library, either directly or indirectly (e.g., through usage of your |
+| own or third-party programs, pipelines, or toolkits which use, rely on,  |
+| incorporate, or are otherwise primarily derivative of code/programs in   |
+| this library), please cite:                                              |
+|                                                                          |
+|   Sukumaran, J and MT Holder. 2010. DendroPy: a Python library for       |
+|     phylogenetic computing. Bioinformatics 26: 1569-1571.                |
+|                                                                          |
+|   Sukumaran, J and MT Holder. SumTrees: Phylogenetic Tree Summarization. |
+|     4.4.0. Available at https://github.com/jeetsukumaran/DendroPy.       |
+|                                                                          |
+| Note that, in the interests of scientific reproducibility, you should    |
+| describe in the text of your publications not only the specific          |
+| version of the SumTrees program, but also the DendroPy library used in   |
+| your analysis. For your information, you are running DendroPy 4.4.0      |
+| (main-bc20409, 2020-06-23 20:32:39).                                     |
+\==========================================================================/
+
+SumTrees: Trees to be read from 1 source(s):
+SumTrees: - '/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-
+            local/run_T1281-M2478/RAxML_bootstrap.BOOT2020-06-29'
+SumTrees: Running in serial mode
+SumTrees: Analyzing: '/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_bootstrap.BOOT2020-06-29'
+SumTrees: '/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_bootstrap.BOOT2020-06-29': tree at offset 0 (analyzing)
+SumTrees: Analysis of source trees completed in: 1.6073 seconds
+SumTrees: Total of 100 trees analyzed for summarization:
+SumTrees: - All trees were treated as unweighted
+SumTrees: - All trees were unrooted
+SumTrees: - 188 unique taxa across all trees
+SumTrees: - 2369 unique splits out of a total of 37400 splits
+SumTrees: - 2180 unique non-trivial splits counted out of a total of non-
+            trivial 18500 splits
+SumTrees: Summarizing onto target tree defined in '/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/RAxML_bestTree.2020-06-29':
+SumTrees: - Support values expressed as proportions or probabilities
+SumTrees: [WARNING] Reporting support by proportions require that support will
+          be reported to at least 2 decimal places
+SumTrees: - Edge lengths as given on target trees
+SumTrees: - Support and other summarization annotations added to target trees
+            as metadata
+SumTrees: Collapsing clades or splits with support frequency less than 0.2
+SumTrees: Writing primary results to: '<stdout>'
+SumTrees: Summarization completed
+SumTrees: Started at: 2020-06-29 05:44:30.638177
+SumTrees: Ended at: 2020-06-29 05:44:34.821864
+SumTrees: Total elapsed time: 4.183687 seconds
+SumTrees: Actual analysis time: 1.6073 seconds
+No config file, using defaults
+Configuration Settings
+[blast]
+Entrez.email = None
+e_value_thresh = 1e-05
+hitlist_size = 10
+location = local
+localblastdb = /branchinecta/shared/local_blast_db
+num_threads = 4
+delay = 90
+[physcraper]
+spp_threshold = 5
+min_length = 0.8
+max_length = 1.2
+
+get_mrca_ott
+(v3) MRCA of sampled taxa is Ilex
+alignment tag is T1281-M2478
+restricting blast search to ncbi taxon ncbi:4295 (ott:727571; Ilex)
+created physcraper ncbi_mrca 4295,
+48 taxa in alignment and tree
+calculate final tree
+current alignment length 48
+call align query seqs from est full tree, self._blast_read is 0
+read_blast_wrapper
+current alignment length 48
+blast dir is /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478
+Today's date is 2020/06/28
+run_blast_wrapper
+/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478
+current alignment length 48
+tip otu420099 not in ingroup. Will not blast, 
+tip otu420083 not in ingroup. Will not blast, 
+blasting seq otu420113
+blasting seq otu420076
+blasting seq otu420078
+blasting seq otu420110
+blasting seq otu420080
+blasting seq otu420082
+blasting seq otu420100
+blasting seq otu420075
+blasting seq otu420074
+blasting seq otu420102
+blasting seq otu420084
+blasting seq otu420072
+blasting seq otu420068
+blasting seq otu420092
+blasting seq otu420095
+blasting seq otu420111
+blasting seq otu420091
+blasting seq otu420070
+blasting seq otu420093
+blasting seq otu420077
+blasting seq otu420073
+blasting seq otu420112
+blasting seq otu420086
+blasting seq otu420108
+blasting seq otu420098
+blasting seq otu420094
+blasting seq otu420109
+blasting seq otu420107
+blasting seq otu420089
+blasting seq otu420090
+blasting seq otu420069
+blasting seq otu420105
+blasting seq otu420067
+blasting seq otu420106
+blasting seq otu420097
+blasting seq otu420101
+blasting seq otu420096
+blasting seq otu420088
+blasting seq otu420085
+blasting seq otu420087
+blasting seq otu420081
+blasting seq otu420104
+blasting seq otu420071
+blasting seq otu420079
+blasting seq otu420103
+blasting seq otu420114
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420099.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420083.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420113.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420076.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420078.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420110.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420080.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420082.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420100.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420075.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420074.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420102.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420084.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420072.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420068.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420092.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420095.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420111.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420091.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420070.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420093.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420077.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420073.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420112.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420086.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420108.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420098.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420094.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420109.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420107.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420089.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420090.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420069.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420105.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420067.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420106.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420097.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420101.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420096.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420088.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420085.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420087.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420081.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420104.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420071.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420079.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420103.txt
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/blast_run_T1281-M2478/otu420114.txt
+Reading in local NCBI taxonomy information................................................
+len AH007162.2:791 was not between 475.68333333333334 and 713.525
+
+
+len AF200587.1:864 was not between 475.68333333333334 and 713.525
+
+
+len MG219060.1:361 was not between 475.68333333333334 and 713.525
+
+
+len MG218732.1:361 was not between 475.68333333333334 and 713.525
+
+
+len AF200586.1:859 was not between 475.68333333333334 and 713.525
+
+...................................................................................................
+
+len AF200589.1:858 was not between 475.68333333333334 and 713.525
+
+
+len AF200585.1:855 was not between 475.68333333333334 and 713.525
+
+..................................................
+...................................................
+....................................................
+.....................................................
+....
+len KF113876.1:740 was not between 475.68333333333334 and 713.525
+
+
+len KF113873.1:731 was not between 475.68333333333334 and 713.525
+
+..................................................
+.......................................................
+........................................................
+.........................................................
+..........................................................
+...........................................................
+............................................................
+...........
+len MG708035.1:752 was not between 475.68333333333334 and 713.525
+
+..................................................
+..............................................................
+...............................................................
+................................................................
+.................................................................
+..................................................................
+.................
+len AF200588.1:848 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................
+len EF590778.1:343 was not between 475.68333333333334 and 713.525
+
+..................................................
+.....................................................................
+....................
+len AF200590.1:812 was not between 475.68333333333334 and 713.525
+
+..................................................
+.......................................................................
+........................................................................
+.......................
+len AH007156.2:785 was not between 475.68333333333334 and 713.525
+
+
+len AH007154.2:777 was not between 475.68333333333334 and 713.525
+
+..................................................
+..........................................................................
+.........................
+len AH007155.2:772 was not between 475.68333333333334 and 713.525
+
+..................................................
+............................................................................
+...........................
+seq otuPS31 is subsequence or identical to otuPS30, not added 
+..................................................
+.............................................................................
+..............................................................................
+...............................................................................
+................................................................................
+.................................................................................
+..................................................................................
+...................................................................................
+....................................................................................
+.....................................................................................
+......................................................................................
+.......................................................................................
+......................................
+seq otuPS43 is subsequence or identical to otuPS42, not added 
+
+len KY417935.1:786 was not between 475.68333333333334 and 713.525
+
+
+len AH007151.2:796 was not between 475.68333333333334 and 713.525
+
+..................................................
+........................................................................................
+.........................................................................................
+..........................................................................................
+.........................................
+len DQ200798.1:760 was not between 475.68333333333334 and 713.525
+
+..................................................
+............................................................................................
+...........................................
+seq otuPS49 is supersequence of otuPS48, otuPS49 added and otuPS48 removed 
+..................................................
+.............................................................................................
+..............................................................................................
+...............................................................................................
+................................................................................................
+.................................................................................................
+..................................................................................................
+...................................................................................................
+..................................................
+..................................................
+..................................................
+...................................................
+..................................................
+....................................................
+..................................................
+.....................................................
+..................................................
+......................................................
+..................................................
+.....
+seq otuPS62 is supersequence of otuPS61, but different taxon 
+..................................................
+..................................................
+......
+len MH566938.1:741 was not between 475.68333333333334 and 713.525
+
+
+len MH566937.1:757 was not between 475.68333333333334 and 713.525
+
+
+len MK240419.1:716 was not between 475.68333333333334 and 713.525
+
+
+len MK240418.1:716 was not between 475.68333333333334 and 713.525
+
+
+len MK240413.1:716 was not between 475.68333333333334 and 713.525
+
+
+len MK240392.1:716 was not between 475.68333333333334 and 713.525
+
+
+len KY682254.1:758 was not between 475.68333333333334 and 713.525
+
+
+len KY682253.1:758 was not between 475.68333333333334 and 713.525
+
+
+len KY682234.1:758 was not between 475.68333333333334 and 713.525
+
+
+len AH007144.2:768 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+.........................................................
+..................................................
+..........................................................
+..................................................
+...........................................................
+..................................................
+............................................................
+..................................................
+...........
+len KY417947.1:814 was not between 475.68333333333334 and 713.525
+
+
+len KY417930.1:791 was not between 475.68333333333334 and 713.525
+
+
+len KY417946.1:824 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+............
+len AH007149.2:780 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+...............................................................
+..................................................
+................................................................
+..................................................
+.................................................................
+..................................................
+..................................................................
+..................................................
+...................................................................
+..................................................
+....................................................................
+..................................................
+.....................................................................
+..................................................
+......................................................................
+..................................................
+.......................................................................
+..................................................
+........................................................................
+..................................................
+.........................................................................
+..................................................
+..........................................................................
+..................................................
+.........................
+len MG218340.1:362 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..........................
+len KX352749.1:772 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+.............................................................................
+..................................................
+............................
+len KY417934.1:833 was not between 475.68333333333334 and 713.525
+
+
+len KY417939.1:782 was not between 475.68333333333334 and 713.525
+
+
+len MH266110.1:729 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+...............................................................................
+..................................................
+................................................................................
+..................................................
+.................................................................................
+..................................................
+..................................................................................
+..................................................
+...................................................................................
+..................................................
+..................................
+len AH007148.2:763 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+...................................
+len KY682252.1:747 was not between 475.68333333333334 and 713.525
+
+
+len KY682251.1:747 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+......................................................................................
+..................................................
+.......................................................................................
+..................................................
+........................................................................................
+..................................................
+.........................................................................................
+..................................................
+..........................................................................................
+..................................................
+.........................................
+len AH007152.2:779 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+............................................................................................
+..................................................
+.............................................................................................
+..................................................
+..............................................................................................
+..................................................
+.............................................
+len AF200592.1:840 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..............................................
+len AH007157.2:797 was not between 475.68333333333334 and 713.525
+
+
+len AH007153.2:804 was not between 475.68333333333334 and 713.525
+
+
+len AH007161.2:792 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+.................................................................................................
+..................................................
+..................................................................................................
+..................................................
+...................................................................................................
+..................................................
+..................................................
+..................................................
+..................................................
+..................................................
+...................................................
+..................................................
+..................................................
+....................................................
+..................................................
+..................................................
+.....................................................
+..................................................
+..................................................
+..
+seq otuPS111 is subsequence or identical to otuPS108, not added 
+..................................................
+..................................................
+..................................................
+....
+len AH007145.2:795 was not between 475.68333333333334 and 713.525
+
+
+len KY682235.1:758 was not between 475.68333333333334 and 713.525
+
+
+len MK240421.1:717 was not between 475.68333333333334 and 713.525
+
+
+len MK240408.1:716 was not between 475.68333333333334 and 713.525
+
+
+len AH007160.2:803 was not between 475.68333333333334 and 713.525
+
+
+len KY417937.1:766 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+.......................................................
+..................................................
+..................................................
+........................................................
+..................................................
+..................................................
+.........................................................
+..................................................
+..................................................
+..........................................................
+..................................................
+..................................................
+...........................................................
+..................................................
+..................................................
+............................................................
+..................................................
+..................................................
+.............................................................
+..................................................
+..................................................
+..............................................................
+..................................................
+..................................................
+...............................................................
+..................................................
+..................................................
+................................................................
+..................................................
+..................................................
+.................................................................
+..................................................
+..................................................
+................
+len MH266109.1:716 was not between 475.68333333333334 and 713.525
+
+
+len MH266108.1:718 was not between 475.68333333333334 and 713.525
+
+
+len MH266107.1:716 was not between 475.68333333333334 and 713.525
+
+
+len MH266100.1:720 was not between 475.68333333333334 and 713.525
+
+
+len AH007146.2:799 was not between 475.68333333333334 and 713.525
+
+
+len KY417932.1:861 was not between 475.68333333333334 and 713.525
+
+
+len KY417931.1:772 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+.................
+len KF113869.1:739 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+....................................................................
+..................................................
+..................................................
+...................
+len MG217679.1:362 was not between 475.68333333333334 and 713.525
+
+
+len KY935369.1:389 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+......................................................................
+..................................................
+..................................................
+.....................
+len MG708036.1:418 was not between 475.68333333333334 and 713.525
+
+
+len EU796897.1:417 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+......................
+len MK087922.1:470 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+.......................
+len MF803187.1:442 was not between 475.68333333333334 and 713.525
+
+
+len MF803182.1:442 was not between 475.68333333333334 and 713.525
+
+
+len AH007295.2:783 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+........................
+len KF113864.1:736 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+...........................................................................
+..................................................
+..................................................
+............................................................................
+..................................................
+..................................................
+.............................................................................
+..................................................
+..................................................
+............................
+len KF113875.1:738 was not between 475.68333333333334 and 713.525
+
+
+len KY682256.1:768 was not between 475.68333333333334 and 713.525
+
+
+len AH007147.2:809 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+...............................................................................
+..................................................
+..................................................
+..............................
+len KY682255.1:768 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+...............................
+len KY417951.1:788 was not between 475.68333333333334 and 713.525
+
+
+len KY417950.1:795 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+..................................................................................
+..................................................
+..................................................
+.................................
+len AH007158.2:801 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+....................................................................................
+..................................................
+..................................................
+.....................................................................................
+..................................................
+..................................................
+......................................................................................
+..................................................
+..................................................
+.......................................................................................
+..................................................
+..................................................
+......................................
+len MK240402.1:717 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+.........................................................................................
+..................................................
+..................................................
+........................................
+len AH007159.2:802 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+...........................................................................................
+..................................................
+..................................................
+............................................................................................
+..................................................
+..................................................
+...........................................
+len MG219896.1:358 was not between 475.68333333333334 and 713.525
+
+
+len MG218058.1:358 was not between 475.68333333333334 and 713.525
+
+
+len MF349080.1:358 was not between 475.68333333333334 and 713.525
+
+..................................................
+..................................................
+..................................................
+..............................................................................................
+..................................................
+..................................................
+...............................................................................................
+..................................................
+..................................................
+..............................................make sp_dict
+There are 86 taxa in the new taxa
+The keys of tmp_dict
+make sp_dict
+There are 45 taxa in aln
+taxa in orginal alignment; 45 taxa in updated alignemnt 94, keeping max 5 seq per taxon
+ 1 new seqs for taxon 53196
+passing on 1 otus for tax id 53196
+ 1 new seqs for taxon 185534
+passing on 1 otus for tax id 185534
+ 1 new seqs for taxon 185503
+passing on 1 otus for tax id 185503
+ 2 new seqs for taxon 53197
+passing on 2 otus for tax id 53197
+ 1 new seqs for taxon 1872702
+passing on 1 otus for tax id 1872702
+ 2 new seqs for taxon 185500
+passing on 2 otus for tax id 185500
+ 1 new seqs for taxon 1043419
+passing on 1 otus for tax id 1043419
+ 1 new seqs for taxon 185518
+passing on 1 otus for tax id 185518
+ 1 new seqs for taxon 185526
+passing on 1 otus for tax id 185526
+ 4 new seqs for taxon 185491
+select_seq_at random
+passing on 3 otus for tax id 185491
+ 3 new seqs for taxon 146503
+passing on 3 otus for tax id 146503
+ 2 new seqs for taxon 53198
+passing on 2 otus for tax id 53198
+ 4 new seqs for taxon 53199
+select_seq_at random
+passing on 4 otus for tax id 53199
+ 1 new seqs for taxon 185492
+passing on 1 otus for tax id 185492
+ 1 new seqs for taxon 185485
+passing on 1 otus for tax id 185485
+ 1 new seqs for taxon 1391459
+passing on 1 otus for tax id 1391459
+ 1 new seqs for taxon 101729
+passing on 1 otus for tax id 101729
+ 1 new seqs for taxon 185502
+passing on 1 otus for tax id 185502
+ 2 new seqs for taxon 58294
+passing on 2 otus for tax id 58294
+ 1 new seqs for taxon 504107
+passing on 1 otus for tax id 504107
+ 2 new seqs for taxon 1603726
+passing on 2 otus for tax id 1603726
+ 4 new seqs for taxon 525220
+passing on 4 otus for tax id 525220
+ 4 new seqs for taxon 185555
+select_seq_at random
+passing on 3 otus for tax id 185555
+ 3 new seqs for taxon 185533
+select_seq_at random
+passing on 3 otus for tax id 185533
+ 2 new seqs for taxon 58297
+passing on 2 otus for tax id 58297
+ 3 new seqs for taxon 504559
+passing on 3 otus for tax id 504559
+ 1 new seqs for taxon 185505
+passing on 1 otus for tax id 185505
+ 1 new seqs for taxon 2520618
+passing on 1 otus for tax id 2520618
+ 9 new seqs for taxon 53200
+select_seq_at random
+passing on 4 otus for tax id 53200
+ 1 new seqs for taxon 185548
+passing on 1 otus for tax id 185548
+ 1 new seqs for taxon 146504
+passing on 1 otus for tax id 146504
+ 2 new seqs for taxon 53201
+passing on 2 otus for tax id 53201
+ 2 new seqs for taxon 4297
+passing on 2 otus for tax id 4297
+ 1 new seqs for taxon 146505
+passing on 1 otus for tax id 146505
+ 1 new seqs for taxon 525221
+passing on 1 otus for tax id 525221
+ 3 new seqs for taxon 4296
+passing on 3 otus for tax id 4296
+ 1 new seqs for taxon 58293
+passing on 1 otus for tax id 58293
+ 1 new seqs for taxon 185560
+passing on 1 otus for tax id 185560
+ 1 new seqs for taxon 58296
+passing on 1 otus for tax id 58296
+ 2 new seqs for taxon 224367
+passing on 2 otus for tax id 224367
+ 1 new seqs for taxon 644192
+passing on 1 otus for tax id 644192
+ 2 new seqs for taxon 224369
+passing on 2 otus for tax id 224369
+ 2 new seqs for taxon 53202
+passing on 2 otus for tax id 53202
+ 1 new seqs for taxon 185490
+passing on 1 otus for tax id 185490
+ 2 new seqs for taxon 185489
+passing on 2 otus for tax id 185489
+ 2 new seqs for taxon 109210
+passing on 2 otus for tax id 109210
+ 1 new seqs for taxon 185527
+passing on 1 otus for tax id 185527
+ 1 new seqs for taxon 185501
+passing on 1 otus for tax id 185501
+ 1 new seqs for taxon 2033747
+passing on 1 otus for tax id 2033747
+ 3 new seqs for taxon 185519
+passing on 3 otus for tax id 185519
+ 2 new seqs for taxon 53210
+passing on 2 otus for tax id 53210
+ 5 new seqs for taxon 53204
+select_seq_at random
+passing on 4 otus for tax id 53204
+ 2 new seqs for taxon 2606428
+passing on 2 otus for tax id 2606428
+ 1 new seqs for taxon 1562320
+passing on 1 otus for tax id 1562320
+ 1 new seqs for taxon 53205
+passing on 1 otus for tax id 53205
+ 2 new seqs for taxon 58305
+passing on 2 otus for tax id 58305
+ 1 new seqs for taxon 525222
+passing on 1 otus for tax id 525222
+ 1 new seqs for taxon 185558
+passing on 1 otus for tax id 185558
+ 2 new seqs for taxon 185488
+passing on 2 otus for tax id 185488
+ 1 new seqs for taxon 185511
+passing on 1 otus for tax id 185511
+ 2 new seqs for taxon 53213
+passing on 2 otus for tax id 53213
+ 3 new seqs for taxon 1043422
+passing on 3 otus for tax id 1043422
+ 3 new seqs for taxon 53206
+passing on 3 otus for tax id 53206
+ 1 new seqs for taxon 58304
+passing on 1 otus for tax id 58304
+ 1 new seqs for taxon 185550
+passing on 1 otus for tax id 185550
+ 1 new seqs for taxon 53207
+passing on 1 otus for tax id 53207
+ 1 new seqs for taxon 185543
+passing on 1 otus for tax id 185543
+ 1 new seqs for taxon 185557
+passing on 1 otus for tax id 185557
+ 1 new seqs for taxon 185508
+passing on 1 otus for tax id 185508
+ 3 new seqs for taxon 185542
+passing on 3 otus for tax id 185542
+ 1 new seqs for taxon 1398196
+passing on 1 otus for tax id 1398196
+ 1 new seqs for taxon 53208
+passing on 1 otus for tax id 53208
+ 1 new seqs for taxon 185553
+passing on 1 otus for tax id 185553
+ 1 new seqs for taxon 1398199
+passing on 1 otus for tax id 1398199
+ 5 new seqs for taxon 53211
+select_seq_at random
+passing on 4 otus for tax id 53211
+ 2 new seqs for taxon 53212
+passing on 2 otus for tax id 53212
+ 1 new seqs for taxon 185517
+passing on 1 otus for tax id 185517
+ 1 new seqs for taxon 185540
+passing on 1 otus for tax id 185540
+ 1 new seqs for taxon 58292
+passing on 1 otus for tax id 58292
+ 1 new seqs for taxon 185498
+passing on 1 otus for tax id 185498
+ 1 new seqs for taxon 53209
+passing on 1 otus for tax id 53209
+ 1 new seqs for taxon 185524
+passing on 1 otus for tax id 185524
+ 1 new seqs for taxon 185559
+passing on 1 otus for tax id 185559
+ 1 new seqs for taxon 185512
+passing on 1 otus for tax id 185512
+ 1 new seqs for taxon 224368
+passing on 1 otus for tax id 224368
+ 1 new seqs for taxon 58299
+passing on 1 otus for tax id 58299
+**** Found 140 new sequences****
+running muscle
+
+write query seq
+writing out sequences
+Muscle NEW done.
+Muscle ALL done.
+updating current alignment from file /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/all_align_T1281-M2478.fas, with 188 seqs.
+est full tree
+running: raxmlHPC -m GTRCAT -s /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/physcraper_T1281-M2478.fas -t /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/random_resolve.tre -p 1 -n 2020-06-29
+calculate bootstrap
+call align query seqs from est full tree, self._blast_read is 1
+running muscle
+
+updating current alignment from file /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/all_align_T1281-M2478.fas, with 188 seqs.
+/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-local/run_T1281-M2478/boot_summary.tre
+596120
+dict_keys(['newick'])
+Rooting tree based on taxon relationships in ott. Root will be MRCA of Helwingia chinensis ott468906, Ilex tsoi ott404203
+Mon Jun 29 05:44:39 PDT 2020
+slurmstepd: error: Exceeded step memory limit at some point.
+slurmstepd: error: Exceeded job memory limit at some point.

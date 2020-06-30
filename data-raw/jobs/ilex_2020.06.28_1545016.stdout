@@ -1,0 +1,240 @@
+lsanchezreyes2
+Ilex remote
+/home/lsanchezreyes2/pj_physcraper/physcraper
+Sun Jun 28 20:07:32 PDT 2020
+/home/lsanchezreyes2/pj_physcraper/physcraper/venv-physcraper/lib64/python3.6/site-packages/Bio/Entrez/__init__.py:631: UserWarning: 
+Email address is not specified.
+
+To make use of NCBI's E-utilities, NCBI requires you to specify your
+email address with each request.  As an example, if your email address
+is A.N.Other@example.com, you can specify it as follows:
+   from Bio import Entrez
+   Entrez.email = 'A.N.Other@example.com'
+In case of excessive usage of the E-utilities, NCBI will attempt to contact
+a user at the email address provided before blocking access to the
+E-utilities.
+  UserWarning,
+No config file, using defaults
+Configuration Settings
+[blast]
+Entrez.email = None
+e_value_thresh = 1e-05
+hitlist_size = 10
+location = remote
+localblastdb = None
+num_threads = 4
+delay = 90
+[physcraper]
+spp_threshold = 5
+min_length = 0.8
+max_length = 1.2
+
+get_mrca_ott
+(v3) MRCA of sampled taxa is Ilex
+alignment tag is T1281-M2478
+restricting blast search to ncbi taxon ncbi:4295 (ott:727571; Ilex)
+created physcraper ncbi_mrca 4295,
+48 taxa in alignment and tree
+calculate final tree
+current alignment length 48
+call align query seqs from est full tree, self._blast_read is 0
+read_blast_wrapper
+current alignment length 48
+blast dir is /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478
+Today's date is 2020/06/28
+run_blast_wrapper
+/home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478
+current alignment length 48
+tip otu420099 not in ingroup. Will not blast, 
+tip otu420083 not in ingroup. Will not blast, 
+blasting seq otu420113
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420113.xml using webservice
+blasting seq otu420076
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420076.xml using webservice
+blasting seq otu420078
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420078.xml using webservice
+blasting seq otu420110
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420110.xml using webservice
+blasting seq otu420080
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420080.xml using webservice
+blasting seq otu420082
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420082.xml using webservice
+blasting seq otu420100
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420100.xml using webservice
+blasting seq otu420075
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420075.xml using webservice
+blasting seq otu420074
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420074.xml using webservice
+blasting seq otu420102
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420102.xml using webservice
+blasting seq otu420084
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420084.xml using webservice
+blasting seq otu420072
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420072.xml using webservice
+blasting seq otu420068
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420068.xml using webservice
+blasting seq otu420092
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420092.xml using webservice
+blasting seq otu420095
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420095.xml using webservice
+blasting seq otu420111
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420111.xml using webservice
+blasting seq otu420091
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420091.xml using webservice
+blasting seq otu420070
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420070.xml using webservice
+blasting seq otu420093
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420093.xml using webservice
+blasting seq otu420077
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420077.xml using webservice
+blasting seq otu420073
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420073.xml using webservice
+blasting seq otu420112
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420112.xml using webservice
+blasting seq otu420086
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420086.xml using webservice
+blasting seq otu420108
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420108.xml using webservice
+blasting seq otu420098
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420098.xml using webservice
+blasting seq otu420094
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420094.xml using webservice
+blasting seq otu420109
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420109.xml using webservice
+blasting seq otu420107
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420107.xml using webservice
+blasting seq otu420089
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420089.xml using webservice
+blasting seq otu420090
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420090.xml using webservice
+blasting seq otu420069
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420069.xml using webservice
+blasting seq otu420105
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420105.xml using webservice
+blasting seq otu420067
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420067.xml using webservice
+blasting seq otu420106
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420106.xml using webservice
+blasting seq otu420097
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420097.xml using webservice
+blasting seq otu420101
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420101.xml using webservice
+blasting seq otu420096
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420096.xml using webservice
+blasting seq otu420088
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420088.xml using webservice
+blasting seq otu420085
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420085.xml using webservice
+blasting seq otu420087
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420087.xml using webservice
+blasting seq otu420081
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420081.xml using webservice
+blasting seq otu420104
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420104.xml using webservice
+blasting seq otu420071
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420071.xml using webservice
+blasting seq otu420079
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420079.xml using webservice
+blasting seq otu420103
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420103.xml using webservice
+blasting seq otu420114
+txid4295[orgn]
+blasting /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420114.xml using webservice
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420099.xml
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420083.xml
+reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420113.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420076.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420078.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420110.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420080.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420082.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420100.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420075.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420074.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420102.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420084.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420072.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420068.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420092.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420095.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420111.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420091.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420070.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420093.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420077.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420073.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420112.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420086.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420108.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420098.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420094.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420109.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420107.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420089.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420090.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420069.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420105.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420067.xml
+.reading /home/lsanchezreyes2/pj_physcraper/physcraperex/data/ilex-remote/run_T1281-M2478/blast_run_T1281-M2478/otu420106.xml
+.Traceback (most recent call last):
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/venv-physcraper/bin/physcraper_run.py", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/bin/physcraper_run.py", line 220, in <module>
+    scraper.calculate_final_tree(boot_reps = boot_reps)
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/physcraper/scrape.py", line 1215, in calculate_final_tree
+    besttreepath = self.est_full_tree()
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/physcraper/scrape.py", line 1122, in est_full_tree
+    alignment = self.align_new_seqs()
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/physcraper/scrape.py", line 931, in align_new_seqs
+    self.read_blast_wrapper()
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/physcraper/scrape.py", line 580, in read_blast_wrapper
+    self.read_webbased_blast_query(fn_path)
+  File "/home/lsanchezreyes2/pj_physcraper/physcraper/physcraper/scrape.py", line 540, in read_webbased_blast_query
+    writeinfofiles.write_not_added_info(self, gb_id, "evalue threshold not passed")
+NameError: name 'writeinfofiles' is not defined
+Mon Jun 29 06:33:57 PDT 2020
