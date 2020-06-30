@@ -229,8 +229,21 @@ title("Original tr.   Pruned updated tr.", cex = 0.1)
 But it is more interesting to plot it with all the new tips, so we see exactly where the new things are:
 ```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
 original_tree_taxonname <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_ndhf/taxonname.tre")
-cotree2 <-  phytools::cophylo(original_tree_taxonname, updated_tree_taxonname, rotate.multi =TRUE)
-phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+cotree2 <-  phytools::cophylo(
+  original_tree_taxonname, 
+  updated_tree_taxonname, 
+  rotate.multi =TRUE)
+phytools::plot.cophylo(
+  x = cotree2, 
+  fsize = 0.3, 
+  lwd = 0.4, 
+  mar=c(.1,.1,2,.5), 
+  ylim=c(-.1,1), 
+  scale.bar=c(0, .05),              
+  # link.type="curved",
+  link.lwd=3,
+  link.lty="solid",
+  link.col=phytools::make.transparent("#8B008B",0.5))
 title("Original tree      Updated tree", cex = 0.1)
 ```
 
@@ -242,12 +255,12 @@ ape::Ntip(tolsubtree)
 grep("Pterygota_alata", tolsubtree$tip.label)
 updated_tree_taxonname$tip.label
 ```
-Eliminate ott and otu tags before comparison, othrwise nothing matches
-```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
-cotree2 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
-phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
-title("Tol subtree      Updated tree", cex = 0.1)
-```
+Eliminate ott and otu tags before comparison, otherwise nothing matches
+# ```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
+# cotree2 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
+# phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+# title("Tol subtree      Updated tree", cex = 0.1)
+# ```
 
 # References
 

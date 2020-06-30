@@ -219,17 +219,50 @@ mtext("Updated tree - Taxon names as labels  ", side = 3, line = -1)
 
 ## IV. Analyzing the physcraper results
 
-First, compare the original tree with the updated tree
+First, compare the original tree with the updated tree.
 
-```{r echo=FALSE}
+We can prune the updated tree, so it is a more straight forward comparison:
+
+```{r pruned-tree, echo=TRUE, results="hide"}
 original_tree_taxonname <- ape::read.tree(file = "../data/ilex-local/inputs_T1281-M2478/taxonname.tre")
-match(updated_tree_taxonname$tip.label,original_tree_taxonname$tip.label)
+tips2keep <- match(original_tree_taxonname$tip.label,updated_tree_taxonname$tip.label)
+
+pruned_updated_tree_taxonname <- ape::drop.tip(updated_tree_taxonname, updated_tree_taxonname$tip.label[-tips2keep])
 ```
 
-```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
-cotree2 <-  phytools::cophylo(original_tree_taxonname, updated_tree_taxonname)
+```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=10}
+original_tree_taxonname$edge.length <- NULL 
+cotree1 <- phytools::cophylo(ape::ladderize(original_tree_taxonname), ape::ladderize(pruned_updated_tree_taxonname), rotate.multi =TRUE)
 
-phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+phytools::plot.cophylo(
+  x = cotree1, 
+  fsize = 0.3, 
+  lwd = 0.4, 
+  mar=c(.1,.1,2,.3), 
+  ylim=c(-.1,1), 
+  scale.bar=c(0, .05),
+  link.lwd=3,
+  link.lty="solid",
+  link.col=phytools::make.transparent("#8B008B",0.5))
+title("Original tr.   Pruned updated tr.", cex = 0.1)
+```
+But comparing vs the whole updated tree is more interesting:
+```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
+cotree2 <-  phytools::cophylo(
+  original_tree_taxonname, 
+  updated_tree_taxonname, 
+  rotate.multi =TRUE)
+phytools::plot.cophylo(
+  x = cotree2, 
+  fsize = 0.3, 
+  lwd = 0.4, 
+  mar=c(.1,.1,2,.5), 
+  ylim=c(-.1,1), 
+  scale.bar=c(0, .05),              
+  # link.type="curved",
+  link.lwd=3,
+  link.lty="solid",
+  link.col=phytools::make.transparent("#8B008B",0.5))
 title("Original tree      Updated tree", cex = 0.1)
 ```
 
