@@ -100,7 +100,7 @@ Let's get it and plot it here:
 ```{r par1,include=FALSE}
 par(mar=c(0,1,0,0), xpd=NA)  # adjust margins for all plots after this
 ```
-```{r original-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%"}
+```{r original-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%", out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
 original_tree <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577")
 ape::plot.phylo(ape::ladderize(original_tree), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
 ```
@@ -120,7 +120,7 @@ The tree has `r ape::Ntip(original_tree)` tips, is rooted, has no branch lengths
 ### Finding a tree in the Open Tree of Life phylesystem with at least one tip label belonging to the group of interest.
 
 ```
-find_trees.py "Ilex"
+find_trees.py --taxon_name  "Ilex"
 ```
 
 ## II. Getting the underlying alignment
@@ -186,9 +186,9 @@ The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` fold
 ```{r pars2, include=FALSE}
 par(mar=c(0.5,1,1,0.5), xpd=NA)
 ```
-```{r updated-tree-otus, echo=TRUE, out.width='100%', fig.height= 14, fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"'}
+```{r updated-tree-otus, echo=TRUE, out.width='100%', fig.height= 5, fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"'}
 updated_tree_otus <- ape::read.tree(file = "../data/ilex-local/run_T1281-M2478/RAxML_bestTree.2020-06-29")
-ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "phylogram", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
+ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
 ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
 mtext("Updated tree - otu tags as labels", side = 3, line = -1)
 ```
@@ -209,10 +209,10 @@ updated_tree_taxonname <- ape::read.tree(
 # ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
 ```
 ```{r pars3, include=FALSE}
-par(mar=c(0,1,1,0), xpd=NA)  # adjust margins for all plots after this?
+par(mar=c(0,1,2,0), xpd=NA)  # adjust margins for all plots after this?
 ```
-```{r updated-tree-taxonname, echo=TRUE, out.width='100%', fig.height= 14, fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
-ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "phylogram", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
+```{r updated-tree-taxonname, echo=TRUE, out.width='100%', fig.height= 5, fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
+ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
 ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
 mtext("Updated tree - Taxon names as labels  ", side = 3, line = -1)
 ```
@@ -230,43 +230,88 @@ tips2keep <- match(original_tree_taxonname$tip.label,updated_tree_taxonname$tip.
 pruned_updated_tree_taxonname <- ape::drop.tip(updated_tree_taxonname, updated_tree_taxonname$tip.label[-tips2keep])
 ```
 
-```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
-original_tree_taxonname$edge.length <- NULL 
-cotree1 <- phytools::cophylo(ape::ladderize(original_tree_taxonname), ape::ladderize(pruned_updated_tree_taxonname), rotate.multi =TRUE)
+```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=18, fig.width=20}
+original_tree_taxonname$edge.length <- NULL
+original_tree_taxonname2 <- original_tree_taxonname
+original_tree_taxonname2$tip.label <- gsub("_otu.*", "", original_tree_taxonname$tip.label)
+
+pruned_updated_tree_taxonname2 <- pruned_updated_tree_taxonname
+pruned_updated_tree_taxonname2$tip.label <- gsub("_otu.*", "", pruned_updated_tree_taxonname$tip.label)
+
+cotree1 <- phytools::cophylo(ape::ladderize(original_tree_taxonname2), ape::ladderize(pruned_updated_tree_taxonname2), rotate.multi =TRUE)
 
 phytools::plot.cophylo(
-  x = cotree1, 
-  fsize = 0.3, 
-  lwd = 0.4, 
-  mar=c(.1,.1,2,.3), 
-  ylim=c(-.1,1), 
-  scale.bar=c(0, .05),
-  link.lwd=3,
+  x = cotree1,
+  fsize = 2,
+  lwd = 0.4,
+  mar=c(.1,.1,8,.3),
+  ylim=c(-.1,1),
+  scale.bar=c(0, 0.5),
+  link.lwd=5,
   link.lty="solid",
   link.col=phytools::make.transparent("#8B008B",0.5))
-title("Original tr.   Pruned updated tr.", cex = 0.1)
+mtext(expression(bold("Original tree")), cex = 4.5, side= 3, line = 0, adj = 0.2)
+mtext(expression(bold("Pruned updated tree")), cex = 4.5, side= 3, line = 0, adj = 0.9)
 ```
-But comparing vs the whole updated tree is more interesting:
-```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=10}
+
+
+But, comparing vs the whole updated tree is more interesting:
+
+```{r cotree-plot2, message = FALSE, eval = TRUE, fig.align="center", dpi = 300, fig.retina = 3, results="asis", out.width="100%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=40, fig.width=15}
 updated_tree_taxonname2 <- updated_tree_taxonname
-updated_tree_taxonname2$edge.length <- updated_tree_taxonname$edge.length*10 # for viz purposes!
+updated_tree_taxonname2$tip.label <- gsub("_otu.*", "", updated_tree_taxonname$tip.label)
+# updated_tree_taxonname2$edge.length <- updated_tree_taxonname$edge.length*10 # for viz purposes! did not work
+# updated_tree_taxonname2$edge.length <- NULL # does not work either
 cotree2 <-  phytools::cophylo(
-  original_tree_taxonname, 
-  updated_tree_taxonname) #, 
-  #rotate.multi =TRUE)
+  ape::ladderize(original_tree_taxonname2),
+  ape::ladderize(updated_tree_taxonname2)) #,
+  #rotate.multi =TRUE) # it does not work with these trees for some reason.
 phytools::plot.cophylo(
-  x = cotree2, 
-  fsize = 0.3, 
-  lwd = 0.4, 
-  mar=c(.1,.1,2,.5), 
-  ylim=c(-.1,1), 
-  xlim=c(-100,100),
-  scale.bar=c(0, .05),              
+  x = cotree2,
+  fsize = 1,
+  lwd = 0.4,
+  mar=c(.1,.1,8,.5),
+  ylim=c(-.1,1),
+  # xlim=c(-1,1),
+  scale.bar=c(0, 1),
   # link.type="curved",
-  link.lwd=3,
+  link.lwd=2,
   link.lty="solid",
   link.col=phytools::make.transparent("#8B008B",0.5))
-title("Original tree      Updated tree", cex = 0.1)
+mtext(expression(bold("Original tree")), cex = 4, side = 3, line = 0, adj =0.2)
+mtext(expression(bold("Updated tree")), cex = 4, side = 3, line = 0, adj = 0.8)
+```
+
+### Now, compare the updated tree with the newer tree
+```{r pars4, include=FALSE}
+par(mar=c(0,0,1,0), xpd=NA)  # adjust margins for all plots after this?
+```
+```{r newer-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 5, fig.height = 3, out.width="100%", out.extra='style="background-color: #FF1493; padding:10px; display: inline-block;"'}
+newer_tree <- rotl::get_study_tree(study_id = "ot_1984", tree_id = "tree1")
+ape::plot.phylo(ape::ladderize(newer_tree), type = "fan", cex = 0.3, label.offset = 0.5, edge.width = 0.5)
+mtext("Newer tree - matched labels", side = 3, cex = 0.6)
+```
+
+```{r cotree-plot3, message = FALSE, eval = TRUE, fig.align="center", dpi = 300, fig.retina = 3, results="asis", out.width="100%", out.extra='style="background-color: #FF1493; padding:10px; display: inline-block;"', fig.height=40, fig.width=15}
+
+cotree3 <-  phytools::cophylo(
+  ape::ladderize(newer_tree),
+  ape::ladderize(updated_tree_taxonname2)) #,
+  #rotate.multi =TRUE) # it does not work with these trees for some reason.
+phytools::plot.cophylo(
+  x = cotree3,
+  fsize = 1,
+  lwd = 0.4,
+  mar=c(.1,.1,8,.5),
+  ylim=c(-.1,1),
+  # xlim=c(-1,1),
+  scale.bar=c(0, 1),
+  # link.type="curved",
+  link.lwd=2,
+  link.lty="solid",
+  link.col=phytools::make.transparent("#FF1493",0.5))
+mtext(expression(bold("Newer tree")), cex = 4, side = 3, line = 0, adj =0.2)
+mtext(expression(bold("Updated old tree")), cex = 4, side = 3, line = 0, adj = 0.8)
 ```
 
 ## V. Citation

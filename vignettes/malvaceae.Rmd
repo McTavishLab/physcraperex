@@ -106,8 +106,8 @@ Let's get the original tree and plot it here:
 par(mar=c(0,1,1,0), xpd=NA)  # adjust margins for all plots after this
 ```
 ```{r get-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="90%", out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
-pg_55 <- rotl::get_study_tree(study_id = "pg_55", tree_id = "tree5864")
-ape::plot.phylo(ape::ladderize(pg_55), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
+original_tree <- rotl::get_study_tree(study_id = "pg_55", tree_id = "tree5864")
+ape::plot.phylo(ape::ladderize(original_tree), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
 mtext("Original tree - original labels", side = 3, cex = 0.6)
 
 ```
@@ -117,12 +117,12 @@ mtext("Original tree - original labels", side = 3, cex = 0.6)
 Now, let's look at some properties of the tree:
 
 ```{r}
-ape::Ntip(pg_55)  # gets the number of tips
-ape::is.rooted(pg_55)  # check that it is rooted
-ape::is.binary(pg_55)  # check that it is fully resolved
-datelife::phylo_has_brlen(pg_55)  # checks that it has branch lengths
+ape::Ntip(original_tree)  # gets the number of tips
+ape::is.rooted(original_tree)  # check that it is rooted
+ape::is.binary(original_tree)  # check that it is fully resolved
+datelife::phylo_has_brlen(original_tree)  # checks that it has branch lengths
 ```
-The tree has `r ape::Ntip(pg_55)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noticed. Also, labels correspond to the labels reported on the original study [here](`r unlist(unname(pg_55_meta$nexml$"^ot:studyPublication"))
+The tree has `r ape::Ntip(original_tree)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noticed. Also, labels correspond to the labels reported on the original study [here](`r unlist(unname(pg_55_meta$nexml$"^ot:studyPublication"))
 `). Other labels are available to use as tip labels. For example, you can plot the tree using other labels, like the unified taxonomic names, or the taxonomic ids.
 
 ## II. Getting the underlying alignment
