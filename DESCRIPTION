@@ -3,7 +3,7 @@ Type: Package
 Title: Physcraper Workflow Examples
 Version: 0.1.0
 Authors@R: c(person("Luna L.", "Sanchez Reyes", role=c("aut", "cre"), email="lunalsr@gmail.com"),
-  person("Emily Jane", "McTavish", role=c("aut", "cre"), email="ejmctavish@gmail.com"))
+  person("Emily Jane", "McTavish", role=c("aut"), email="ejmctavish@gmail.com"))
 Maintainer: Luna L Sanchez Reyes <sanchez.reyes.luna@gmail.com>
 Description: This package presents several examples of the Physcraper workflow.
     As a package, it has the advantage of installability and hence reproducibility by any user.
@@ -18,7 +18,7 @@ Imports:
   rotl,
   knitr
 SystemRequirements: PhantomJS
-Suggests: 
+Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr

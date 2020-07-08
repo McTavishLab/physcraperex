@@ -2,7 +2,7 @@
 title: "Physcraper Examples: the Malvaceae"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ilex}
+  %\VignetteIndexEntry{malvaceae}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -230,16 +230,16 @@ But it is more interesting to plot it with all the new tips, so we see exactly w
 ```{r cotree-plot2, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
 original_tree_taxonname <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_ndhf/taxonname.tre")
 cotree2 <-  phytools::cophylo(
-  original_tree_taxonname, 
-  updated_tree_taxonname, 
+  original_tree_taxonname,
+  updated_tree_taxonname,
   rotate.multi =TRUE)
 phytools::plot.cophylo(
-  x = cotree2, 
-  fsize = 0.3, 
-  lwd = 0.4, 
-  mar=c(.1,.1,2,.5), 
-  ylim=c(-.1,1), 
-  scale.bar=c(0, .05),              
+  x = cotree2,
+  fsize = 0.3,
+  lwd = 0.4,
+  mar=c(.1,.1,2,.5),
+  ylim=c(-.1,1),
+  scale.bar=c(0, .05),
   # link.type="curved",
   link.lwd=3,
   link.lty="solid",

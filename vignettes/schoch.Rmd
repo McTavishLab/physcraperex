@@ -2,7 +2,7 @@
 title: "Physcraper Examples: the Dothideomycetes"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ilex}
+  %\VignetteIndexEntry{schoch}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -24,7 +24,7 @@ library(DT)
 
 ### With the Open Tree of Life website
 
-Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up the taxon 
+Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up the taxon
 Dothideomycetes.
 
 Oh no... it seems like the Dothideomycetes are not represented as a clade on the Open Tree of Life synthetic tree (at the middle of year 2020):
@@ -44,7 +44,7 @@ follow the ["View the MRCA of the members of this taxon in the synthetic tree"](
 knitr::include_graphics("ascomycota-tree-opentree-2020-06-06.png")
 ```
 
-It is the Ascomycota, which has more than 1.5k species. 
+It is the Ascomycota, which has more than 1.5k species.
 
 It is time now to ask the question, do we want to update an alignment for all the Ascomycota???
 
@@ -63,14 +63,14 @@ There is a published tree that is conflicting with the taxonomy.
 
 ***
 
-Let's get more information about the taxonomy of the Dothideomycetes, follow the ["View this taxon in the taxonomy browser"](https://tree.opentreeoflife.org/taxonomy/browse?id=346120) link. 
+Let's get more information about the taxonomy of the Dothideomycetes, follow the ["View this taxon in the taxonomy browser"](https://tree.opentreeoflife.org/taxonomy/browse?id=346120) link.
 
 ```{r dothideomycetes-taxonomy-opentree, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
 knitr::include_graphics("dothideomycetes-taxonomy-opentree-2020-06-06.png")
 ```
 
-So, it seems like it is a taxon in NCBI. To verify this, go to the section "Taxon details", and follow the [ncbi:147541](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=147541) link. 
+So, it seems like it is a taxon in NCBI. To verify this, go to the section "Taxon details", and follow the [ncbi:147541](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=147541) link.
 
 ```{r dothideomycetes-ncbi, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
@@ -131,7 +131,7 @@ par(mar=c(0,1,0,0), xpd=NA)  # adjust margins for all plots after this
 ```
 ```{r schoch-pg_254-tree137, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, fig.width = 2, out.width="100%", fig.height = 20}
 schoch2009 <- rotl::get_study_tree(study_id = "pg_254", tree_id = "tree137")
-ape::plot.phylo(ape::ladderize(schoch2009), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5) 
+ape::plot.phylo(ape::ladderize(schoch2009), type = "phylogram", cex = 0.3, label.offset = 1, edge.width = 0.5)
 ```
 
 
@@ -176,4 +176,3 @@ physcraper_run.py -s pg_238 -t tree109 -tb -no_est -o ../physcraperex/data/schoc
 ```
 physcraper_run.py -s pg_238 -t tree109 -a ../physcraperex/data-raw/alignments/Tr5276-M3939-mod.nex -as nexus  -db /branchinecta/shared/local_blast_db -o ../physcraperex/data/schoch_ascomycota_1_2020.06.06
 ```
-
