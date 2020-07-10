@@ -11,7 +11,7 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "ilex-images/"
+  fig.path = "../data-raw/ilex-images/"
 )
 knitr::opts_knit$set(
   global.par = TRUE
