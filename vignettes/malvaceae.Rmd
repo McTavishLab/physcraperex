@@ -18,10 +18,11 @@ knitr::opts_knit$set(
   )
 ```
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
 library(webshot)
 getwd()
 source("../R/plots.R")
+library(ape)
 ```
 
 ```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
@@ -304,13 +305,15 @@ updated_tree_taxonname$tip.label[47]
 # going to OpenTree it looks like it atually corresponds to Firmiana simplex, not sure why it was not standardized, probably bc it was in NCBI
 # I'm changing it by hand:
 updated_tree_taxonname$tip.label[47] <- "Firmiana_simplex"
-# And running mtch again
+# And running match again
 new_in_tol <- match(updated_tree_taxonname$tip.label, tolsubtree$tip.label)
 ```
 
 Then, use the `phytools package to create a data object that will contain info from our tolsubtree tips and edges:
 
 ```{r simmap}
+tolsubtree <- ape::ladderize(tolsubtree)
+
 tip_colors <- rep("gray", ape::Ntip(tolsubtree))
 tip_colors[all_updated_tree_in_tol] <- "black"
 tip_colors[new_tips_in_tol] <- "red"
@@ -320,7 +323,6 @@ tip_values[tip_colors == "black"] <- 1
 tip_values[tip_colors == "red"] <- 100
 names(tip_values) <- tolsubtree$tip.label
 head(tip_values)
-tolsubtree_ladderized <- ape::ladderize(tolsubtree)
 all_values <- sum_tips(tolsubtree, tip_values)
 
 all_cols <- rep("gray", length(all_values))
@@ -330,7 +332,7 @@ all_values[all_values >= 1]
 all_cols[all_values >= 1] <- "black"
 all_cols[all_values >= 100] <- "red"
 edge_colors <- all_cols[tolsubtree$edge[,2]]
-length(edge_cols) == nrow(tolsubtree$edge)
+length(edge_colors) == nrow(tolsubtree$edge)
 # tip_cols <- all_cols[seq(ape::Ntip(tolsubtree))]
 
 namess <- rep("Synth tips", length(edge_colors))
@@ -346,9 +348,17 @@ for (i in seq(length(edge_colors))){
 cols <- setNames(c("red","black", "gray"), c("Updated tips", "Original tips", "Synth tips"))
 tolsubtree_wbl <- ape::compute.brlen(tolsubtree)
 tolsubtree_wbl$maps <- tolsubtree$maps
+```
+```{r simmap-plot, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=2.5}
 par(fg="transparent")
-phytools::plotSimmap(tolsubtree_wbl,type="fan",part=0.5,fsize=0.1, ftype="i", colors = cols)
-
+phytools::plotSimmap(tolsubtree_wbl,type="fan",part=0.95, ftype="i", colors = cols, lwd = 0.1, fsize = 0.05) #lwd = 0.5, fsize=0.1
+lastPP<-get("last_plot.phylo",env=.PlotPhyloEnv)
+par(fg="black")
+phytools::add.simmap.legend(colors=cols,vertical=FALSE,x=-0.25, y=-1.2,prompt=FALSE, fsize = 0.5)
+tt<-gsub("_"," ",tolsubtree_wbl$tip.label)
+tt[]
+text(lastPP$xx[1:length(tt)],lastPP$yy[1:length(tt)],
+  tt,cex=0.05,col=tip_colors,pos=4,offset=0.1,font=3)
 
 require(phytools)
 data(anoletree)
@@ -372,3 +382,6 @@ text(lastPP$xx[1:length(tt)],lastPP$yy[1:length(tt)],
 # References
 
 Trick for the cophylo titles and margins from https://cran.r-project.org/web/packages/phangorn/vignettes/IntertwiningTreesAndNetworks.html
+
+Trick for colord tip labels:
+http://blog.phytools.org/2013/09/coloring-tip-labels-by-character-state.html
