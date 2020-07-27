@@ -33,3 +33,23 @@ get_file_names <- function(studyid, file_dir = "data-raw/trees/treebase"){
   system(paste0("ls ", studyid, " > ", treefiles))
   return(paste0(file_dir, "/", treefiles))
 }
+
+# get_file_names
+#
+# Write nexus or newick files to pdf or png.
+#
+#' @param tree a phylo object
+#' @param values named numeric character vector with names corresponding to tip labels
+
+sum_tips <- function(tree, values) {
+    # tree <- ape::reorder.phylo(tree, "postorder")  # no need to reorder the whole tree
+    res <- numeric(max(tree$edge))
+    res[1:ape::Ntip(tree)] <- values[match(names(values), tree$tip.label)]
+    for (i in ape::postorder(tree))  { # ape postorder doesn't include root
+         tmp <- tree$edge[i,1]
+         # print(i)
+         res[tmp] <- res[tmp] + res[tree$edge[i, 2]]
+         # print(res)
+   }
+   res
+}

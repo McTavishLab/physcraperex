@@ -20,6 +20,8 @@ knitr::opts_knit$set(
 
 ```{r setup, echo=FALSE}
 library(webshot)
+getwd()
+source("../R/plots.R")
 ```
 
 ```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
@@ -195,6 +197,7 @@ in the `output_tag` folder as `updated_taxonname.tre`.
 ```{r, echo=TRUE, out.width='100%', fig.height= 15, fig.retina=3, dpi=300}
 updated_tree_taxonname <- ape::read.tree(
   file = "../data/pg_55/outputs_pg_55tree5864_ndhf/updated_taxonname.tre")
+updated_tree_taxonname$tip.label.original <- updated_tree_taxonname$tip.label
 ```
 ```{r,include=FALSE}
 par(mar=c(1.8,1.7,1.5,1.7), xpd=NA)  # adjust margins for all plots after this
@@ -214,12 +217,19 @@ original_tree_otus <- ape::read.tree(file = "../data/pg_55/inputs_pg_55tree5864_
 updated_tree_otus_pruned <- ape::read.tree(
   file = "../data/pg_55/pruned_updated.tre"
 )
+# This tree only has 31 tips because it is the pruned updated tree.
 ```
 
+Lets get indices from the new tips added to the updated tree and see which taxa they correspond to:
+```{r new-tips}
+new_tips <- grep("_otuPS[0-9]*", updated_tree_taxonname$tip.label.original)
+updated_tree_taxonname$tip.label.original[new_tips]
+```
+There are `r length(new_tips)` new tips in the updated tree.
 
-Now plot them face to face
+Now plot the trees face to face.
 
-We can prune the updated tree, so it is a straight forward comparison:
+We can first prune the updated tree of the new tips, so it is a straight forward comparison:
 ```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=4.5}
 cotree <-  phytools::cophylo(original_tree_otus, updated_tree_otus_pruned, rotate.multi =TRUE)
 phytools::plot.cophylo(x = cotree, fsize = 0.5, lwd = 0.5, mar=c(.1,.2,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
@@ -247,20 +257,117 @@ phytools::plot.cophylo(
 title("Original tree      Updated tree", cex = 0.1)
 ```
 
-We can also plot the updated tree against the synthetic subtree of Malvaceae, to visualize how it updates our current knowledge of the phylogeentic relationships within the family:
+We can also plot the updated tree against the synthetic subtree of Malvaceae, to visualize how it updates our current knowledge of the phylogenetic relationships within the family:
 
-```{r get-tol-subtree, message=FALSE, warning=FALSE}
+```{r get-tol-subtree, message=FALSE, warning=FALSE, results='hide'}
 tolsubtree <- rotl::tol_subtree(ott_id = 279960)
-ape::Ntip(tolsubtree)
-grep("Pterygota_alata", tolsubtree$tip.label)
-updated_tree_taxonname$tip.label
 ```
+```{r get-tol-subtree2, message=FALSE, warning=FALSE}
+ape::Ntip(tolsubtree)
+
+head(tolsubtree$tip.label)
+head(updated_tree_taxonname$tip.label)
+
+```
+
+`ape::Ntip` tells us that there are almost 6k taxa in the Malvaceae OpenTree synthetic tree. 
+
+Tip labels in both trees have taxon identifier tags that will make name matching impossible. Lets remove them:
+
+```{r tree-tips, message=FALSE, warning=FALSE}
+updated_tree_taxonname$tip.label <- gsub("_otuPS[0-9]*", "", updated_tree_taxonname$tip.label.original)
+updated_tree_taxonname$tip.label <- gsub("_otu[0-9]*", "", updated_tree_taxonname$tip.label)
+
+tolsubtree$tip.label.original <- tolsubtree$tip.label
+tolsubtree$tip.label <- gsub("_ott[0-9]*", "", tolsubtree$tip.label)
+
+```
+
 Eliminate ott and otu tags before comparison, otherwise nothing matches
-# ```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
-# cotree2 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
-# phytools::plot.cophylo(x = cotree2, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
+
+```{r cotree-plot3, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=7.5}
+# cotree3 <-  phytools::cophylo(tolsubtree, updated_tree_taxonname, rotate.multi =TRUE)
+# phytools::plot.cophylo(x = cotree3, fsize = 0.2, lwd = 0.5, mar=c(.1,.1,2,.3), ylim=c(-.1,1), scale.bar=c(0, .05))
 # title("Tol subtree      Updated tree", cex = 0.1)
-# ```
+```
+
+The whole Malvaceae tree might be too large for a cotree plot.
+Lets try something else.
+
+First, get indices of new tips from updated tree present in the Malvaceae synthetic tree:
+
+```{r physcraper,  message = FALSE, warning=FALSE}
+all_updated_tree_in_tol <- match(updated_tree_taxonname$tip.label, tolsubtree$tip.label)
+new_tips_in_tol <- match(updated_tree_taxonname$tip.label[new_tips], tolsubtree$tip.label)
+# one tip seems to be absent frm the Malvaceae subtree
+updated_tree_taxonname$tip.label[47]
+# going to OpenTree it looks like it atually corresponds to Firmiana simplex, not sure why it was not standardized, probably bc it was in NCBI
+# I'm changing it by hand:
+updated_tree_taxonname$tip.label[47] <- "Firmiana_simplex"
+# And running mtch again
+new_in_tol <- match(updated_tree_taxonname$tip.label, tolsubtree$tip.label)
+```
+
+Then, use the `phytools package to create a data object that will contain info from our tolsubtree tips and edges:
+
+```{r simmap}
+tip_colors <- rep("gray", ape::Ntip(tolsubtree))
+tip_colors[all_updated_tree_in_tol] <- "black"
+tip_colors[new_tips_in_tol] <- "red"
+
+tip_values <- rep(0, ape::Ntip(tolsubtree))
+tip_values[tip_colors == "black"] <- 1
+tip_values[tip_colors == "red"] <- 100
+names(tip_values) <- tolsubtree$tip.label
+head(tip_values)
+tolsubtree_ladderized <- ape::ladderize(tolsubtree)
+all_values <- sum_tips(tolsubtree, tip_values)
+
+all_cols <- rep("gray", length(all_values))
+all_values[all_values >= 100]
+all_values[all_values >= 1]
+
+all_cols[all_values >= 1] <- "black"
+all_cols[all_values >= 100] <- "red"
+edge_colors <- all_cols[tolsubtree$edge[,2]]
+length(edge_cols) == nrow(tolsubtree$edge)
+# tip_cols <- all_cols[seq(ape::Ntip(tolsubtree))]
+
+namess <- rep("Synth tips", length(edge_colors))
+namess[which(edge_colors == "black")] <- "Original tips"
+namess[which(edge_colors == "red")] <- "Updated tips"
+
+tolsubtree$maps <- as.list(rep(1, length(edge_colors)))
+for (i in seq(length(edge_colors))){
+  names(tolsubtree$maps[[i]]) <- namess[i]
+}
+# fam_tree_brlen3$maps[1]
+# str(fam_tree_brlen3$maps)
+cols <- setNames(c("red","black", "gray"), c("Updated tips", "Original tips", "Synth tips"))
+tolsubtree_wbl <- ape::compute.brlen(tolsubtree)
+tolsubtree_wbl$maps <- tolsubtree$maps
+par(fg="transparent")
+phytools::plotSimmap(tolsubtree_wbl,type="fan",part=0.5,fsize=0.1, ftype="i", colors = cols)
+
+
+require(phytools)
+data(anoletree)
+tree<-anoletree
+x<-getStates(tree,"tips")
+par(fg="transparent")
+plotTree(tree,fsize=0.6,ylim=c(-1,length(tree$tip.label)))
+lastPP<-get("last_plot.phylo",env=.PlotPhyloEnv)
+ss<-sort(unique(x))
+colors<-setNames(palette()[1:length(ss)],ss)
+par(fg="black")
+add.simmap.legend(colors=colors,vertical=FALSE,x=0.25,
+  y=-1,prompt=FALSE)
+colors<-sapply(x,function(x,y) y[which(names(y)==x)],
+  y=colors)
+tt<-gsub("_"," ",tree$tip.label)
+text(lastPP$xx[1:length(tt)],lastPP$yy[1:length(tt)],
+  tt,cex=0.6,col=colors,pos=4,offset=0.1,font=3)
+```
 
 # References
 
