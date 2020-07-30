@@ -150,8 +150,10 @@ wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M2478?format=nexus" -o d
 
 
 ```
-physcraper_run.py -s pg_2827 -t tree6577 -o data/pg_2827_tree6577
+physcraper_run.py -s pg_2827 -t tree6577 -r -o data/pg_2827_tree6577
 ```
+
+The -r flag repeats the physcraper search until no new sequences are found.
 
 ```
 physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -o data/ilex-remote
