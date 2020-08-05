@@ -1,0 +1,26 @@
+
+MUSCLE v3.8.1551 by Robert C. Edgar
+
+http://www.drive5.com/muscle
+This software is donated to the public domain.
+Please cite: Edgar, R.C. Nucleic Acids Res 32(5), 1792-97.
+
+new_seqs_UNaligned_2020-07-31_p 2 seqs, lengths min 670, max 803, avg 736
+00:00:00    15 MB(-2%)  Iter   1   33.33%  K-mer dist pass 100:00:00    15 MB(-2%)  Iter   1  100.00%  K-mer dist pass 1
+00:00:00    15 MB(-2%)  Iter   1   33.33%  K-mer dist pass 200:00:00    15 MB(-2%)  Iter   1  100.00%  K-mer dist pass 2
+00:00:00    16 MB(-2%)  Iter   1  100.00%  Align node       00:00:00    19 MB(-2%)  Iter   1  100.00%  Align node
+00:00:00    19 MB(-2%)  Iter   1   50.00%  Root alignment00:00:00    19 MB(-2%)  Iter   1  100.00%  Root alignment00:00:00    19 MB(-2%)  Iter   1  100.00%  Root alignment
+
+MUSCLE v3.8.1551 by Robert C. Edgar
+
+http://www.drive5.com/muscle
+This software is donated to the public domain.
+Please cite: Edgar, R.C. Nucleic Acids Res 32(5), 1792-97.
+
+00:00:00    15 MB(-2%)  Reading /home/ejmctavish/projects/otapi/data_physcraper/data/pg_2827_tree6577/run_pg_2827tree6577_run4/original_cleaned.fas
+00:00:00    16 MB(-2%)  277 seqs 1220 cols
+00:00:00    16 MB(-2%)  Reading /home/ejmctavish/projects/otapi/data_physcraper/data/pg_2827_tree6577/run_pg_2827tree6577_run4/new_seqs_aligned_2020-07-31_pg_2827tree6577.fas
+00:00:00    16 MB(-2%)  2 seqs 809 cols
+00:00:01    17 MB(-2%)  Aligning profiles
+00:00:01    21 MB(-2%)  Building output
+00:00:01    22 MB(-2%)  Writing output
