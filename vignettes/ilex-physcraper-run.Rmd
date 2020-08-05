@@ -1,0 +1,42 @@
+---
+title: "ilex-physcraper-run"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ilex-physcraper-run}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "../data-raw/ilex-images/"
+)
+knitr::opts_knit$set(
+  global.par = TRUE
+  )
+```
+
+```{r setup, echo=FALSE}
+library(webshot)
+source("../R/plots.R")
+
+```
+
+## III. Starting a physcraper a run
+
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -o data/pg_2827_tree6577
+```
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -o data/ilex-remote
+```
+
+### Using a local BLAST database
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db local_blast_db -o data/ilex-local
+```

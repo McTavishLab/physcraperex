@@ -354,30 +354,15 @@ par(fg="transparent")
 phytools::plotSimmap(tolsubtree_wbl,type="fan",part=0.95, ftype="i", colors = cols, lwd = 0.1, fsize = 0.05) #lwd = 0.5, fsize=0.1
 lastPP<-get("last_plot.phylo",env=.PlotPhyloEnv)
 par(fg="black")
-phytools::add.simmap.legend(colors=cols,vertical=FALSE,x=-0.25, y=-1.2,prompt=FALSE, fsize = 0.5)
+phytools::add.simmap.legend(colors=cols,vertical=FALSE,x=-0.9, y=-1.2,prompt=FALSE, fsize = 0.5)
 tt<-gsub("_"," ",tolsubtree_wbl$tip.label)
-tt[]
+#tt[tip_colors == "gray"] <- ""
 text(lastPP$xx[1:length(tt)],lastPP$yy[1:length(tt)],
-  tt,cex=0.05,col=tip_colors,pos=4,offset=0.1,font=3)
+  tt,cex=0.2,col=tip_colors,pos=4,offset=0.1,font=3)
 
-require(phytools)
-data(anoletree)
-tree<-anoletree
-x<-getStates(tree,"tips")
-par(fg="transparent")
-plotTree(tree,fsize=0.6,ylim=c(-1,length(tree$tip.label)))
-lastPP<-get("last_plot.phylo",env=.PlotPhyloEnv)
-ss<-sort(unique(x))
-colors<-setNames(palette()[1:length(ss)],ss)
-par(fg="black")
-add.simmap.legend(colors=colors,vertical=FALSE,x=0.25,
-  y=-1,prompt=FALSE)
-colors<-sapply(x,function(x,y) y[which(names(y)==x)],
-  y=colors)
-tt<-gsub("_"," ",tree$tip.label)
-text(lastPP$xx[1:length(tt)],lastPP$yy[1:length(tt)],
-  tt,cex=0.6,col=colors,pos=4,offset=0.1,font=3)
 ```
+
+
 
 # References
 

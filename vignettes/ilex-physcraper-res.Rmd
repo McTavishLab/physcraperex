@@ -1,0 +1,79 @@
+---
+title: "ilex-physcraper-res"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ilex-physcraper-res}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "../data-raw/ilex-images/"
+)
+knitr::opts_knit$set(
+  global.par = TRUE
+  )
+```
+
+```{r setup, echo=FALSE}
+library(webshot)
+source("../R/plots.R")
+```
+
+
+## IV. Reading physcraper results
+
+### The physcraper tag
+
+T1281-M2478
+
+### Input files
+
+Physcraper rewrites input files for a couple reasons: reproducibility, taxon name matching, and taxon reconciliation.
+It writes the config file down if none was provided
+
+### Run files
+
+Files in here are also automatically written down by physcraper.
+
+blast runs, alignments, raxml trees, bootstrap
+
+The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
+The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
+
+```{r pars2, include=FALSE}
+par(mar=c(0.5,1,1,0.5), xpd=NA)
+```
+```{r updated-tree-otus, echo=TRUE, out.width='100%', fig.height= 5, fig.retina=3, dpi=300, out.extra='style="background-color: #6B8E23; padding:10px; display: inline-block;"'}
+updated_tree_otus <- ape::read.tree(file = "../data/ilex-local/run_T1281-M2478/RAxML_bestTree.2020-06-29")
+ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - otu tags as labels", side = 3, line = -1)
+```
+
+### Output files
+
+A number of files is automatically written down by physcraper.
+
+A nexson tree with all types of tip labels is saved in here.
+From this tree, a tree with any kind of label can be produced.
+By default, the updtaed tree with taxon names as tip labels is saved
+in the `output_tag` folder as `updated_taxonname.tre`.
+
+
+```{r read-updated-tree-taxonname, echo=TRUE}
+updated_tree_taxonname <- ape::read.tree(
+  file = "../data/ilex-local/outputs_T1281-M2478/updated_taxonname.tre")
+# ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
+```
+```{r pars3, include=FALSE}
+par(mar=c(0,1,2,0), xpd=NA)  # adjust margins for all plots after this?
+```
+```{r updated-tree-taxonname, echo=TRUE, out.width='100%', fig.height= 5, fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
+ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
+ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
+mtext("Updated tree - Taxon names as labels  ", side = 3, line = -1)
+```
