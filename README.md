@@ -1,18 +1,22 @@
 
-# Physcraper Examples
+# Physcraper examples
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of physcraperex is to ...
+The goal of physcraperex is to present tools for visualizing and analysing results from Physcraper, a python toolkit for updating existing phylogenetic knowledge with new molecular data.
 
-## Installation
+Physcraper's documentation is available at [https://physcraper.readthedocs.io](https://physcraper.readthedocs.io/en/latest/index.html).
+
+## Installing physcraperex
 
 For now, you can only install the development version of the package with 
 
 ``` r
 devtools::install_github("McTavishLab/physcraperex")
 ```
+
+For instructions on how to install Physcraper go to the [documentation website](https://physcraper.readthedocs.io/en/latest/install.html).
 
 <!--You can install the released version of physcraperex from [CRAN](https://CRAN.R-project.org) with:
 
