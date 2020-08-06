@@ -1,5 +1,15 @@
 pandoc: '2.5'
 pkgdown: 1.4.1
 pkgdown_sha: ~
-articles: []
+articles:
+  ilex-find-a-tree: ilex-find-a-tree.html
+  ilex-get-alignment: ilex-get-alignment.html
+  ilex-physcraper-res: ilex-physcraper-res.html
+  ilex-physcraper-resviz: ilex-physcraper-resviz.html
+  ilex-physcraper-run: ilex-physcraper-run.html
+  ilex-toc: ilex-toc.html
+  ilex: ilex.html
+  malvaceae: malvaceae.html
+  schoch: schoch.html
+  todo: todo.html
 
