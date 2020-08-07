@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -18,23 +18,25 @@ knitr::opts_knit$set(
   )
 ```
 
-```{r setup, echo=FALSE}
+```{r setup0, echo=FALSE}
 library(webshot)
 source("../R/plots.R")
 ```
 
-```{r nature, echo=FALSE, fig.cap="*Ilex* fruits and leaves in the snow", out.width = '75%', fig.retina= 2}
+```{r nature, echo=FALSE, fig.cap="*Ilex* fruits and leaves in the snow.", out.width = '75%', fig.retina= 2}
 knitr::include_graphics("images/holly-snow.jpg")
 ```
 
+## I. Finding a tree to update
 
+```{r child="_ilex-find-a-tree.Rmd"}
 
-
+```
 
 
 
 ## Acknowledgments
 
-University of California, Merced cluster, MERCED (Multi-Environment Research Computer for Exploration and Discovery) supported by the National Science Foundation (Grant No. ACI-1429783).
+
 
 Holly Image by <a href="https://pixabay.com/es/users/WolfBlur-2503887/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Wolfgang Claussen</a> at <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Pixabay</a>

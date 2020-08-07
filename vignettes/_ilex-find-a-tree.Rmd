@@ -1,43 +1,21 @@
 ---
-title: "ilex-find-a-tree"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{ilex-find-a-tree}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "Finding a tree to update"
+output: rmarkdown::html_document
 ---
-
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "../data-raw/ilex-images/"
-)
-knitr::opts_knit$set(
-  global.par = TRUE
-  )
+```{r echo = FALSE}
+screenshot_date <- "May 25, 2020"
 ```
+### Using the Open Tree of Life website
 
-```{r setup, echo=FALSE}
-library(webshot)
-source("../R/plots.R")
+Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up for the taxon *Ilex*.
 
-```
+The screenshpt below shows the state of the genus *Ilex* in the Open Tree of Life synthetic tree on `r screenshot_date`. If you go to OpenTree's website you can check out *Ilex* current state [here](https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex).
 
-## I. Finding a tree to update
-
-### With the Open Tree of Life website
-
-Go to the [Open Tree of Life website](https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302) and use the "search for taxon" menu to look up the taxon *Ilex*.
-
-This is how the genus *Ilex* is represented on the Open Tree of Life synthetic tree at the middle of year 2020:
-
-```{r ilex-tree-opentree, echo=FALSE, fig.cap="Go to the website and look at it [here](https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex)", out.width = '100%', fig.retina= 2}
+```{r ilex-tree-opentree, echo=FALSE, fig.cap="Phylogenetic representation of the hollies in OpenTree's synthetic tree.", out.width = '100%', fig.retina= 2}
 # library(webshot)
 # webshot("https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex", "ilex-tree-opentree.png", delay = 1)
 
-# webshot did not work on opentree website
+# webshot works on opentree website if I set up a delay!
 knitr::include_graphics("ilex-tree-opentree-2020-05-31.png")
 ```
 
@@ -60,7 +38,7 @@ Studies matching the word 'ilex' on the curator database, at the middle of year 
 knitr::include_graphics("ilex-curation-opentree-2020-05-31.png")
 ```
 
-### Finding a tree to update using the R package rotl
+### Using the R package rotl
 
 <!-- ```{r} -->
 <!-- ilex <- rotl::tnrs_match_names(names = "ilex") -->
@@ -115,6 +93,7 @@ ape::is.binary(original_tree)  # check that it is fully resolved
 datelife::phylo_has_brlen(original_tree)  # checks that it has branch lengths
 ```
 The tree has `r ape::Ntip(original_tree)` tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noted. Also, labels correspond to the labels reported on the original study [here](`r studies$study_doi[study2003]`). Other labels are available to use as tip labels. For example, you can plot the tree using the unified taxonomic names, or the taxonomic ids.
+
 
 ### Finding a tree in the Open Tree of Life phylesystem with at least one tip label belonging to the group of interest.
 
