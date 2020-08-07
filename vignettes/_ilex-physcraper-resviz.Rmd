@@ -5,12 +5,25 @@ output: rmarkdown::html_document
 
 ### *New tips and taxa*
 
-First, we will 
+An easy way to visualize the ne wtips added into th eupdated tree compared to the original tree is coloring the barnches from those new tips with an outstanding color. We will use a function defined in this package to do so. 
+
+The function takes as argument the path to the tree and otu info files:
+
+```{r arguments}
+mytreefile = '../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
+myotuinfofile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv'
+```
+
+```{r plot-tips-and-branches}
+plot_branches(treefile = mytreefile, otu_info_file = myotuinfofile)
+```
 
 
 ### *Changes in phylogenetic relationships*
 
 We can also compare the original tree with the updated tree.
+
+
 
 We can prune the updated tree, so it is a more straight forward comparison:
 
@@ -105,8 +118,4 @@ mtext(expression(bold("Newer tree")), cex = 4, side = 3, line = 0, adj =0.2)
 mtext(expression(bold("Updated old tree")), cex = 4, side = 3, line = 0, adj = 0.8)
 ```
 
-```r{plot_branches}
-treefile = 'data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
-otu_info_file = 'data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv'
 
-```
