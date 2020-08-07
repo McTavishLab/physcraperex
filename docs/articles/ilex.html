@@ -54,24 +54,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/ilex-find-a-tree.html">ilex-find-a-tree</a>
-    </li>
-    <li>
-      <a href="../articles/ilex-get-alignment.html">ilex-get-alignment</a>
-    </li>
-    <li>
-      <a href="../articles/ilex-physcraper-res.html">ilex-physcraper-res</a>
-    </li>
-    <li>
-      <a href="../articles/ilex-physcraper-resviz.html">ilex-physcraper-resviz</a>
-    </li>
-    <li>
-      <a href="../articles/ilex-physcraper-run.html">ilex-physcraper-run</a>
-    </li>
-    <li>
-      <a href="../articles/ilex-toc.html">Physcraper Examples: the Hollies</a>
-    </li>
-    <li>
       <a href="../articles/ilex.html">Physcraper Examples: the Hollies</a>
     </li>
     <li>
@@ -110,14 +92,141 @@
     
     
 <div class="figure">
-<img src="images/holly-snow.jpg" alt="*Ilex* fruits and leaves in the snow" width="75%"><p class="caption">
-<em>Ilex</em> fruits and leaves in the snow
+<img src="images/holly-snow.jpg" alt="*Ilex* fruits and leaves in the snow." width="75%"><p class="caption">
+<em>Ilex</em> fruits and leaves in the snow.
 </p>
+</div>
+<div id="i--finding-a-tree-to-update" class="section level2">
+<h2 class="hasAnchor">
+<a href="#i--finding-a-tree-to-update" class="anchor"></a>I. Finding a tree to update</h2>
+<div id="using-the-open-tree-of-life-website" class="section level3">
+<h3 class="hasAnchor">
+<a href="#using-the-open-tree-of-life-website" class="anchor"></a>Using the Open Tree of Life website</h3>
+<p>Go to the <a href="https://tree.opentreeoflife.org/opentree/argus/opentree12.3@ott93302">Open Tree of Life website</a> and use the “search for taxon” menu to look up for the taxon <em>Ilex</em>.</p>
+<p>The screenshpt below shows the state of the genus <em>Ilex</em> in the Open Tree of Life synthetic tree on May 25, 2020. If you go to OpenTree’s website you can check out <em>Ilex</em> current state <a href="https://tree.opentreeoflife.org/opentree/argus/ottol@727571/Ilex">here</a>.</p>
+<div class="figure">
+<img src="ilex-tree-opentree-2020-05-31.png" alt="Phylogenetic representation of the hollies in OpenTree's synthetic tree." width="100%"><p class="caption">
+Phylogenetic representation of the hollies in OpenTree’s synthetic tree.
+</p>
+</div>
+<hr>
+<p>Navigating into the tree, we notice that there might be two studies associated to this portion of the Open Tree synthetic tree.</p>
+<p><img src="ilex-tree-opentree-2020-05-31-2.png" width="100%"></p>
+<hr>
+<p>Let’s verify that on the <a href="https://tree.opentreeoflife.org/curator">study curator of OToL</a>.</p>
+<p>Studies matching the word ‘ilex’ on the curator database, at the middle of year 2020. Some of these studies are not actually about the hollies, but other taxa that have the species epithet <em>ilex</em>, e.g., the holly oak <em>Quercus ilex</em> or the rodent <em>Apodemus ilex</em></p>
+<p><img src="ilex-curation-opentree-2020-05-31.png" width="100%"></p>
+</div>
+<div id="using-the-r-package-rotl" class="section level3">
+<h3 class="hasAnchor">
+<a href="#using-the-r-package-rotl" class="anchor"></a>Using the R package rotl</h3>
+<!-- ```{r} -->
+<!-- ilex <- rotl::tnrs_match_names(names = "ilex") -->
+<!-- ``` -->
+<!-- ```{r, results='asis', echo=FALSE} -->
+<!-- knitr::kable(ilex, caption = "Taxonomic Name Resolution information for the genus *Ilex*") -->
+<!-- ``` -->
+<!-- Can we use the *OTT id* to get some trees or studies? -->
+<!-- ```{r} -->
+<!-- rotl::studies_properties() -->
+<!-- ``` -->
+<p>Explain what a focal clade is.</p>
+<p>There is a handy function that will search a taxon among the focal clades reported across trees.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">studies &lt;-<span class="st"> </span>rotl<span class="op">::</span><span class="kw"><a href="https://docs.ropensci.org/rotl/reference/studies_find_studies.html">studies_find_studies</a></span>(<span class="dt">property=</span><span class="st">"ot:focalCladeOTTTaxonName"</span>, <span class="dt">value=</span><span class="st">"Ilex"</span>)</a></code></pre></div>
+<table class="table">
+<caption>Studies with the genus <em>Ilex</em> as focal clade.</caption>
+<colgroup>
+<col width="4%">
+<col width="3%">
+<col width="8%">
+<col width="4%">
+<col width="5%">
+<col width="55%">
+<col width="17%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">study_ids</th>
+<th align="left">n_trees</th>
+<th align="left">tree_ids</th>
+<th align="left">candidate</th>
+<th align="left">study_year</th>
+<th align="left">title</th>
+<th align="left">study_doi</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">ot_1984</td>
+<td align="left">1</td>
+<td align="left">tree1</td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left"></td>
+<td align="left"><a href="http://dx.doi.org/10.1111/jse.12567" class="uri">http://dx.doi.org/10.1111/jse.12567</a></td>
+</tr>
+<tr class="even">
+<td align="left">pg_2827</td>
+<td align="left">2</td>
+<td align="left">tree6576, tree6577</td>
+<td align="left">tree6577</td>
+<td align="left">2003</td>
+<td align="left">Molecular analyses of the genus Ilex (Aquifoliaceae) in southern South America, evidence from AFLP and ITS sequence data</td>
+<td align="left"><a href="http://dx.doi.org/10.3732/ajb.92.2.352" class="uri">http://dx.doi.org/10.3732/ajb.92.2.352</a></td>
+</tr>
+</tbody>
+</table>
+<p>It seems like the oldest tree, <em>tree6577</em> from study <em>pg_2827</em>, is in the Open Tree of Life synthetic tree.</p>
+<p>Let’s get it and plot it here:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">original_tree &lt;-<span class="st"> </span>rotl<span class="op">::</span><span class="kw"><a href="https://docs.ropensci.org/rotl/reference/get_study_tree.html">get_study_tree</a></span>(<span class="dt">study_id =</span> <span class="st">"pg_2827"</span>, <span class="dt">tree_id =</span> <span class="st">"tree6577"</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; Warning in build_raw_phylo(ncl, missing_edge_length): missing edge lengths are</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; not allowed in phylo class. All removed.</span></a>
+<a class="sourceLine" id="cb2-4" title="4">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/plot.phylo.html">plot.phylo</a></span>(ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/ladderize.html">ladderize</a></span>(original_tree), <span class="dt">type =</span> <span class="st">"phylogram"</span>, <span class="dt">cex =</span> <span class="fl">0.3</span>, <span class="dt">label.offset =</span> <span class="dv">1</span>, <span class="dt">edge.width =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="../data-raw/ilex-images/original-tree-1.png" width="100%" style="background-color: #DCDCDC; padding:10px; display: inline-block;"></p>
+<hr>
+<p>Now, let’s look at some properties of the tree:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/summary.phylo.html">Ntip</a></span>(original_tree)  <span class="co"># gets the number of tips</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; [1] 48</span></a>
+<a class="sourceLine" id="cb3-3" title="3">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/root.html">is.rooted</a></span>(original_tree)  <span class="co"># check that it is rooted</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; [1] TRUE</span></a>
+<a class="sourceLine" id="cb3-5" title="5">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/is.binary.tree.html">is.binary</a></span>(original_tree)  <span class="co"># check that it is fully resolved</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; [1] FALSE</span></a>
+<a class="sourceLine" id="cb3-7" title="7">datelife<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/datelife/man/phylo_has_brlen.html">phylo_has_brlen</a></span>(original_tree)  <span class="co"># checks that it has branch lengths</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
+<p>The tree has 48 tips, is rooted, has no branch lengths and is not fully resolved, as you probably already noted. Also, labels correspond to the labels reported on the original study <a href="http://dx.doi.org/10.3732/ajb.92.2.352">here</a>. Other labels are available to use as tip labels. For example, you can plot the tree using the unified taxonomic names, or the taxonomic ids.</p>
+</div>
+<div id="finding-a-tree-in-the-open-tree-of-life-phylesystem-with-at-least-one-tip-label-belonging-to-the-group-of-interest-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#finding-a-tree-in-the-open-tree-of-life-phylesystem-with-at-least-one-tip-label-belonging-to-the-group-of-interest-" class="anchor"></a>Finding a tree in the Open Tree of Life phylesystem with at least one tip label belonging to the group of interest.</h3>
+<pre><code>find_trees.py --taxon_name  "Ilex"</code></pre>
+</div>
+</div>
+<div id="ii--getting-the-underlying-alignment" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ii--getting-the-underlying-alignment" class="anchor"></a>II. Getting the underlying alignment</h2>
+<div id="from-treebase" class="section level3">
+<h3 class="hasAnchor">
+<a href="#from-treebase" class="anchor"></a>From TreeBASE</h3>
+<div id="using-physcraper-and-the-arguments--tb-and--no_est" class="section level4">
+<h4 class="hasAnchor">
+<a href="#using-physcraper-and-the-arguments--tb-and--no_est" class="anchor"></a>Using physcraper and the arguments <code>-tb</code> and <code>-no_est</code>
+</h4>
+<pre><code>physcraper_run.py -s pg_2827 -t tree6577 -tb -no_est -o data/pg_2827_tree6577</code></pre>
+</div>
+<div id="downloading-the-alignment-directly-from-a-repository" class="section level4">
+<h4 class="hasAnchor">
+<a href="#downloading-the-alignment-directly-from-a-repository" class="anchor"></a>Downloading the alignment directly from a repository</h4>
+<p>The alignments are here <a href="https://treebase.org/treebase-web/search/study/matrices.html?id=1091" class="uri">https://treebase.org/treebase-web/search/study/matrices.html?id=1091</a></p>
+<p>On a mac you can do:</p>
+<pre><code>wget "http://purl.org/phylo/treebase/phylows/matrix/TB2:M2478?format=nexus" -o data-raw/alignments/T1281-M2478.nex</code></pre>
+</div>
+</div>
+<div id="other-repos" class="section level3">
+<h3 class="hasAnchor">
+<a href="#other-repos" class="anchor"></a>Other repos</h3>
+</div>
 </div>
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
-<p>University of California, Merced cluster, MERCED (Multi-Environment Research Computer for Exploration and Discovery) supported by the National Science Foundation (Grant No. ACI-1429783).</p>
 <p>Holly Image by <a href="https://pixabay.com/es/users/WolfBlur-2503887/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Wolfgang Claussen</a> at <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Pixabay</a></p>
 </div>
   </div>
@@ -128,7 +237,9 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#acknowledgments">Acknowledgments</a></li>
+<li><a href="#i--finding-a-tree-to-update">I. Finding a tree to update</a></li>
+      <li><a href="#ii--getting-the-underlying-alignment">II. Getting the underlying alignment</a></li>
+      <li><a href="#acknowledgments">Acknowledgments</a></li>
       </ul>
 </div>
       </div>
