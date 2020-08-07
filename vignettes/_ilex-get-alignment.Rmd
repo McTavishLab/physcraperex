@@ -1,32 +1,11 @@
 ---
 title: "ilex-get-alignment"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{ilex-get-alignment}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_document
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "../data-raw/ilex-images/"
-)
-knitr::opts_knit$set(
-  global.par = TRUE
-  )
-```
 
-```{r setup, echo=FALSE}
-library(webshot)
-source("../R/plots.R")
 
-```
-
-## II. Getting the underlying alignment
-
-### TreeBASE
+### From TreeBASE
 
 #### Using physcraper and the arguments `-tb` and `-no_est`
 

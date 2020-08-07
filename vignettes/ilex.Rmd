@@ -33,6 +33,11 @@ knitr::include_graphics("images/holly-snow.jpg")
 
 ```
 
+## II. Getting the underlying alignment
+
+```{r child="_ilex-get-alignment.Rmd"}
+
+```
 
 
 ## Acknowledgments
