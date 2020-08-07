@@ -3,7 +3,14 @@ title: "ilex-physcraper-resviz"
 output: rmarkdown::html_document
 ---
 
-First, compare the original tree with the updated tree.
+### *New tips and taxa*
+
+First, we will 
+
+
+### *Changes in phylogenetic relationships*
+
+We can also compare the original tree with the updated tree.
 
 We can prune the updated tree, so it is a more straight forward comparison:
 
