@@ -2,6 +2,7 @@ pandoc: '2.5'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
+  _general-ack: _general-ack.html
   _ilex-find-a-tree: _ilex-find-a-tree.html
   _ilex-get-alignment: _ilex-get-alignment.html
   _ilex-physcraper-res: _ilex-physcraper-res.html
