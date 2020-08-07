@@ -23,7 +23,8 @@ library(webshot)
 source("../R/plots.R")
 ```
 
-```{r nature, echo=FALSE, fig.cap="*Ilex* fruits and leaves in the snow.", out.width = '75%', fig.retina= 2}
+
+```{r nature, echo=FALSE, fig.cap="*Ilex* fruits and leaves in the snow. Image by [Wolfgang Claussen](https://pixabay.com/es/users/WolfBlur-2503887/) at [Pixabay](https://pixabay.com/es/photos/holly-ilex-aquifolium-la-nieve-3012084/).", out.width = '75%', fig.retina= 2}
 knitr::include_graphics("images/holly-snow.jpg")
 ```
 
@@ -33,15 +34,44 @@ knitr::include_graphics("images/holly-snow.jpg")
 
 ```
 
+***
+
 ## II. Getting the underlying alignment
 
 ```{r child="_ilex-get-alignment.Rmd"}
 
 ```
 
+***
+
+## III. Starting a Physcraper a run
+
+```{r child="_ilex-physcraper-run.Rmd"}
+
+```
+
+***
+
+## IV. Reading the Physcraper results
+
+```{r child="_ilex-physcraper-res.Rmd"}
+
+```
+
+***
+
+## V. Visualizing the Physcraper results
+
+```{r child="_ilex-physcraper-resviz.Rmd"}
+
+```
+
+***
 
 ## Acknowledgments
 
+```{r child="_general-ack.Rmd"}
+
+```
 
 
-Holly Image by <a href="https://pixabay.com/es/users/WolfBlur-2503887/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Wolfgang Claussen</a> at <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3012084">Pixabay</a>

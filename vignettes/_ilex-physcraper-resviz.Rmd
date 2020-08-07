@@ -1,33 +1,7 @@
 ---
 title: "ilex-physcraper-resviz"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{ilex-physcraper-resviz}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_document
 ---
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "../data-raw/ilex-images/"
-)
-knitr::opts_knit$set(
-  global.par = TRUE
-  )
-```
-
-```{r setup, echo=FALSE}
-library(webshot)
-source("../R/plots.R")
-updated_tree_taxonname <- ape::read.tree(
-  file = "../data/ilex-local/outputs_T1281-M2478/updated_taxonname.tre")
-```
-
-
-
-## IV. Analyzing the physcraper results
 
 First, compare the original tree with the updated tree.
 
