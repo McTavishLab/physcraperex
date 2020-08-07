@@ -1,0 +1,9 @@
+---
+title: "general-acknowledgements"
+output: rmarkdown::html_document
+---
+
+
+Research was supported by the grant "Sustaining the Open Tree of Life", National Science Foundation ABI No. 1759838, and ABI No. 1759846.
+
+Computer time was provided by the Multi-Environment Research Computer for Exploration and Discovery (MERCED) cluster from the University of California, Merced (UCM), supported by the NSF Grant No. ACI-1429783.
