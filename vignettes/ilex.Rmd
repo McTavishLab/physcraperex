@@ -24,7 +24,7 @@ source("../R/plots.R")
 
 
 ```{r nature, echo=FALSE, fig.cap="*Ilex* fruits and leaves in the snow. Image by [Wolfgang Claussen](https://pixabay.com/es/users/WolfBlur-2503887/) at [Pixabay](https://pixabay.com/es/photos/holly-ilex-aquifolium-la-nieve-3012084/).", out.width = '75%', fig.retina= 2}
-knitr::include_graphics("images/holly-snow.jpg")
+knitr::include_graphics("ilex-snow.jpg")
 ```
 
 ## I. Finding a tree to update
@@ -72,5 +72,3 @@ knitr::include_graphics("images/holly-snow.jpg")
 ```{r child="_general-ack.Rmd"}
 
 ```
-
-
