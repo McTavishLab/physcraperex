@@ -26,7 +26,7 @@ library(ape)
 ```
 
 ```{r nature, echo=FALSE, fig.cap="Cocoa plant fruits", out.width = '75%', fig.retina= 2}
-knitr::include_graphics("images/malvaceae-plant.jpg")
+knitr::include_graphics("malvaceae-plant.jpg")
 ```
 
 ## I. Finding a tree to update
@@ -271,7 +271,7 @@ head(updated_tree_taxonname$tip.label)
 
 ```
 
-`ape::Ntip` tells us that there are almost 6k taxa in the Malvaceae OpenTree synthetic tree. 
+`ape::Ntip` tells us that there are almost 6k taxa in the Malvaceae OpenTree synthetic tree.
 
 Tip labels in both trees have taxon identifier tags that will make name matching impossible. Lets remove them:
 

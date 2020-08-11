@@ -5,7 +5,7 @@ output: rmarkdown::html_document
 
 ### *Visualizing new tips and taxa*
 
-An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and/or branches from those new tips with a vibrant color. We will use a function defined in this package to do so.
+An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and/or branches from those new tips with a highlighting color. We will use a function defined in this package to do so.
 
 The function takes as argument the paths to both the tree and the OTU info files:
 
@@ -15,12 +15,11 @@ myotuinfofile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_28
 ```
 
 
-First plot just the new tips
+And uses `phytools::plotBranchbyTrait`, so it takes all arguments from `ape::plot.phylo`, too:
 
-Then plot the tips and branches
-
-```{r plot-tips-and-branches}
-plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.3, edge.width = 1, tip_label = "taxon")
+```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
+plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
+mtext(expression(Updated~italic(Ilex) ~ plain("gene tree, after 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
 ```
 
 
