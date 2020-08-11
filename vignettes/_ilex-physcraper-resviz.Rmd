@@ -5,7 +5,7 @@ output: rmarkdown::html_document
 
 ### *Visualizing new tips and taxa*
 
-An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and/or branches from those new tips with a highlighting color. We will use a function defined in this package to do so.
+An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and branches from those new tips with a highlighting color. We will use a function defined in this package to do so.
 
 The function takes as argument the paths to both the tree and the OTU info files:
 
@@ -17,107 +17,31 @@ myotuinfofile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_28
 
 And uses `phytools::plotBranchbyTrait`, so it takes all arguments from `ape::plot.phylo`, too:
 
-```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
+```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
 plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
 mtext(expression(Updated~italic(Ilex) ~ plain("gene tree, after 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
 ```
+Let's get the summary of new tips:
 
+```{r ilex-summary, message = TRUE, eval = TRUE}
+summ <- summarize(treefile = mytreefile, otufile = myotuinfofile)
+```
 
 ### *Visualizing changes in phylogenetic relationships*
 
-We can also compare the original tree with the updated tree.
+How does the phylogenetic relationships from the updated tree compare to those from the original tree and other *Ilex* trees?
 
+We will use the conflict tool of the OpenTree to visualize this.
 
+The next figure shows in green the nodes that were resolved by the original tree:
+```{r ilex-conflict-original, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
-We can prune the updated tree, so it is a more straight forward comparison:
-
-```{r pruned-tree, echo=TRUE, results="hide"}
-original_tree_taxonname <- ape::read.tree(file = "../data/ilex-local/inputs_T1281-M2478/taxonname.tre")
-tips2keep <- match(original_tree_taxonname$tip.label,updated_tree_taxonname$tip.label)
-
-pruned_updated_tree_taxonname <- ape::drop.tip(updated_tree_taxonname, updated_tree_taxonname$tip.label[-tips2keep])
+knitr::include_graphics("ilex-tree6577-conflict-vs-taxonomy.png")
 ```
 
-```{r cotree-plot1, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 3, results="asis", out.width="90%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=18, fig.width=20}
-original_tree_taxonname$edge.length <- NULL
-original_tree_taxonname2 <- original_tree_taxonname
-original_tree_taxonname2$tip.label <- gsub("_otu.*", "", original_tree_taxonname$tip.label)
+The following figure shows in blue the nodes that align with the original tree and in green the nodes that were resolved with the updated data.
 
-pruned_updated_tree_taxonname2 <- pruned_updated_tree_taxonname
-pruned_updated_tree_taxonname2$tip.label <- gsub("_otu.*", "", pruned_updated_tree_taxonname$tip.label)
+```{r ilex-conflict-updated, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
-cotree1 <- phytools::cophylo(ape::ladderize(original_tree_taxonname2), ape::ladderize(pruned_updated_tree_taxonname2), rotate.multi =TRUE)
-
-phytools::plot.cophylo(
-  x = cotree1,
-  fsize = 2,
-  lwd = 0.4,
-  mar=c(.1,.1,8,.3),
-  ylim=c(-.1,1),
-  scale.bar=c(0, 0.5),
-  link.lwd=5,
-  link.lty="solid",
-  link.col=phytools::make.transparent("#8B008B",0.5))
-mtext(expression(bold("Original tree")), cex = 4.5, side= 3, line = 0, adj = 0.2)
-mtext(expression(bold("Pruned updated tree")), cex = 4.5, side= 3, line = 0, adj = 0.9)
-```
-
-
-But, comparing vs the whole updated tree is more interesting:
-
-```{r cotree-plot2, message = FALSE, eval = TRUE, fig.align="center", dpi = 300, fig.retina = 3, results="asis", out.width="100%",  out.extra='style="background-color: #8B008B; padding:10px; display: inline-block;"', fig.height=40, fig.width=15}
-updated_tree_taxonname2 <- updated_tree_taxonname
-updated_tree_taxonname2$tip.label <- gsub("_otu.*", "", updated_tree_taxonname$tip.label)
-# updated_tree_taxonname2$edge.length <- updated_tree_taxonname$edge.length*10 # for viz purposes! did not work
-# updated_tree_taxonname2$edge.length <- NULL # does not work either
-cotree2 <-  phytools::cophylo(
-  ape::ladderize(original_tree_taxonname2),
-  ape::ladderize(updated_tree_taxonname2)) #,
-  #rotate.multi =TRUE) # it does not work with these trees for some reason.
-phytools::plot.cophylo(
-  x = cotree2,
-  fsize = 1,
-  lwd = 0.4,
-  mar=c(.1,.1,8,.5),
-  ylim=c(-.1,1),
-  # xlim=c(-1,1),
-  scale.bar=c(0, 1),
-  # link.type="curved",
-  link.lwd=2,
-  link.lty="solid",
-  link.col=phytools::make.transparent("#8B008B",0.5))
-mtext(expression(bold("Original tree")), cex = 4, side = 3, line = 0, adj =0.2)
-mtext(expression(bold("Updated tree")), cex = 4, side = 3, line = 0, adj = 0.8)
-```
-
-### Now, compare the updated tree with the newer tree
-```{r pars4, include=FALSE}
-par(mar=c(0,0,1,0), xpd=NA)  # adjust margins for all plots after this?
-```
-```{r newer-tree, message = FALSE, eval = TRUE, dpi = 300, fig.retina = 5, fig.height = 3, out.width="100%", out.extra='style="background-color: #FF1493; padding:10px; display: inline-block;"'}
-newer_tree <- rotl::get_study_tree(study_id = "ot_1984", tree_id = "tree1")
-ape::plot.phylo(ape::ladderize(newer_tree), type = "fan", cex = 0.3, label.offset = 0.5, edge.width = 0.5)
-mtext("Newer tree - matched labels", side = 3, cex = 0.6)
-```
-
-```{r cotree-plot3, message = FALSE, eval = TRUE, fig.align="center", dpi = 300, fig.retina = 3, results="asis", out.width="100%", out.extra='style="background-color: #FF1493; padding:10px; display: inline-block;"', fig.height=40, fig.width=15}
-
-cotree3 <-  phytools::cophylo(
-  ape::ladderize(newer_tree),
-  ape::ladderize(updated_tree_taxonname2)) #,
-  #rotate.multi =TRUE) # it does not work with these trees for some reason.
-phytools::plot.cophylo(
-  x = cotree3,
-  fsize = 1,
-  lwd = 0.4,
-  mar=c(.1,.1,8,.5),
-  ylim=c(-.1,1),
-  # xlim=c(-1,1),
-  scale.bar=c(0, 1),
-  # link.type="curved",
-  link.lwd=2,
-  link.lty="solid",
-  link.col=phytools::make.transparent("#FF1493",0.5))
-mtext(expression(bold("Newer tree")), cex = 4, side = 3, line = 0, adj =0.2)
-mtext(expression(bold("Updated old tree")), cex = 4, side = 3, line = 0, adj = 0.8)
+knitr::include_graphics("ilex-tree6577-physcraper-conflict-vs-synth.png")
 ```
