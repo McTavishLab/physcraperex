@@ -33,15 +33,27 @@ How does the phylogenetic relationships from the updated tree compare to those f
 
 We will use the conflict tool of the OpenTree to visualize this.
 
-The next figure shows in green the nodes that were resolved by the original tree:
+The next figure shows in green the nodes resolved by the original tree:
 ```{r ilex-conflict-original, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
 knitr::include_graphics("ilex-tree6577-conflict-vs-taxonomy.png")
 ```
 
-The following figure shows in blue the nodes that align with the original tree and in green the nodes that were resolved with the updated data.
+The following figure shows results from the conflict analysis in the updated *Ilex* tree. The blue nodes align with phylogenetic relationships from the Gottlieb2005 tree; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict with phylogenetic relationships shown in Gottlieb2005.
 
 ```{r ilex-conflict-updated, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
 
 knitr::include_graphics("ilex-tree6577-physcraper-conflict-vs-synth.png")
+```
+
+Let's get the Yao2020 tree:
+```{r yao2020}
+yao2020 <- rotl::get_study_tree(study_id = "ot_1984", tree_id = "tree1")
+```
+
+The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align with Gottlieb2005, the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005, and the orange nodes conflict with phylogenetic relationships from Gottlieb2005.
+
+```{r ilex-conflict-yao2020, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
+
+knitr::include_graphics("ilex-tree1-physcraper-conflict-vs-synth.png")
 ```
