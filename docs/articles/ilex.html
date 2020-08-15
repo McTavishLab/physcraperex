@@ -300,11 +300,10 @@
 <p>How does the phylogenetic relationships from the updated tree compare to those from the original tree and other <em>Ilex</em> trees?</p>
 <p>We will use the conflict tool of the OpenTree to visualize this.</p>
 <p>The next figure shows in green the nodes resolved by the original tree: <img src="ilex-tree6577-conflict-vs-taxonomy.png" width="100%"></p>
-<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes align with phylogenetic relationships from the Gottlieb2005 tree; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict with phylogenetic relationships shown in Gottlieb2005.</p>
+<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict with phylogenetic relationships shown in Gottlieb2005.</p>
 <p><img src="ilex-tree6577-physcraper-conflict-vs-synth.png" width="100%"></p>
 <p>Let’s get the Yao2020 tree:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">yao2020 &lt;-<span class="st"> </span>rotl<span class="op">::</span><span class="kw"><a href="https://docs.ropensci.org/rotl/reference/get_study_tree.html">get_study_tree</a></span>(<span class="dt">study_id =</span> <span class="st">"ot_1984"</span>, <span class="dt">tree_id =</span> <span class="st">"tree1"</span>)</a></code></pre></div>
-<p>The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align with Gottlieb2005, the green nodes resolve phylogenetic relationships that were npt solved by Gottlieb2005, and the orange nodes conflict with phylogenetic relationships from Gottlieb2005.</p>
 <p><img src="ilex-tree1-physcraper-conflict-vs-synth.png" width="100%"></p>
 <hr>
 </div>
