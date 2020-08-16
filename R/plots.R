@@ -91,18 +91,19 @@ get_tip_values <- function(treefile, otufile){
   spp <- as.vector(tip_info$X.ot.ottTaxonName)
   names(spp) <- rownames(tip_info)
 
-
+  # doing a loop bc tip_info has more taxa than phytree ("not added" sequences)
   newtips = c()
   spp_labels = c()
   for (lab in phytree[["tip.label"]]) {
     status = st[names(st) == lab]
-    val = grepl("new", status, fixed = TRUE)
+    val = !grepl("original", status, fixed = TRUE)
     val = 100*as.integer(val)
     names(val) <- lab
     newtips = c(newtips, val)
     tax = spp[names(spp) == lab]
     spp_labels = c(spp_labels, tax)
   }
+  original <- spp_labels[newtips == 0]
   return(list(phytree=phytree,
               newtips=newtips,
               spp_labels=spp_labels,
