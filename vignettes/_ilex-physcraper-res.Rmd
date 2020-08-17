@@ -33,7 +33,7 @@ mtext("Updated tree - otu tags as labels", side = 3, line = -1)
 
 ### Output files
 
-A number of files is automatically written down by physcraper.
+A variety of files are automatically written down by physcraper.
 
 A nexson tree with all types of tip labels is saved in here.
 From this tree, a tree with any kind of label can be produced.
@@ -45,6 +45,11 @@ in the `output_tag` folder as `updated_taxonname.tre`.
 updated_tree_taxonname <- ape::read.tree(
   file = "../data/ilex-local/outputs_T1281-M2478/updated_taxonname.tre")
 # ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
+updated_tree_taxonname$tip.label %in% c("Helwingia_japonica_otu420083", "Helwingia_chinensis_otu420099")
+
+updated_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31")
+updated_drop <- ape::drop.tip(updated_tree, c("otu420083", "otu420099"))
+
 ```
 ```{r pars3, include=FALSE}
 par(mar=c(0,1,2,0), xpd=NA)  # adjust margins for all plots after this?

@@ -261,6 +261,9 @@ summarize <- function(treefile, otufile){
   message("And ", length(x$spp_labels[x$newtips==100]), " new tips representing ",
           length(unique(new_taxa)), " new OTT taxa added to the original tree.")
 
+  message("It is ", round(x$phytree$Nnode/ape::Ntip(x$phytree), digits = 2),
+          "% resolved.")
+
   return(xx)
 }
 

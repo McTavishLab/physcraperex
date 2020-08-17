@@ -262,11 +262,31 @@
 <div id="output-files" class="section level3">
 <h3 class="hasAnchor">
 <a href="#output-files" class="anchor"></a>Output files</h3>
-<p>A number of files is automatically written down by physcraper.</p>
+<p>A variety of files are automatically written down by physcraper.</p>
 <p>A nexson tree with all types of tip labels is saved in here. From this tree, a tree with any kind of label can be produced. By default, the updtaed tree with taxon names as tip labels is saved in the <code>output_tag</code> folder as <code>updated_taxonname.tre</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">updated_tree_taxonname &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/read.tree.html">read.tree</a></span>(</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="dt">file =</span> <span class="st">"../data/ilex-local/outputs_T1281-M2478/updated_taxonname.tre"</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co"># ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">updated_tree_taxonname<span class="op">$</span>tip.label <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Helwingia_japonica_otu420083"</span>, <span class="st">"Helwingia_chinensis_otu420099"</span>)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;   [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt;  [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;  [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;  [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;  [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;  [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;  [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt; [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt; [121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt; [145] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt; [157] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt; [169] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb11-20" data-line-number="20"><span class="co">#&gt; [181] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE</span></a>
+<a class="sourceLine" id="cb11-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb11-22" data-line-number="22">updated_tree &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/read.tree.html">read.tree</a></span>(<span class="dt">file =</span> <span class="st">"../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31"</span>)</a>
+<a class="sourceLine" id="cb11-23" data-line-number="23">updated_drop &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/drop.tip.html">drop.tip</a></span>(updated_tree, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"otu420083"</span>, <span class="st">"otu420099"</span>))</a></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/plot.phylo.html">plot.phylo</a></span>(ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/ladderize.html">ladderize</a></span>(updated_tree_taxonname), <span class="dt">type =</span> <span class="st">"fan"</span>, <span class="dt">cex =</span> <span class="fl">0.25</span>, <span class="dt">label.offset =</span> <span class="fl">0.01</span>, <span class="dt">edge.width =</span> <span class="fl">0.5</span>)</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">ape<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ape/man/add.scale.bar.html">add.scale.bar</a></span>(<span class="dt">cex =</span> <span class="fl">0.3</span>, <span class="dt">font =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">"black"</span>)</a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span>(<span class="st">"Updated tree - Taxon names as labels  "</span>, <span class="dt">side =</span> <span class="dv">3</span>, <span class="dt">line =</span> <span class="dv">-1</span>)</a></code></pre></div>
@@ -291,7 +311,14 @@
 <p><img src="ilex_files/figure-html/plot-tips-and-branches-1.png" width="100%" style="background-color: #DCDCDC; padding:10px; display: inline-block;"> Let’s get the summary of new tips:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">summ &lt;-<span class="st"> </span><span class="kw">summarize</span>(<span class="dt">treefile =</span> mytreefile, <span class="dt">otufile =</span> myotuinfofile)</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt; This updated tree has 48 original tips, representing 45 unique OTT taxa.</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; And 231 new tips representing 84 new OTT taxa added to the original tree.</span></a></code></pre></div>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; And 231 new tips representing 84 new OTT taxa added to the original tree.</span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt; It is 0.99% resolved.</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span>(updated_drop<span class="op">$</span>edge.length, <span class="dt">breaks=</span><span class="dv">1400</span>, <span class="dt">col =</span> <span class="st">"skyblue3"</span>,</a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">     <span class="dt">border =</span> <span class="st">"skyblue3"</span>, <span class="dt">xlab=</span> <span class="st">"Branch Length (substitution rate)"</span>,</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8">     <span class="dt">main =</span> <span class="st">"Updated Gottlieb2005 tree </span><span class="ch">\n</span><span class="st"> branch length frequency distribution"</span>)</a></code></pre></div>
+<p><img src="ilex_files/figure-html/ilex-summary-1.png" width="700"></p>
+<p>Even though the updated tree is 99% resolved, 321 branches are &lt;0.01 and 133 are &lt; 0.00001, effectively negligible. The longest branch is 0.1215869 and the smallest branch is 1.000000510^{-6}</p>
 </div>
 <div id="visualizing-changes-in-phylogenetic-relationships" class="section level3">
 <h3 class="hasAnchor">
@@ -300,7 +327,7 @@
 <p>How does the phylogenetic relationships from the updated tree compare to those from the original tree and other <em>Ilex</em> trees?</p>
 <p>We will use the conflict tool of the OpenTree to visualize this.</p>
 <p>The next figure shows in green the nodes resolved by the Gottlieb2005 tree and in blue the nodes that align with taxonomy: <img src="ilex-tree6577-conflict-vs-taxonomy.png" width="100%"></p>
-<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict either with phylogenetic relationships shown in Gottlieb2005 or with taxonomy.</p>
+<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes (approximately 20) resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict either with phylogenetic relationships shown in Gottlieb2005 or with taxonomy.</p>
 <p><img src="ilex-tree6577-physcraper-conflict-vs-synth.png" width="100%"></p>
 <p>Let’s get the Yao2020 tree:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">yao2020 &lt;-<span class="st"> </span>rotl<span class="op">::</span><span class="kw"><a href="https://docs.ropensci.org/rotl/reference/get_study_tree.html">get_study_tree</a></span>(<span class="dt">study_id =</span> <span class="st">"ot_1984"</span>, <span class="dt">tree_id =</span> <span class="st">"tree1"</span>)</a></code></pre></div>
@@ -314,7 +341,7 @@
 <a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt; The tree to compare contributes 68 distinct taxa that are neither in original tree</span></a>
 <a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt;   nor in the updated tree.</span></a>
 <a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; The tree to compare has 41 taxa that are in original tree.</span></a></code></pre></div>
-<p>The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align either with Gottlieb2005 or with taxonomy, the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005, and the orange nodes conflict either with phylogenetic relationships from Gottlieb2005 or with taxonomy.</p>
+<p>The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align either with Gottlieb2005 or with taxonomy, the green nodes (approximately 80) resolve phylogenetic relationships that were not solved by Gottlieb2005, and the orange nodes conflict either with phylogenetic relationships from Gottlieb2005 or with taxonomy.</p>
 <p><img src="ilex-tree1-physcraper-conflict-vs-synth.png" width="100%"></p>
 <hr>
 </div>
