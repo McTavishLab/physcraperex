@@ -288,8 +288,11 @@ compare <- function(treefile, otufile, tree){
     sort(c(setdiff(x, y), setdiff(y, x)))
   } # function from https://www.r-bloggers.com/outersect-the-opposite-of-rs-intersect-function/
 
-  shared_new <- intersect(outersect(x$original, tree$tip.label),
-                      outersect(x$original, x$spp_labels))
+  all_new <- unique(c(tree$tip.label[!tree$tip.label %in% x$original],
+                      x$spp_labels[!x$spp_labels %in% x$original]))
+
+  shared_new <- intersect(tree$tip.label[!tree$tip.label %in% x$original],
+                      x$spp_labels[!x$spp_labels %in% x$original])
 
   # test that none of the original are in shared_new
   # all(!x$original %in% shared_new)
@@ -297,18 +300,51 @@ compare <- function(treefile, otufile, tree){
   # new taxa that are only in treefile and not in tree
   not_in_tree <- x$spp_labels[!x$spp_labels %in% tree$tip.label]
   not_in_tree_new <- not_in_tree[!not_in_tree %in% x$original]
+  names(not_in_tree_new) <- NULL
 
   # new taxa that are only in tree and not in treefile
   # it will always exclude all origginal, bc they are all in x$spp_labels
   not_in_x <- tree$tip.label[!tree$tip.label %in% x$spp_labels]
 
-  # tests:
-  not_in_x %in% not_in_tree
-  not_in_x %in% x$original
-  not_in_tree %in% not_in_x
-  not_in_tree %in% x$original
+  original_in_tree <- tree$tip.label[tree$tip.label %in% x$original]
 
-  list(shared= shared_new, only_on_updated = x_only_new, only_on_tree = unique(tree_only))
+  # tests:
+  any(not_in_x %in% not_in_tree)
+  any(not_in_x %in% x$original)
+  any(not_in_tree_new %in% not_in_x)
+  any(not_in_tree_new %in% x$original)
+  any(duplicated(not_in_tree_new))
+  any(duplicated(not_in_x))
+
+  xx <- list(all_new = all_new,
+             shared_new= shared_new,
+             only_in_updated = unique(not_in_tree_new),
+             only_in_tree = not_in_x,
+             original_in_tree = unique(original_in_tree)
+           )
+
+  message("The updated tree (from treefile) and the tree to compare (from tree)
+  contribute jointly with ", length(xx$all_new),
+  " distinct taxa that are in not in the original tree.", "\n From this, ",
+  length(shared_new), " taxa are present in both trees.\n")
+
+  message("The updated tree contributes ", length(xx$only_in_updated),
+  " distinct taxa that are neither in original tree
+  nor in tree to compare.\n")
+
+  message("The tree to compare contributes ", length(xx$only_in_tree),
+  " distinct taxa that are neither in original tree
+  nor in the updated tree.\n")
+
+  message("The tree to compare has ", length(xx$original_in_tree),
+  " taxa that are in original tree.")
+
+  return(xx)
+
+
+
+
+
 }
 
 # To get a color blind safe palette:
