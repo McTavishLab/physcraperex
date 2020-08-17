@@ -290,8 +290,8 @@
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/expression.html">expression</a></span>(Updated<span class="op">~</span><span class="kw"><a href="https://rdrr.io/r/grDevices/plotmath.html">italic</a></span>(Ilex) <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/grDevices/plotmath.html">plain</a></span>(<span class="st">"gene tree, after 4 BLAST cycles"</span>)), <span class="dt">side=</span> <span class="dv">3</span>, <span class="dt">line=</span><span class="op">-</span><span class="dv">1</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
 <p><img src="ilex_files/figure-html/plot-tips-and-branches-1.png" width="100%" style="background-color: #DCDCDC; padding:10px; display: inline-block;"> Let’s get the summary of new tips:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">summ &lt;-<span class="st"> </span><span class="kw">summarize</span>(<span class="dt">treefile =</span> mytreefile, <span class="dt">otufile =</span> myotuinfofile)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt; This updated tree has 57 original tips, representing 51 unique OTT taxa.</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; And 222 new tips representing 78 new OTT taxa added to the original tree.</span></a></code></pre></div>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt; This updated tree has 48 original tips, representing 45 unique OTT taxa.</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; And 231 new tips representing 84 new OTT taxa added to the original tree.</span></a></code></pre></div>
 </div>
 <div id="visualizing-changes-in-phylogenetic-relationships" class="section level3">
 <h3 class="hasAnchor">
@@ -299,11 +299,22 @@
 </h3>
 <p>How does the phylogenetic relationships from the updated tree compare to those from the original tree and other <em>Ilex</em> trees?</p>
 <p>We will use the conflict tool of the OpenTree to visualize this.</p>
-<p>The next figure shows in green the nodes resolved by the original tree: <img src="ilex-tree6577-conflict-vs-taxonomy.png" width="100%"></p>
-<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict with phylogenetic relationships shown in Gottlieb2005.</p>
+<p>The next figure shows in green the nodes resolved by the Gottlieb2005 tree and in blue the nodes that align with taxonomy: <img src="ilex-tree6577-conflict-vs-taxonomy.png" width="100%"></p>
+<p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict either with phylogenetic relationships shown in Gottlieb2005 or with taxonomy.</p>
 <p><img src="ilex-tree6577-physcraper-conflict-vs-synth.png" width="100%"></p>
 <p>Let’s get the Yao2020 tree:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">yao2020 &lt;-<span class="st"> </span>rotl<span class="op">::</span><span class="kw"><a href="https://docs.ropensci.org/rotl/reference/get_study_tree.html">get_study_tree</a></span>(<span class="dt">study_id =</span> <span class="st">"ot_1984"</span>, <span class="dt">tree_id =</span> <span class="st">"tree1"</span>)</a></code></pre></div>
+<p>Now we can compare the taxa in the updated Gottlieb2005 and in Yao2020:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">comp &lt;-<span class="st"> </span><span class="kw">compare</span>(<span class="dt">treefile =</span> mytreefile, <span class="dt">otufile =</span> myotuinfofile, <span class="dt">tree =</span> yao2020)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="co">#&gt; The updated tree (from treefile) and the tree to compare (from tree)</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="co">#&gt;   contribute jointly with 152 distinct taxa that are in not in the original tree.</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt;  From this, 66 taxa are present in both trees.</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; The updated tree contributes 18 distinct taxa that are neither in original tree</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;   nor in tree to compare.</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt; The tree to compare contributes 68 distinct taxa that are neither in original tree</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt;   nor in the updated tree.</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; The tree to compare has 41 taxa that are in original tree.</span></a></code></pre></div>
+<p>The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align either with Gottlieb2005 or with taxonomy, the green nodes resolve phylogenetic relationships that were not solved by Gottlieb2005, and the orange nodes conflict either with phylogenetic relationships from Gottlieb2005 or with taxonomy.</p>
 <p><img src="ilex-tree1-physcraper-conflict-vs-synth.png" width="100%"></p>
 <hr>
 </div>
