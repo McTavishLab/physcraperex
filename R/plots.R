@@ -349,10 +349,10 @@ compare <- function(treefile, otufile, tree){
 
 # To get a color blind safe palette:
 # help from https://stackoverflow.com/questions/57153428/r-plot-color-combinations-that-are-colorblind-accessible
-library(rcartocolor)
-display_carto_all(colorblind_friendly = TRUE)
-rcartocolor::display_carto_pal(3, "ag_Sunset")
-mycol <- rcartocolor::carto_pal(3, "ag_Sunset")
+# library(rcartocolor)
+# display_carto_all(colorblind_friendly = TRUE)
+# rcartocolor::display_carto_pal(3, "ag_Sunset")
+# mycol <- rcartocolor::carto_pal(3, "ag_Sunset")
 
 # scales::show_col(safe_colorblind_palette)
 
