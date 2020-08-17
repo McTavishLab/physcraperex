@@ -342,12 +342,10 @@ compare <- function(treefile, otufile, tree){
   message("The tree to compare has ", length(xx$original_in_tree),
   " taxa that are in original tree.")
 
+  message("It is ", round(tree$Nnode/ape::Ntip(tree), digits = 2),
+          "% resolved.")
+
   return(xx)
-
-
-
-
-
 }
 
 # To get a color blind safe palette:

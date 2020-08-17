@@ -61,6 +61,10 @@ knitr::include_graphics("ilex-tree6577-physcraper-conflict-vs-synth.png")
 Let's get the Yao2020 tree:
 ```{r yao2020}
 yao2020 <- rotl::get_study_tree(study_id = "ot_1984", tree_id = "tree1")
+
+hist(yao2020$edge.length, col = "skyblue3", breaks = round(max(yao2020$edge.length)),
+     border = "skyblue3", xlab= "Branch Length (million years)",
+     main = "Yao2020 tree branch length \n frequency distribution")
 ```
 
 Now we can compare the taxa in the updated Gottlieb2005 and in Yao2020:
