@@ -10,7 +10,8 @@ An easy way to visualize the new tips added into the updated tree compared to th
 The function takes as argument the paths to both the tree and the OTU info files:
 
 ```{r arguments}
-mytreefile = '../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
+# mytreefile = '../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
+mytreefile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/physcraper_pg_2827tree6577.tre'
 myotuinfofile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv'
 ```
 
@@ -20,13 +21,13 @@ And uses `phytools::plotBranchbyTrait`, so it takes all arguments from `ape::plo
 ```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
 plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
 mtext(expression(Updated~italic(Ilex) ~ plain("gene tree, after 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
-
 ```
 Let's get the summary of new tips:
 
 ```{r ilex-summary, message = TRUE, eval = TRUE}
 summ <- summarize(treefile = mytreefile, otufile = myotuinfofile)
-
+```
+```{r hist, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
 hist(updated_drop$edge.length, breaks=1400, col = "skyblue3",
      border = "skyblue3", xlab= "Branch Length (substitution rate)",
      main = "Updated Gottlieb2005 tree \n branch length frequency distribution")
@@ -36,8 +37,6 @@ Even though the updated tree is 99% resolved, `r sum(updated_drop$edge.length<0.
 branches are <0.01 and `r sum(updated_drop$edge.length<0.00001)` are < 0.00001, effectively negligible.
 The longest branch is `r max(updated_drop$edge.length)` and the smallest
 branch is `r min(updated_drop$edge.length)`
-
-
 
 ### *Visualizing changes in phylogenetic relationships*
 
@@ -51,6 +50,7 @@ The next figure shows in green the nodes resolved by the Gottlieb2005 tree and i
 knitr::include_graphics("ilex-tree6577-conflict-vs-taxonomy.png")
 ```
 
+
 The following figure shows results from the conflict analysis in the updated *Ilex* tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes (approximately 20) resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict either with phylogenetic relationships shown in Gottlieb2005 or with taxonomy.
 
 ```{r ilex-conflict-updated, echo=FALSE, fig.cap="", out.width = '100%', fig.retina= 2}
@@ -61,7 +61,10 @@ knitr::include_graphics("ilex-tree6577-physcraper-conflict-vs-synth.png")
 Let's get the Yao2020 tree:
 ```{r yao2020}
 yao2020 <- rotl::get_study_tree(study_id = "ot_1984", tree_id = "tree1")
+```
 
+
+```{r hist2, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
 hist(yao2020$edge.length, col = "skyblue3", breaks = round(max(yao2020$edge.length)),
      border = "skyblue3", xlab= "Branch Length (million years)",
      main = "Yao2020 tree branch length \n frequency distribution")

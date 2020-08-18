@@ -43,12 +43,14 @@ in the `output_tag` folder as `updated_taxonname.tre`.
 
 ```{r read-updated-tree-taxonname, echo=TRUE}
 updated_tree_taxonname <- ape::read.tree(
-  file = "../data/ilex-local/outputs_T1281-M2478/updated_taxonname.tre")
+  file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/updated_taxonname.tre")
 # ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
 updated_tree_taxonname$tip.label %in% c("Helwingia_japonica_otu420083", "Helwingia_chinensis_otu420099")
 
 updated_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31")
 updated_drop <- ape::drop.tip(updated_tree, c("otu420083", "otu420099"))
+
+updated_sumtree <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/physcraper_pg_2827tree6577.tre")
 
 ```
 ```{r pars3, include=FALSE}
