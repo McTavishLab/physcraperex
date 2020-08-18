@@ -306,7 +306,7 @@ compare <- function(treefile, otufile, tree){
   names(not_in_tree_new) <- NULL
 
   # new taxa that are only in tree and not in treefile
-  # it will always exclude all origginal, bc they are all in x$spp_labels
+  # it will always exclude all original, bc they are all in x$spp_labels
   not_in_x <- tree$tip.label[!tree$tip.label %in% x$spp_labels]
 
   original_in_tree <- tree$tip.label[tree$tip.label %in% x$original]
@@ -335,12 +335,19 @@ compare <- function(treefile, otufile, tree){
   " distinct taxa that are neither in original tree
   nor in tree to compare.\n")
 
-  message("The tree to compare contributes ", length(xx$only_in_tree),
-  " distinct taxa that are neither in original tree
+  message("The tree to compare has ", sum(!tree$tip.label %in% xx$original),
+  "new tips and contributes ", length(unique(tree$tip.label[!tree$tip.label %in% xx$original])),
+  " distinct taxa from which ",
+  length(xx$only_in_tree),
+  " are neither in original tree
   nor in the updated tree.\n")
 
   message("The tree to compare has ", length(xx$original_in_tree),
   " taxa that are in original tree.")
+
+  message("And ", sum(!tree$tip.label %in% xx$original),
+          " tips different from original, representing ",
+          length(unique(xx$only_in_tree)), " new OTT taxa added to the original tree.")
 
   message("It is ", round(tree$Nnode/ape::Ntip(tree), digits = 2),
           "% resolved.")
