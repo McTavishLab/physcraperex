@@ -336,11 +336,10 @@ compare <- function(treefile, otufile, tree){
   nor in tree to compare.\n")
 
   message("The tree to compare has ", sum(!tree$tip.label %in% xx$original),
-  "new tips and contributes ", length(unique(tree$tip.label[!tree$tip.label %in% xx$original])),
-  " distinct taxa from which ",
+  " new tips and contributes ", length(unique(tree$tip.label[!tree$tip.label %in% xx$original])),
+  " distinct taxa \n from which ",
   length(xx$only_in_tree),
-  " are neither in original tree
-  nor in the updated tree.\n")
+  " are neither in original tree nor in the updated tree.\n")
 
   message("The tree to compare has ", length(xx$original_in_tree),
   " taxa that are in original tree.")
