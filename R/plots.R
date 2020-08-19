@@ -123,7 +123,13 @@ get_tip_values <- function(treefile, otufile){
 #' treefile = 'data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
 #' otufile = 'data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv'
 
-plot_branches_method1 <- function(x, tip_label = "otu", drop_outgroup = TRUE, ladderize_tree = TRUE, color = "red", ...){
+plot_branches_method1 <- function(x,
+                                  tip_label = "otu",
+                                  drop_outgroup = TRUE,
+                                  ladderize_tree = TRUE,
+                                  color = "red",
+                                  edge_length=TRUE,
+                                  ...){
 
   phytree <- x$phytree
   if (!inherits(phytree, "phylo"))
@@ -180,7 +186,13 @@ plot_branches_method1 <- function(x, tip_label = "otu", drop_outgroup = TRUE, la
 
   ape::tiplabels(text=tip_labels_final, col=tip_color, cex=cex, frame="none", adj = c(-0.1,0.5))
   if(!is.null(phytree$node.label)){
-    ape::nodelabels(text=phytree$node.label, cex=cex*0.7, frame="none", adj = c(-0.1,0.5))    
+    ape::nodelabels(text=phytree$node.label, cex=cex*0.7, frame="none", adj = c(-0.1,0.5))
+  }
+  if(edge_length){
+    zz <- round(phytree$edge.length, digits=3)
+    w <- zz>0.01
+    ape::edgelabels(text=zz[w], edge=seq(length(zz))[w],
+                    cex=cex*0.5, frame="none", col = "gray", adj = c(0.5, -0.4))
   }
 }
 #
