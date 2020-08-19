@@ -28,7 +28,7 @@ par(mar=c(0.5,1,1,0.5), xpd=NA)
 updated_tree_otus <- ape::read.tree(file = "../data/ilex-local/run_T1281-M2478/RAxML_bestTree.2020-06-29")
 ape::plot.phylo(ape::ladderize(updated_tree_otus), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
 ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
-mtext("Updated tree - otu tags as labels", side = 3, line = -1)
+mtext("Updated tree - otu tags as labels", side = 3, line = 0)
 ```
 
 ### Output files
@@ -40,17 +40,18 @@ From this tree, a tree with any kind of label can be produced.
 By default, the updtaed tree with taxon names as tip labels is saved
 in the `output_tag` folder as `updated_taxonname.tre`.
 
+Updated_sumtree and updated_tree_taxonname are the same tree: a consensus tree output of [summtrees from DendroPy](https://dendropy.org/programs/sumtrees.html).
 
 ```{r read-updated-tree-taxonname, echo=TRUE}
+updated_sumtree <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/physcraper_pg_2827tree6577.tre")
+
 updated_tree_taxonname <- ape::read.tree(
   file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/updated_taxonname.tre")
 # ape::plot.phylo(ape::ladderize(updated_tree_taxonname), cex = 0.35)
-updated_tree_taxonname$tip.label %in% c("Helwingia_japonica_otu420083", "Helwingia_chinensis_otu420099")
+# updated_tree_taxonname$tip.label %in% c("Helwingia_japonica_otu420083", "Helwingia_chinensis_otu420099")
 
-updated_tree <- ape::read.tree(file = "../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31")
-updated_drop <- ape::drop.tip(updated_tree, c("otu420083", "otu420099"))
-
-updated_sumtree <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/physcraper_pg_2827tree6577.tre")
+# updated_raxml <- ape::read.tree(file = "../data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31")
+updated_sumtree_drop <- ape::drop.tip(updated_sumtree, c("otu420083", "otu420099"))
 
 ```
 ```{r pars3, include=FALSE}
@@ -59,5 +60,5 @@ par(mar=c(0,1,2,0), xpd=NA)  # adjust margins for all plots after this?
 ```{r updated-tree-taxonname, echo=TRUE, out.width='100%', fig.height= 5, fig.retina=3, dpi=300,  out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
 ape::plot.phylo(ape::ladderize(updated_tree_taxonname), type = "fan", cex = 0.25, label.offset = 0.01, edge.width = 0.5)
 ape::add.scale.bar(cex = 0.3, font = 1, col = "black")
-mtext("Updated tree - Taxon names as labels  ", side = 3, line = -1)
+mtext("Updated tree - Taxon names as labels  ", side = 3, line = 1)
 ```

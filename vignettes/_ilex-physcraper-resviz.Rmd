@@ -2,7 +2,26 @@
 title: "ilex-physcraper-resviz"
 output: rmarkdown::html_document
 ---
-
+```{r echo = FALSE}
+updated_sumtree_drop <- ape::ladderize(updated_sumtree_drop)
+internal_edges <- updated_sumtree_drop$edge[,2] > ape::Ntip(updated_sumtree_drop)
+tip_edges <- updated_sumtree_drop$edge[,2] <= ape::Ntip(updated_sumtree_drop)
+boots <- as.numeric(updated_sumtree_drop$node.label)
+sum(boots>0.8)
+# internal edges that are very small:
+sum(updated_sumtree_drop$edge.length[internal_edges]<0.00001) # 30
+# tip edges that are very small:
+sum(updated_sumtree_drop$edge.length[tip_edges]<0.00001) # 77
+updated_sumtree_drop$Nnode
+ie <- updated_sumtree_drop$edge.length[internal_edges]
+ie <- c(1, ie) # adding a root edge length
+bb <- which(ie<0.00001 & boots>0.75)
+ie[bb]
+boots[bb]
+updated_sumtree_drop$edge.length[bb+ape::Ntip(updated_sumtree_drop)]
+ss <- sapply(bb+ape::Ntip(updated_sumtree_drop)-1, function(x)
+              phytools::getDescendants(tree=updated_sumtree_drop, node=x))
+```
 ### *Visualizing new tips and taxa*
 
 An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and branches from those new tips with a highlighting color. We will use a function defined in this package to do so.
@@ -20,23 +39,42 @@ And uses `phytools::plotBranchbyTrait`, so it takes all arguments from `ape::plo
 
 ```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
 plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
-mtext(expression(Updated~italic(Ilex) ~ plain("gene tree, after 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
+mtext(expression(Updated~italic(Ilex) ~ plain("gene tree - 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
+ape::nodelabels(node=bb+ape::Ntip(updated_sumtree_drop)-1, pch =8, cex = 0.1, col = "green")
 ```
 Let's get the summary of new tips:
 
 ```{r ilex-summary, message = TRUE, eval = TRUE}
 summ <- summarize(treefile = mytreefile, otufile = myotuinfofile)
+updated_sumtree_drop <- ape::ladderize(updated_sumtree_drop)
+internal_edges <- updated_sumtree_drop$edge[,2] > ape::Ntip(updated_sumtree_drop)
+tip_edges <- updated_sumtree_drop$edge[,2] <= ape::Ntip(updated_sumtree_drop)
+boots <- as.numeric(updated_sumtree_drop$node.label)
+sum(boots>0.8)
+# internal edges that are very small:
+sum(updated_sumtree_drop$edge.length[internal_edges]<0.00001) # 30
+# tip edges that are very small:
+sum(updated_sumtree_drop$edge.length[tip_edges]<0.00001) # 77
+updated_sumtree_drop$Nnode
+ie <- updated_sumtree_drop$edge.length[internal_edges]
+ie <- c(1, ie) # adding a root edge length
+bb <- which(ie<0.00001 & boots>0.75)
+ie[bb]
+boots[bb]
+updated_sumtree_drop$edge.length[bb+ape::Ntip(updated_sumtree_drop)]
+ss <- sapply(bb+ape::Ntip(updated_sumtree_drop)-1, function(x)
+              phytools::getDescendants(tree=updated_sumtree_drop, node=x))
 ```
 ```{r hist, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"'}
-hist(updated_drop$edge.length, breaks=1400, col = "skyblue3",
+hist(updated_sumtree_drop$edge.length, breaks=1400, col = "skyblue3",
      border = "skyblue3", xlab= "Branch Length (substitution rate)",
      main = "Updated Gottlieb2005 tree \n branch length frequency distribution")
 ```
 
-Even though the updated tree is 99% resolved, `r sum(updated_drop$edge.length<0.01)`
-branches are <0.01 and `r sum(updated_drop$edge.length<0.00001)` are < 0.00001, effectively negligible.
-The longest branch is `r max(updated_drop$edge.length)` and the smallest
-branch is `r min(updated_drop$edge.length)`
+The updated tree is `r round(updated_sumtree_drop$Nnode/ape::Ntip(updated_sumtree_drop), digits=2)*100`% resolved, with `r sum(updated_sumtree_drop$edge.length<0.01)`
+branches that are <0.01 and `r sum(updated_sumtree_drop$edge.length<0.00001)` are < 0.00001, effectively negligible.
+The longest branch is `r max(updated_sumtree_drop$edge.length)` and the smallest
+branch is `r min(updated_sumtree_drop$edge.length)`
 
 ### *Visualizing changes in phylogenetic relationships*
 
