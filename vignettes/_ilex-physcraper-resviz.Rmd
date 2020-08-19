@@ -58,6 +58,7 @@ sum(updated_sumtree_drop$edge.length[tip_edges]<0.00001) # 77
 updated_sumtree_drop$Nnode
 ie <- updated_sumtree_drop$edge.length[internal_edges]
 ie <- c(1, ie) # adding a root edge length
+sum(boots<0.75)/ape::Ntip(updated_sumtree_drop)
 bb <- which(ie<0.00001 & boots>0.75)
 ie[bb]
 boots[bb]
