@@ -179,7 +179,9 @@ plot_branches_method1 <- function(x, tip_label = "otu", drop_outgroup = TRUE, la
                               ...)
 
   ape::tiplabels(text=tip_labels_final, col=tip_color, cex=cex, frame="none", adj = c(-0.1,0.5))
-
+  if(!is.null(phytree$node.label)){
+    ape::nodelabels(text=phytree$node.label, cex=cex*0.7, frame="none", adj = c(-0.1,0.5))    
+  }
 }
 #
 # phytools::plotBranchbyTrait(tree = phytree,
