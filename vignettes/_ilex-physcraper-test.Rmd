@@ -1,0 +1,33 @@
+---
+title: "ilex-physcraper-test"
+output: rmarkdown::html_document
+---
+
+To perform a test of Physcraper functionality, we pruned ~20% of the Gottlieb et al. tree (10 tips) and the corresponding sequences from the alignment, and performed a Physcraper run to test if we would recover the dropped tips:
+
+```
+pg_2827_tree6577 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
+
+```
+```
+ape::Ntip(pg_2827_tree6577)
+```
+```
+tokeep <- sample(pg_2827_tree6577$tip.label, 38)
+
+
+```
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -o data/pg_2827_tree6577
+```
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -o data/ilex-remote
+```
+
+### Using a local BLAST database
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db local_blast_db -o data/ilex-local
+```
