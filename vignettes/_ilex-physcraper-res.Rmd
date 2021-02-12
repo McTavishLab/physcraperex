@@ -10,15 +10,15 @@ T1281-M2478
 ### Input files
 
 Physcraper rewrites input files for a couple reasons: reproducibility, taxon name matching, and taxon reconciliation.
-It writes the config file down if none was provided
+It also writes the config file down if none was provided.
 
 ### Run files
 
-Files in here are also automatically written down by physcraper.
+Files in here are also automatically written down by Physcraper.
 
 blast runs, alignments, raxml trees, bootstrap
 
-The trees are reconstructed using RAxML, with tip labels corresponding to local ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
+The trees are reconstructed using RAxML, with tip labels corresponding to Physcraper taxon ids (e.g., otu42009, otuPS1) and not taxon names (e.g., *Helwingia japonica*), nor taxonomic ids (e.g., ott or ncbi). Branch lengths are proportional to relative substitution rates.
 The RAxML tree with taxon names as tip labels is saved on the `outputs_tag` folder.
 
 ```{r pars2, include=FALSE}
@@ -33,11 +33,11 @@ mtext("Updated tree - otu tags as labels", side = 3, line = 0)
 
 ### Output files
 
-A variety of files are automatically written down by physcraper.
+A variety of files are automatically written down by Physcraper.
 
 A nexson tree with all types of tip labels is saved in here.
 From this tree, a tree with any kind of label can be produced.
-By default, the updtaed tree with taxon names as tip labels is saved
+By default, the updated tree with taxon names as tip labels is saved
 in the `output_tag` folder as `updated_taxonname.tre`.
 
 Updated_sumtree and updated_tree_taxonname are the same tree: a consensus tree output of [summtrees from DendroPy](https://dendropy.org/programs/sumtrees.html).
