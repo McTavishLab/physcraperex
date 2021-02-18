@@ -9,11 +9,16 @@ To perform a test of Physcraper functionality, we pruned ~20% of the Gottlieb et
 pg_2827_tree6577 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
 
 ```
+```{r, echo=TRUE}
+outgroup_index <- match(c("Helwingia_chinensis", "Helwingia_japonica"), pg_2827_tree6577$tip.label)
+ingroup_tip.label <- pg_2827_tree6577$tip.label[-outgroup_index]
+ingroup_ntip <- length(ingroup_tip.label)
+ingroup_ntip* 0.8
 ```
-ape::Ntip(pg_2827_tree6577)
-```
-```
-tokeep <- sample(pg_2827_tree6577$tip.label, 38)
+```{r, echo = TRUE}
+
+
+todrop <- sample(ingroup_tip.label, ingroup_ntip-37)
 
 
 ```
