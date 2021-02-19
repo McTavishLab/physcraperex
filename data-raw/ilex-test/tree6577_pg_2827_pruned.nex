@@ -1,0 +1,91 @@
+#NEXUS
+[R-package APE, Sat Feb 20 15:44:23 2021]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 39;
+	TAXLABELS
+		Helwingia_chinensis
+		Helwingia_japonica
+		Ilex_crenata
+		Ilex_dumosa_var._dumosa
+		Ilex_dumosa_var._guaranina
+		Ilex_opaca
+		Ilex_argentina_1
+		Ilex_cassine
+		Ilex_collina
+		Ilex_vomitoria
+		Ilex_rugosa
+		Ilex_integra
+		Ilex_beecheyi
+		Ilex_mertensii
+		Ilex_x_kiusiana
+		Ilex_maximowicziana
+		Ilex_cornuta
+		Ilex_buergeri
+		Ilex_latifolia
+		Ilex_liukiuensis
+		Ilex_mucronata
+		Ilex_serrata
+		Ilex_rotunda
+		Ilex_glabra
+		Ilex_mitis
+		Ilex_yunnanensis
+		Ilex_macropoda
+		Ilex_micrococca
+		Ilex_pedunculosa
+		Ilex_argentina
+		Ilex_brasiliensis
+		Ilex_theezans_1
+		Ilex_theezans
+		Ilex_brevicuspis
+		Ilex_taubertiana
+		Ilex_microdonta_1
+		Ilex_pseudobuxus
+		Ilex_microdonta
+		Ilex_paraguariensis
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Helwingia_chinensis,
+		2	Helwingia_japonica,
+		3	Ilex_crenata,
+		4	Ilex_dumosa_var._dumosa,
+		5	Ilex_dumosa_var._guaranina,
+		6	Ilex_opaca,
+		7	Ilex_argentina_1,
+		8	Ilex_cassine,
+		9	Ilex_collina,
+		10	Ilex_vomitoria,
+		11	Ilex_rugosa,
+		12	Ilex_integra,
+		13	Ilex_beecheyi,
+		14	Ilex_mertensii,
+		15	Ilex_x_kiusiana,
+		16	Ilex_maximowicziana,
+		17	Ilex_cornuta,
+		18	Ilex_buergeri,
+		19	Ilex_latifolia,
+		20	Ilex_liukiuensis,
+		21	Ilex_mucronata,
+		22	Ilex_serrata,
+		23	Ilex_rotunda,
+		24	Ilex_glabra,
+		25	Ilex_mitis,
+		26	Ilex_yunnanensis,
+		27	Ilex_macropoda,
+		28	Ilex_micrococca,
+		29	Ilex_pedunculosa,
+		30	Ilex_argentina,
+		31	Ilex_brasiliensis,
+		32	Ilex_theezans_1,
+		33	Ilex_theezans,
+		34	Ilex_brevicuspis,
+		35	Ilex_taubertiana,
+		36	Ilex_microdonta_1,
+		37	Ilex_pseudobuxus,
+		38	Ilex_microdonta,
+		39	Ilex_paraguariensis
+	;
+	TREE * UNTITLED = [&R] ((1,2),(39,((3,(4,5)),((6,(7,8)),(9,10),(11,((15,(12,(13,14))),((16,17),(18,19,20)))),21,(24,(22,23),(26,25,(27,28),(29,(30,((31,32),33,((34,35),(38,(36,37))))))))))));
+END;
