@@ -3,36 +3,64 @@ title: "ilex-physcraper-test"
 output: rmarkdown::html_document
 ---
 
-To perform a test of Physcraper functionality, we pruned ~20% of the Gottlieb et al. tree (10 tips) and the corresponding sequences from the alignment, and performed a Physcraper run to test if we would recover the dropped tips:
+To perform a test of Physcraper functionality, we pruned the Gottlieb et al. tree down ~20%, excluding the outgroups, corresponding to approximately 9 tips. We then performed a Physcraper run to test if we would recover the dropped tips.
+The input alignment will be automatically trimmed y Physcraper
+
+We performed the following steps:
+
+1. [Pruning the tree](#pruning)
+1. Running Physcraper
+1. Checking that the priginal alignment was appropriately trimmed
+1. Analyzing Physcraper results
+
+# Pruning the Gottlieb et al. tree
+
+## Getting the tree from the Open Tree of Life database
+
+```{r, echo = TRUE}
+tree6577_pg_2827 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
 
 ```
-pg_2827_tree6577 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
 
-```
+## Identifying the outgroups
 ```{r, echo=TRUE}
-outgroup_index <- match(c("Helwingia_chinensis", "Helwingia_japonica"), pg_2827_tree6577$tip.label)
-ingroup_tip.label <- pg_2827_tree6577$tip.label[-outgroup_index]
+outgroup_index <- match(c("Helwingia_chinensis", "Helwingia_japonica"), tree6577_pg_2827$tip.label)
+```
+
+
+## Getting the ingroup tip labels
+```{r, echo=TRUE}
+ingroup_tip.label <- tree6577_pg_2827$tip.label[-outgroup_index]
+```
+
+
+## Calculating the number of tips to keep
+```{r, echo=TRUE}
 ingroup_ntip <- length(ingroup_tip.label)
 ingroup_ntip* 0.8
 ```
+
+## Choosing at random the ingroup tips to drop
 ```{r, echo = TRUE}
 
-
+set.seed(19022021)
 todrop <- sample(ingroup_tip.label, ingroup_ntip-37)
-
-
+todrop
 ```
 
-```
-physcraper_run.py -s pg_2827 -t tree6577 -o data/pg_2827_tree6577
+## Dropping the tips from the tree
+
+```{r, echo=TRUE}
+pruned_tree <- ape::drop.tip(phy = tree6577_pg_2827, tip = todrop)
+pruned_tree
 ```
 
-```
-physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -o data/ilex-remote
+## Saving the tree as newick
+
+```{r, echo = TRUE}
+ape::write.tree(phy = pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.tre")
+ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.nex")
 ```
 
-### Using a local BLAST database
 
-```
-physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db local_blast_db -o data/ilex-local
-```
+
