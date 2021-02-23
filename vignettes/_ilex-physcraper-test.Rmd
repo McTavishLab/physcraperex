@@ -9,6 +9,7 @@ The input alignment will be automatically trimmed y Physcraper
 We performed the following steps:
 
 1. [Pruning the tree](#pruning)
+1. [Matching the names](#matching)
 1. Running Physcraper
 1. Checking that the priginal alignment was appropriately trimmed
 1. Analyzing Physcraper results
@@ -55,12 +56,36 @@ pruned_tree <- ape::drop.tip(phy = tree6577_pg_2827, tip = todrop)
 pruned_tree
 ```
 
-## Saving the tree as newick
+## Saving the tree as newick and nexus
 
 ```{r, echo = TRUE}
 ape::write.tree(phy = pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.tre")
 ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.nex")
 ```
 
+# Matching the tree tip labels
 
+## First generate a simple text file containing one tip label per line
 
+```{r, echo = TRUE}
+
+write(paste(pruned_tree$tip.label, collapse = "\n"), file = "../data-raw/ilex-test/pruned_tree_tip_labels.txt")
+```
+# Running the Physcraper test
+
+## Locally
+
+```
+physcraper_run.py -tf ../data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a data-raw/alignments/T1281-M2478.nex -as nexus -ti ../data-raw/ilex-test/pruned_tree_tip_labels_mapped.main.json -db local_blast_db -o data/ilex-test-local
+```
+
+## Remotely
+```
+physcraper_run.py -tf ../data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a data-raw/alignments/T1281-M2478.nex -as nexus -ti ../data-raw/ilex-test/pruned_tree_tip_labels_mapped.main.json -o data/ilex-test-remote
+```
+
+### Using a local BLAST database
+
+```
+physcraper_run.py -s pg_2827 -t tree6577 -a data-raw/alignments/T1281-M2478.nex -as nexus -db local_blast_db -o data/ilex-local
+```
