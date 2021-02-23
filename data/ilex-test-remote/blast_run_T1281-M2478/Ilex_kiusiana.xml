@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastn</BlastOutput_program>
+  <BlastOutput_version>BLASTN 2.11.0+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>nt</BlastOutput_db>
+  <BlastOutput_query-ID>Query_34445</BlastOutput_query-ID>
+  <BlastOutput_query-def>No definition line</BlastOutput_query-def>
+  <BlastOutput_query-len>583</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_sc-match>2</Parameters_sc-match>
+      <Parameters_sc-mismatch>-3</Parameters_sc-mismatch>
+      <Parameters_gap-open>5</Parameters_gap-open>
+      <Parameters_gap-extend>2</Parameters_gap-extend>
+      <Parameters_filter>L;m;</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_34445</Iteration_query-ID>
+  <Iteration_query-def>No definition line</Iteration_query-def>
+  <Iteration_query-len>583</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>gi|1524649819|gb|MK240426.1|</Hit_id>
+  <Hit_def>Ilex x wandoensis isolate BM2 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and large subunit ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>MK240426</Hit_accession>
+  <Hit_len>698</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>759.603</Hsp_bit-score>
+      <Hsp_score>841</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>31</Hsp_hit-from>
+      <Hsp_hit-to>655</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>538</Hsp_identity>
+      <Hsp_positive>538</Hsp_positive>
+      <Hsp_gaps>50</Hsp_gaps>
+      <Hsp_align-len>629</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCKGCGAACTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| |||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>gi|1206483717|gb|KY682252.1|</Hit_id>
+  <Hit_def>Ilex integra isolate IIM 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and 28S ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>KY682252</Hit_accession>
+  <Hit_len>747</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>759.603</Hsp_bit-score>
+      <Hsp_score>841</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>65</Hsp_hit-from>
+      <Hsp_hit-to>689</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>538</Hsp_identity>
+      <Hsp_positive>538</Hsp_positive>
+      <Hsp_gaps>50</Hsp_gaps>
+      <Hsp_align-len>629</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCTGCGAACTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| |||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>gi|1206483716|gb|KY682251.1|</Hit_id>
+  <Hit_def>Ilex integra isolate IIF 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and 28S ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>KY682251</Hit_accession>
+  <Hit_len>747</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>759.603</Hsp_bit-score>
+      <Hsp_score>841</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>65</Hsp_hit-from>
+      <Hsp_hit-to>689</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>538</Hsp_identity>
+      <Hsp_positive>538</Hsp_positive>
+      <Hsp_gaps>50</Hsp_gaps>
+      <Hsp_align-len>629</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCTGCGAACTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| |||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>gi|187370697|gb|EU647663.1|</Hit_id>
+  <Hit_def>Ilex integra isolate 3 internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene, complete sequence; and internal transcribed spacer 2, partial sequence</Hit_def>
+  <Hit_accession>EU647663</Hit_accession>
+  <Hit_len>634</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>757.8</Hsp_bit-score>
+      <Hsp_score>839</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>582</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>634</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>537</Hsp_identity>
+      <Hsp_positive>537</Hsp_positive>
+      <Hsp_gaps>50</Hsp_gaps>
+      <Hsp_align-len>628</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAAC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCTGCGAACTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGAC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| |||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| ||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>gi|1524649809|gb|MK240416.1|</Hit_id>
+  <Hit_def>Ilex x wandoensis clone isolate BM7-3 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and large subunit ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>MK240416</Hit_accession>
+  <Hit_len>703</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>752.389</Hsp_bit-score>
+      <Hsp_score>833</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>43</Hsp_hit-from>
+      <Hsp_hit-to>665</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>537</Hsp_identity>
+      <Hsp_positive>537</Hsp_positive>
+      <Hsp_gaps>52</Hsp_gaps>
+      <Hsp_align-len>629</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCTGCGAACTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTTGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCCTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCC--AAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCCCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| ||||||||||||||||||||||||| |||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| |||||||||||||||| |||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| || ||||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>gi|318067863|dbj|AB607211.1|</Hit_id>
+  <Hit_def>Ilex integra genes for ITS1, 5.8S rRNA, ITS2, partial and complete sequence, sex: female &gt;gi|318067864|dbj|AB607212.1| Ilex integra genes for ITS1, 5.8S rRNA, ITS2, partial and complete sequence, sex: male</Hit_def>
+  <Hit_accession>AB607211</Hit_accession>
+  <Hit_len>663</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>745.176</Hsp_bit-score>
+      <Hsp_score>825</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>582</Hsp_query-to>
+      <Hsp_hit-from>41</Hsp_hit-from>
+      <Hsp_hit-to>663</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>535</Hsp_identity>
+      <Hsp_positive>535</Hsp_positive>
+      <Hsp_gaps>51</Hsp_gaps>
+      <Hsp_align-len>628</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAAC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCTGCGA-CTCGTTAAAATATATGCCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCCCACCACACTCCCCCGGGCCGCTCGGGATTTGGCTTGCGTTCCCCTTGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGAC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| |||| || ||| |||||| | |||||||||| || |||||||||||||||||||||| ||||||||||| |||| ||||||||||||||||||||||||| |||||||||||| |||||||||||||||||||||||||||| | |||||||||||||||||||||||||||||||||||||||||||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| ||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>gi|1732396271|gb|MK033996.1|</Hit_id>
+  <Hit_def>Ilex tetramera isolate Y153 18S small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and 26S large subunit ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>MK033996</Hit_accession>
+  <Hit_len>661</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>739.766</Hsp_bit-score>
+      <Hsp_score>819</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>637</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>538</Hsp_identity>
+      <Hsp_positive>538</Hsp_positive>
+      <Hsp_gaps>53</Hsp_gaps>
+      <Hsp_align-len>630</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGTC-CTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAG-GGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAATATATGGCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCC-AACGCACTCCCCCAGCCCCCTCGGGATTTGGCTTGCGTTCCCCTTGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCACAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGG-CCCAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAKCGAGCTCTGACCGCGACCCTGTGC-GCCTTCC-TCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| |  ||||||||| || |||||||||||||||||||| ||| ||||||||||| |||||||||||||||||||||||||||| |||||||||||| |||||||||||||||||||||||||||| | ||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||  ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||| ||| |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||| ||| ||| ||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>gi|1732396270|gb|MK033995.1|</Hit_id>
+  <Hit_def>Ilex tetramera isolate Y151 18S small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and 26S large subunit ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>MK033995</Hit_accession>
+  <Hit_len>661</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>739.766</Hsp_bit-score>
+      <Hsp_score>819</Hsp_score>
+      <Hsp_evalue>0</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>14</Hsp_hit-from>
+      <Hsp_hit-to>637</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>538</Hsp_identity>
+      <Hsp_positive>538</Hsp_positive>
+      <Hsp_gaps>53</Hsp_gaps>
+      <Hsp_align-len>630</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGTC-CTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAG-GGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG---------------------------------------------CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTCGTTAAAATATATGGCTGGGGGTCTGAGAAGGGGTGCGCGAGCCCCCC-AACGCACTCCCCCAGCCCCCTCGGGATTTGGCTTGCGTTCCCCTTGCGGGGACTCGGCCAAGCTCCCGACAACGAACCCCGGCGCTGTCTGCGCCAAGGAACCACAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGGATATCTCGGCTCTCGCATCGATGAAGAACGTAGCGAAATGCGATACTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTCGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGG-CCCAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGC-GCCTTCC-TCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| |  ||||||||| || |||||||||||||||||||| ||| ||||||||||| |||||||||||||||||||||||||||| |||||||||||| |||||||||||||||||||||||||||| | ||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||  ||||||||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||| ||| |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||| ||| ||| ||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>gi|1059792986|gb|AH007152.2|</Hit_id>
+  <Hit_def>Ilex x kiusiana 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, complete sequence; 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2, complete sequence; and 26S ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>AH007152</Hit_accession>
+  <Hit_len>779</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>574.758</Hsp_bit-score>
+      <Hsp_score>636</Hsp_score>
+      <Hsp_evalue>6.08706e-164</Hsp_evalue>
+      <Hsp_query-from>263</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>418</Hsp_hit-from>
+      <Hsp_hit-to>738</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>321</Hsp_identity>
+      <Hsp_positive>321</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>321</Hsp_align-len>
+      <Hsp_qseq>CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>468.359</Hsp_bit-score>
+      <Hsp_score>518</Hsp_score>
+      <Hsp_evalue>6.51067e-132</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>262</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>303</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>262</Hsp_identity>
+      <Hsp_positive>262</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>262</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGTCCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGTCCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGGATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>gi|1059792982|gb|AH007148.2|</Hit_id>
+  <Hit_def>Ilex integra 18S ribosomal RNA gene, partial sequence; internal transcribed spacer 1, complete sequence; 5.8S ribosomal RNA gene, partial sequence; internal transcribed spacer 2, complete sequence; and 26S ribosomal RNA gene, partial sequence</Hit_def>
+  <Hit_accession>AH007148</Hit_accession>
+  <Hit_len>763</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>436.8</Hsp_bit-score>
+      <Hsp_score>483</Hsp_score>
+      <Hsp_evalue>3.84815e-122</Hsp_evalue>
+      <Hsp_query-from>263</Hsp_query-from>
+      <Hsp_query-to>583</Hsp_query-to>
+      <Hsp_hit-from>419</Hsp_hit-from>
+      <Hsp_hit-to>735</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>290</Hsp_identity>
+      <Hsp_positive>290</Hsp_positive>
+      <Hsp_gaps>4</Hsp_gaps>
+      <Hsp_align-len>321</Hsp_align-len>
+      <Hsp_qseq>CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCTAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGATTSAGGGGCGGAAATTGGCCTCCCGTACATCTGAACGTGCGCGGTTGGCCCCGAAAAAATGRGTTCTTGAATAAGGACGTCACGACAAGTGTTGGTTGAAATACGCCTTGAGTCATGTCTTGAGGCACCTAGTCTGTAACGAGCTCTGACCGCAACTCTGTGCAGCCATCCTTCATGGATCGTGCTTCAACC</Hsp_qseq>
+      <Hsp_hseq>CTTGGTGTGAATTGCAGAATCCCGTGAACCATCGAGTTTTTGAACGCAAGTTGCGCCCAAAGCCATTAGGCCAAGGGCACGTCTGCCTGGGCGTCACGCATCACGTCGCCCCCAACCCCAATTGCGGGAGTTGGGGGCGGAAATTGGCCTCCCGTCCA--CGAACGTGCGCGGTTGGCCCAAAAAAAATGAGTTCTTGACGATGGACGTCACGACAAGTGGTGGTTGAAAGACCTCTTGCGTCATGTCGTGAGGCACCAAGTCTGTAGCGAGCTCTGACCGCGACCCTGTGCA--CCTTCTTCACGGATGGTGCTTCGACC</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |  |||||||||||||||||||||| ||   |||||||||||||||||||  |||||||| ||||||||  | ||||||||||||||||| ||||||||| ||  |||| |||||||| ||||||||| |||||||| |||||||||||||| || |||||||  | | ||||| |||| ||||||| |||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>342.123</Hsp_bit-score>
+      <Hsp_score>378</Hsp_score>
+      <Hsp_evalue>6.52218e-94</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>262</Hsp_query-to>
+      <Hsp_hit-from>42</Hsp_hit-from>
+      <Hsp_hit-to>304</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>236</Hsp_identity>
+      <Hsp_positive>236</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>264</Hsp_align-len>
+      <Hsp_qseq>CAAAGTAGACCCYGCGAACTYGTTTAAATATGT-CCTGGGGGTCAGACAAGGGGTGCGCGAGCCCCCCCAACACACTCCCCCAGGCCCCTCGGG-ATTTGGCTTGCGTTCCCCTAGCGGGGACTCGGTCAAGCTCCCGACAACGAACCCCGGCGCTATTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATGTCCCGTTCGCGGTGTGCAGGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG</Hsp_qseq>
+      <Hsp_hseq>CAAAGTAGACCCGGCGAACTTGTTAAAATATATGCCTGGGGGTTTGAGAAGGGGTGTGCGAGCCCCCC-AACAAAATTCCCCAGCCCCCTTGGGGATTTGGCTTGCGTTCCCCTAGGGGGGATTGGGCCAAGTTCCGGAAAACGAACCCGGGCGCTTTTTGCGCCAAGGAACCATAACTGAAGGGCTGGCCTCCCGATTTCCCGTCCGCGGTGTGCACGGGAGGCATTTGCATCTTTTGAATCTAAAACGACTCTCGGCAACGG</Hsp_hseq>
+      <Hsp_midline>|||||||||||| ||||||| ||| |||||| | |||||||||  || |||||||| ||||||||||| |||| | | |||||| ||||| ||| ||||||||||||||||||||| ||||| | || |||| ||| || ||||||||| |||||| ||||||||||||||||||||||||||||||||||||||||| |||||| ||||||||||| ||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>3283</Statistics_db-num>
+      <Statistics_db-len>11413887</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>0.41</Statistics_kappa>
+      <Statistics_lambda>0.625</Statistics_lambda>
+      <Statistics_entropy>0.78</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>

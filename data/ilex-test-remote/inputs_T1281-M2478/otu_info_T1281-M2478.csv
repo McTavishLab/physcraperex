@@ -1,0 +1,55 @@
+otu_id	^ot:ottTaxonName	^ot:ottId	^ncbi:taxon	^ncbi:accession	^physcraper:last_blasted	^physcraper:ingroup	^physcraper:status	^ot:originalLabel	^ncbi:title	^physcraper:in_current_aln
+otu1	Helwingia chinensis	468906	146502	-	None	unknown	original	Helwingia_chinensis	-	True
+otu2	Helwingia japonica	1030991	16915	-	None	unknown	original	Helwingia_japonica	-	True
+otu3	Ilex crenata	671004	4296	-	None	unknown	original	Ilex_crenata	-	True
+otu4	Ilex dumosa var. dumosa	967819	224367	-	None	unknown	deleted from tree in reconciliation	Ilex_dumosa_var._dumosa	-	False
+otu5	Ilex dumosa var. guaranina	967823	224369	-	None	unknown	deleted from tree in reconciliation	Ilex_dumosa_var._guaranina	-	False
+otu6	Ilex opaca	660052	101729	-	None	unknown	original	Ilex_opaca	-	True
+otu7	Ilex argentina	302247	185491	-	None	unknown	deleted from tree in reconciliation	Ilex_argentina_1	-	False
+otu8	Ilex cassine	468907	146503	-	None	unknown	original	Ilex_cassine	-	True
+otu9	Ilex collina	468913	146504	-	None	unknown	original	Ilex_collina	-	True
+otu10	Ilex vomitoria	727576	4297	-	None	unknown	original	Ilex_vomitoria	-	True
+otu11	Ilex rugosa	1015271	53212	-	None	unknown	original	Ilex_rugosa	-	True
+otu12	Ilex integra	751453	53204	-	None	unknown	original	Ilex_integra	-	True
+otu13	Ilex beecheyi	796111	58300	-	None	unknown	original	Ilex_beecheyi	-	True
+otu14	Ilex mertensii	796109	58301	-	None	unknown	original	Ilex_mertensii	-	True
+otu15	Ilex x kiusiana	5144136	58298	-	None	unknown	deleted from tree in reconciliation	Ilex_x_kiusiana	-	False
+otu16	Ilex maximowicziana	89476	58292	-	None	unknown	original	Ilex_maximowicziana	-	True
+otu17	Ilex cornuta	468915	146505	-	None	unknown	original	Ilex_cornuta	-	True
+otu18	Ilex buergeri	89480	58297	-	None	unknown	original	Ilex_buergeri	-	True
+otu19	Ilex latifolia	676217	53205	-	None	unknown	original	Ilex_latifolia	-	True
+otu20	Ilex liukiuensis	796105	58303	-	None	unknown	original	Ilex_liukiuensis	-	True
+otu21	Ilex mucronata	224625	185535	-	None	unknown	original	Ilex_mucronata	-	True
+otu22	Ilex serrata	796121	58304	-	None	unknown	original	Ilex_serrata	-	True
+otu23	Ilex rotunda	1015268	53211	-	None	unknown	original	Ilex_rotunda	-	True
+otu24	Ilex glabra	458761	109210	-	None	unknown	original	Ilex_glabra	-	True
+otu25	Ilex mitis	676179	53207	-	None	unknown	original	Ilex_mitis	-	True
+otu26	Ilex yunnanensis	1015274	53213	-	None	unknown	original	Ilex_yunnanensis	-	True
+otu27	Ilex macropoda	796117	58305	-	None	unknown	original	Ilex_macropoda	-	True
+otu28	Ilex micrococca	676195	53206	-	None	unknown	original	Ilex_micrococca	-	True
+otu29	Ilex pedunculosa	751461	53208	-	None	unknown	original	Ilex_pedunculosa	-	True
+otu30	Ilex argentina	302247	185491	-	None	unknown	original	Ilex_argentina	-	True
+otu31	Ilex brasiliensis	432622	53198	-	None	unknown	original	Ilex_brasiliensis	-	True
+otu32	Ilex theizans	68451	185555	-	None	unknown	deleted from tree in reconciliation	Ilex_theezans_1	-	False
+otu33	Ilex theizans	68451	185555	-	None	unknown	original	Ilex_theezans	-	True
+otu34	Ilex brevicuspis	432620	53199	-	None	unknown	original	Ilex_brevicuspis	-	True
+otu35	Ilex taubertiana	967825	224368	-	None	unknown	original	Ilex_taubertiana	-	True
+otu36	Ilex microdonta	222016	185533	-	None	unknown	deleted from tree in reconciliation	Ilex_microdonta_1	-	False
+otu37	Ilex pseudobuxus	1015266	53210	-	None	unknown	original	Ilex_pseudobuxus	-	True
+otu38	Ilex microdonta	222016	185533	-	None	unknown	original	Ilex_microdonta	-	True
+otu39	Ilex paraguariensis	589430	185542	-	None	unknown	original	Ilex_paraguariensis	-	True
+Ilex_anomala	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_anomala	-	True
+Ilex_dumosa_dumosa	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_dumosa_dumosa	-	True
+Ilex_kiusiana	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_kiusiana	-	True
+Ilex_microdonta_Gbk	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_microdonta_Gbk	-	True
+Ilex_theezans_Gbk	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_theezans_Gbk	-	True
+Ilex_dumosa_guaranina	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_dumosa_guaranina	-	True
+Ilex_argentina_Gbk	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_argentina_Gbk	-	True
+Ilex_canariensis	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_canariensis	-	True
+Ilex_amelanchier	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_amelanchier	-	True
+Ilex_decidua	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_decidua	-	True
+Ilex_warburgii	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_warburgii	-	True
+Ilex_percoriacea	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_percoriacea	-	True
+Ilex_integerrima	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_integerrima	-	True
+Ilex_mutchagara	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_mutchagara	-	True
+Ilex_dimorphophylla	-	-	-	-	None	unknown	in original alignment but not tree, taxon info unknown	Ilex_dimorphophylla	-	True
