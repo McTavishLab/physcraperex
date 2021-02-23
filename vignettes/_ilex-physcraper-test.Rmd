@@ -76,12 +76,12 @@ write(paste(pruned_tree$tip.label, collapse = "\n"), file = "../data-raw/ilex-te
 ## Locally
 
 ```
-physcraper_run.py -tf ../data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a data-raw/alignments/T1281-M2478.nex -as nexus -ti ../data-raw/ilex-test/pruned_tree_tip_labels_mapped.main.json -db local_blast_db -o data/ilex-test-local
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
 ```
 
 ## Remotely
 ```
-physcraper_run.py -tf ../data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a data-raw/alignments/T1281-M2478.nex -as nexus -ti ../data-raw/ilex-test/pruned_tree_tip_labels_mapped.main.json -o data/ilex-test-remote
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -o physcraperex/data/ilex-test-remote
 ```
 
 ### Using a local BLAST database
