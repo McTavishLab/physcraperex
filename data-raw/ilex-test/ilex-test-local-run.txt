@@ -1,0 +1,455 @@
+(physcraper_env) [lsanchezreyes2@mrcd101 shared]$ physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db /branchinecta/shared/local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
+No config file, using defaults
+Your taxonomy databases from NCBI were dowloaded 263 days ago.                     Please update nodes and names.dmp,                     as described in 'https://physcraper.readthedocs.io/en/latest/install.html#local-databases'
+Configuration Settings
+[blast]
+Entrez.email = None
+e_value_thresh = 1e-05
+hitlist_size = 10
+location = local
+localblastdb = /branchinecta/shared/local_blast_db
+num_threads = 8
+delay = 90
+[physcraper]
+spp_threshold = 5
+min_length = 0.8
+max_length = 1.2
+
+get_mrca_ott
+NAME RECONCILIATION Some of the taxa in the tree are not in the alignment or vice versa and will be pruned. Missing "Ilex_amelanchier", "Ilex_dumosa_dumosa", "Ilex_mutchagara", "Ilex_decidua", "Ilex_dumosa_var._guaranina", "Ilex_x_kiusiana", "Ilex_kiusiana", "Ilex_integerrima", "Ilex_theezans_1", "Ilex_dumosa_var._dumosa"...
+restricting blast search                         to taxon ncbi:91883 (ott:596120; Aquifoliales)
+Tree file written to /branchinecta/shared/physcraperex/data/ilex-test-local/inputs_T1281-M2478/taxonname.tre
+Blasting 'otu1'
+Blasting 'otu2'
+Blasting 'Ilex_amelanchier'
+Blasting 'Ilex_anomala'
+Blasting 'otu30'
+Blasting 'Ilex_argentina_Gbk'
+Blasting 'otu13'
+Blasting 'otu31'
+Blasting 'otu34'
+Blasting 'otu18'
+Blasting 'Ilex_canariensis'
+Blasting 'otu8'
+Blasting 'otu9'
+Blasting 'otu17'
+Blasting 'otu3'
+Blasting 'Ilex_decidua'
+Blasting 'Ilex_dimorphophylla'
+Blasting 'Ilex_dumosa_dumosa'
+Blasting 'Ilex_dumosa_guaranina'
+Blasting 'otu24'
+Blasting 'Ilex_integerrima'
+Blasting 'otu12'
+Blasting 'Ilex_kiusiana'
+Blasting 'otu19'
+Blasting 'otu20'
+Blasting 'otu27'
+Blasting 'otu16'
+Blasting 'otu14'
+Blasting 'otu28'
+Blasting 'otu38'
+Blasting 'Ilex_microdonta_Gbk'
+Blasting 'otu25'
+Blasting 'otu21'
+Blasting 'Ilex_mutchagara'
+Blasting 'otu6'
+Blasting 'otu39'
+Blasting 'otu29'
+Blasting 'Ilex_percoriacea'
+Blasting 'otu37'
+Blasting 'otu23'
+Blasting 'otu11'
+Blasting 'otu22'
+Blasting 'otu35'
+Blasting 'otu33'
+Blasting 'Ilex_theezans_Gbk'
+Blasting 'otu10'
+Blasting 'Ilex_warburgii'
+Blasting 'otu26'
+reading blast data
+Reading in local NCBI taxonomy information
+/home/lsanchezreyes2/.conda/envs/physcraper_env/lib/python3.6/site-packages/Bio/Entrez/__init__.py:631: UserWarning:
+Email address is not specified.
+
+To make use of NCBI's E-utilities, NCBI requires you to specify your
+email address with each request.  As an example, if your email address
+is A.N.Other@example.com, you can specify it as follows:
+   from Bio import Entrez
+   Entrez.email = 'A.N.Other@example.com'
+In case of excessive usage of the E-utilities, NCBI will attempt to contact
+a user at the email address provided before blocking access to the
+E-utilities.
+  UserWarning,
+34 taxa in orginal alignment;                           121 taxa in updated alignemnt,                           keeping max 5 seq per taxon
+**** Found 143 new sequences after                           removing identical seqs****
+/home/lsanchezreyes2/.conda/envs/physcraper_env/bin/raxmlHPC
+
+RAxML can't, parse the alignment file as phylip file
+it will now try to parse it as FASTA file
+
+IMPORTANT WARNING: Alignment column 524 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 526 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 529 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 542 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 543 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 544 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 545 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 546 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 547 contains only undetermined values which will be treated as missing data
+
+
+IMPORTANT WARNING: Sequences otuPS51 and otuPS52 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otuPS8 and otuPS9 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otuPS149 and otuPS150 are exactly identical
+
+IMPORTANT WARNING
+Found 3 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+
+IMPORTANT WARNING
+Found 9 columns that contain only undetermined values which will be treated as missing data.
+Normally these columns should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with
+sequence duplicates and undetermined columns removed is printed to file /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/physcraper_T1281-M2478.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs"
+
+
+Alignment has 9 completely undetermined sites that will be automatically removed from the input data
+
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 656 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 29.38%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 user-specified trees
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 656
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -m GTRCAT -s /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/physcraper_T1281-M2478.fas -t /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/random_resolve.tre -p 1 -n 2021-02-22
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.213 0.294 0.287 0.206
+
+You provided an incomplete starting tree 33 alignmnet has 191 taxa
+Inference[0]: Time 46.324741 CAT-based likelihood -10040.039664, best rearrangement setting 10
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -11045.384719 tree written to file /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_result.2021-02-22
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -11045.384719 ....
+
+Final GAMMA-based Score of best tree -11037.363252
+
+Program execution info written to /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_info.2021-02-22
+Best-scoring ML tree written to: /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_bestTree.2021-02-22
+
+Overall execution time: 107.638244 secs or 0.029900 hours or 0.001246 days
+
+/home/lsanchezreyes2/.conda/envs/physcraper_env/bin/raxmlHPC
+Option -T does not have any effect with the sequential or parallel MPI version.
+It is used to specify the number of threads for the Pthreads-based parallelization
+
+RAxML can't, parse the alignment file as phylip file
+it will now try to parse it as FASTA file
+
+IMPORTANT WARNING: Alignment column 524 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 526 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 529 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 542 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 543 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 544 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 545 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 546 contains only undetermined values which will be treated as missing data
+IMPORTANT WARNING: Alignment column 547 contains only undetermined values which will be treated as missing data
+
+
+IMPORTANT WARNING: Sequences otuPS51 and otuPS52 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otuPS8 and otuPS9 are exactly identical
+
+
+IMPORTANT WARNING: Sequences otuPS149 and otuPS150 are exactly identical
+
+IMPORTANT WARNING
+Found 3 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+
+IMPORTANT WARNING
+Found 9 columns that contain only undetermined values which will be treated as missing data.
+Normally these columns should be excluded from the analysis.
+
+An alignment file with undetermined columns and sequence duplicates removed has already
+been printed to file /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/physcraper_T1281-M2478.fas.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs"
+
+
+Alignment has 9 completely undetermined sites that will be automatically removed from the input data
+
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 656 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 29.38%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 100 non-parametric bootstrap inferences
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 656
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -T 8 -m GTRCAT -s /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/physcraper_T1281-M2478.fas -p 1 -b 1 -# 100 -n BOOT2021-02-22
+
+
+Bootstrap[0]: Time 46.982707 seconds, bootstrap likelihood -9665.518299, best rearrangement setting 15
+Bootstrap[1]: Time 31.615419 seconds, bootstrap likelihood -10039.033347, best rearrangement setting 10
+Bootstrap[2]: Time 40.597005 seconds, bootstrap likelihood -9780.420024, best rearrangement setting 20
+Bootstrap[3]: Time 33.454313 seconds, bootstrap likelihood -9474.951100, best rearrangement setting 10
+Bootstrap[4]: Time 56.372344 seconds, bootstrap likelihood -10022.201380, best rearrangement setting 10
+Bootstrap[5]: Time 39.203817 seconds, bootstrap likelihood -10005.404686, best rearrangement setting 5
+Bootstrap[6]: Time 40.606105 seconds, bootstrap likelihood -9980.107507, best rearrangement setting 5
+Bootstrap[7]: Time 27.304511 seconds, bootstrap likelihood -9041.111566, best rearrangement setting 10
+Bootstrap[8]: Time 27.229301 seconds, bootstrap likelihood -9197.484000, best rearrangement setting 10
+Bootstrap[9]: Time 38.981823 seconds, bootstrap likelihood -10524.296462, best rearrangement setting 15
+Bootstrap[10]: Time 38.941823 seconds, bootstrap likelihood -9105.746572, best rearrangement setting 15
+Bootstrap[11]: Time 28.454055 seconds, bootstrap likelihood -9712.187655, best rearrangement setting 10
+Bootstrap[12]: Time 23.593342 seconds, bootstrap likelihood -9492.761752, best rearrangement setting 5
+Bootstrap[13]: Time 42.272080 seconds, bootstrap likelihood -9184.333356, best rearrangement setting 20
+Bootstrap[14]: Time 22.420483 seconds, bootstrap likelihood -9508.434699, best rearrangement setting 5
+Bootstrap[15]: Time 34.830492 seconds, bootstrap likelihood -9335.418085, best rearrangement setting 5
+Bootstrap[16]: Time 32.333740 seconds, bootstrap likelihood -9155.350967, best rearrangement setting 15
+Bootstrap[17]: Time 43.178794 seconds, bootstrap likelihood -9822.326716, best rearrangement setting 15
+Bootstrap[18]: Time 34.616577 seconds, bootstrap likelihood -9361.244653, best rearrangement setting 15
+Bootstrap[19]: Time 32.518506 seconds, bootstrap likelihood -9582.643435, best rearrangement setting 10
+Bootstrap[20]: Time 45.901142 seconds, bootstrap likelihood -9996.458058, best rearrangement setting 15
+Bootstrap[21]: Time 45.876108 seconds, bootstrap likelihood -10061.352125, best rearrangement setting 15
+Bootstrap[22]: Time 31.260833 seconds, bootstrap likelihood -9539.204251, best rearrangement setting 10
+Bootstrap[23]: Time 29.102804 seconds, bootstrap likelihood -9238.978143, best rearrangement setting 10
+Bootstrap[24]: Time 50.894202 seconds, bootstrap likelihood -9175.766429, best rearrangement setting 20
+Bootstrap[25]: Time 27.231413 seconds, bootstrap likelihood -10050.696700, best rearrangement setting 10
+Bootstrap[26]: Time 60.806938 seconds, bootstrap likelihood -10445.100007, best rearrangement setting 10
+Bootstrap[27]: Time 30.118252 seconds, bootstrap likelihood -10113.285325, best rearrangement setting 10
+Bootstrap[28]: Time 35.644494 seconds, bootstrap likelihood -9817.179351, best rearrangement setting 10
+Bootstrap[29]: Time 34.425261 seconds, bootstrap likelihood -9066.266001, best rearrangement setting 5
+Bootstrap[30]: Time 46.340973 seconds, bootstrap likelihood -9829.250628, best rearrangement setting 10
+Bootstrap[31]: Time 42.426770 seconds, bootstrap likelihood -9809.115605, best rearrangement setting 5
+Bootstrap[32]: Time 42.044494 seconds, bootstrap likelihood -9806.154747, best rearrangement setting 10
+Bootstrap[33]: Time 31.032954 seconds, bootstrap likelihood -9326.275901, best rearrangement setting 10
+Bootstrap[34]: Time 33.363586 seconds, bootstrap likelihood -9794.927101, best rearrangement setting 10
+Bootstrap[35]: Time 46.539347 seconds, bootstrap likelihood -9755.782635, best rearrangement setting 10
+Bootstrap[36]: Time 25.740855 seconds, bootstrap likelihood -9430.429390, best rearrangement setting 10
+Bootstrap[37]: Time 40.195167 seconds, bootstrap likelihood -9664.822893, best rearrangement setting 10
+Bootstrap[38]: Time 30.248967 seconds, bootstrap likelihood -9414.007186, best rearrangement setting 5
+Bootstrap[39]: Time 29.629468 seconds, bootstrap likelihood -10142.022963, best rearrangement setting 15
+Bootstrap[40]: Time 46.729724 seconds, bootstrap likelihood -10233.944012, best rearrangement setting 10
+Bootstrap[41]: Time 43.756400 seconds, bootstrap likelihood -10064.533656, best rearrangement setting 10
+Bootstrap[42]: Time 34.714378 seconds, bootstrap likelihood -9727.782994, best rearrangement setting 10
+Bootstrap[43]: Time 31.727813 seconds, bootstrap likelihood -9270.651483, best rearrangement setting 10
+Bootstrap[44]: Time 39.073225 seconds, bootstrap likelihood -10052.585593, best rearrangement setting 10
+Bootstrap[45]: Time 33.015217 seconds, bootstrap likelihood -9651.282566, best rearrangement setting 5
+Bootstrap[46]: Time 37.857981 seconds, bootstrap likelihood -10564.378147, best rearrangement setting 10
+Bootstrap[47]: Time 30.591170 seconds, bootstrap likelihood -9594.378967, best rearrangement setting 10
+Bootstrap[48]: Time 25.341598 seconds, bootstrap likelihood -9710.533105, best rearrangement setting 10
+Bootstrap[49]: Time 22.489155 seconds, bootstrap likelihood -9989.602169, best rearrangement setting 5
+Bootstrap[50]: Time 29.630772 seconds, bootstrap likelihood -9660.089849, best rearrangement setting 10
+Bootstrap[51]: Time 44.779645 seconds, bootstrap likelihood -9311.259149, best rearrangement setting 15
+Bootstrap[52]: Time 32.270521 seconds, bootstrap likelihood -9973.238416, best rearrangement setting 10
+Bootstrap[53]: Time 32.098438 seconds, bootstrap likelihood -9564.334163, best rearrangement setting 10
+Bootstrap[54]: Time 36.423618 seconds, bootstrap likelihood -9197.260334, best rearrangement setting 15
+Bootstrap[55]: Time 28.708297 seconds, bootstrap likelihood -9780.609603, best rearrangement setting 10
+Bootstrap[56]: Time 46.118175 seconds, bootstrap likelihood -9236.897089, best rearrangement setting 10
+Bootstrap[57]: Time 28.201277 seconds, bootstrap likelihood -10552.110072, best rearrangement setting 10
+Bootstrap[58]: Time 55.556553 seconds, bootstrap likelihood -9107.606814, best rearrangement setting 20
+Bootstrap[59]: Time 51.626784 seconds, bootstrap likelihood -10265.806974, best rearrangement setting 5
+Bootstrap[60]: Time 29.622171 seconds, bootstrap likelihood -8789.313905, best rearrangement setting 10
+Bootstrap[61]: Time 28.045503 seconds, bootstrap likelihood -9919.440087, best rearrangement setting 10
+Bootstrap[62]: Time 60.091265 seconds, bootstrap likelihood -9984.586454, best rearrangement setting 10
+Bootstrap[63]: Time 36.797324 seconds, bootstrap likelihood -10524.715412, best rearrangement setting 15
+Bootstrap[64]: Time 28.181098 seconds, bootstrap likelihood -9211.935924, best rearrangement setting 10
+Bootstrap[65]: Time 28.808882 seconds, bootstrap likelihood -10260.329978, best rearrangement setting 10
+Bootstrap[66]: Time 39.477588 seconds, bootstrap likelihood -9211.490591, best rearrangement setting 20
+Bootstrap[67]: Time 31.330273 seconds, bootstrap likelihood -10116.614645, best rearrangement setting 10
+Bootstrap[68]: Time 30.740239 seconds, bootstrap likelihood -9072.067839, best rearrangement setting 10
+Bootstrap[69]: Time 49.226399 seconds, bootstrap likelihood -9953.063282, best rearrangement setting 5
+Bootstrap[70]: Time 28.291931 seconds, bootstrap likelihood -9398.901326, best rearrangement setting 10
+Bootstrap[71]: Time 56.329653 seconds, bootstrap likelihood -10683.386711, best rearrangement setting 15
+Bootstrap[72]: Time 32.877531 seconds, bootstrap likelihood -10493.694592, best rearrangement setting 15
+Bootstrap[73]: Time 33.617441 seconds, bootstrap likelihood -9959.746919, best rearrangement setting 10
+Bootstrap[74]: Time 35.876566 seconds, bootstrap likelihood -9650.808155, best rearrangement setting 5
+Bootstrap[75]: Time 40.155179 seconds, bootstrap likelihood -10489.600488, best rearrangement setting 15
+Bootstrap[76]: Time 40.010956 seconds, bootstrap likelihood -9260.960028, best rearrangement setting 10
+Bootstrap[77]: Time 34.363037 seconds, bootstrap likelihood -8863.009886, best rearrangement setting 10
+Bootstrap[78]: Time 37.614569 seconds, bootstrap likelihood -9187.787000, best rearrangement setting 10
+Bootstrap[79]: Time 35.688965 seconds, bootstrap likelihood -9820.333204, best rearrangement setting 5
+Bootstrap[80]: Time 42.284000 seconds, bootstrap likelihood -9741.245044, best rearrangement setting 10
+Bootstrap[81]: Time 35.152804 seconds, bootstrap likelihood -9167.689913, best rearrangement setting 10
+Bootstrap[82]: Time 45.737942 seconds, bootstrap likelihood -10443.897152, best rearrangement setting 15
+Bootstrap[83]: Time 50.831595 seconds, bootstrap likelihood -9889.497885, best rearrangement setting 15
+Bootstrap[84]: Time 29.167280 seconds, bootstrap likelihood -9990.849636, best rearrangement setting 10
+Bootstrap[85]: Time 25.827553 seconds, bootstrap likelihood -9883.482591, best rearrangement setting 10
+Bootstrap[86]: Time 40.840826 seconds, bootstrap likelihood -9622.796640, best rearrangement setting 20
+Bootstrap[87]: Time 38.489865 seconds, bootstrap likelihood -10365.663126, best rearrangement setting 15
+Bootstrap[88]: Time 36.184504 seconds, bootstrap likelihood -8743.417316, best rearrangement setting 15
+Bootstrap[89]: Time 26.088928 seconds, bootstrap likelihood -9120.382062, best rearrangement setting 10
+Bootstrap[90]: Time 32.346916 seconds, bootstrap likelihood -9280.959954, best rearrangement setting 5
+Bootstrap[91]: Time 40.872842 seconds, bootstrap likelihood -9722.772220, best rearrangement setting 5
+Bootstrap[92]: Time 34.732643 seconds, bootstrap likelihood -9269.570394, best rearrangement setting 10
+Bootstrap[93]: Time 33.721613 seconds, bootstrap likelihood -9571.856943, best rearrangement setting 10
+Bootstrap[94]: Time 31.418116 seconds, bootstrap likelihood -9852.524555, best rearrangement setting 10
+Bootstrap[95]: Time 40.388872 seconds, bootstrap likelihood -10903.293858, best rearrangement setting 10
+Bootstrap[96]: Time 45.234673 seconds, bootstrap likelihood -9395.060493, best rearrangement setting 20
+Bootstrap[97]: Time 39.539253 seconds, bootstrap likelihood -10241.092330, best rearrangement setting 15
+Bootstrap[98]: Time 31.138307 seconds, bootstrap likelihood -9458.388606, best rearrangement setting 10
+Bootstrap[99]: Time 36.121524 seconds, bootstrap likelihood -9436.875917, best rearrangement setting 15
+
+
+Overall Time for 100 Bootstraps 3680.670401
+
+
+Average Time per Bootstrap 36.806704
+All 100 bootstrapped trees written to: /branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_bootstrap.BOOT2021-02-22
+/==========================================================================\
+|                                 SumTrees                                 |
+|                     Phylogenetic Tree Summarization                      |
+|                              Version 4.5.1                               |
+|                   By Jeet Sukumaran and Mark T. Holder                   |
+|                          Using: DendroPy 4.5.1                           |
++--------------------------------------------------------------------------+
+|                                 Citation                                 |
+|                                 ~~~~~~~~                                 |
+| If any stage of your work or analyses relies on code or programs from    |
+| this library, either directly or indirectly (e.g., through usage of your |
+| own or third-party programs, pipelines, or toolkits which use, rely on,  |
+| incorporate, or are otherwise primarily derivative of code/programs in   |
+| this library), please cite:                                              |
+|                                                                          |
+|   Sukumaran, J and MT Holder. 2010. DendroPy: a Python library for       |
+|     phylogenetic computing. Bioinformatics 26: 1569-1571.                |
+|                                                                          |
+|   Sukumaran, J and MT Holder. SumTrees: Phylogenetic Tree Summarization. |
+|     4.5.1. Available at https://github.com/jeetsukumaran/DendroPy.       |
+|                                                                          |
+| Note that, in the interests of scientific reproducibility, you should    |
+| describe in the text of your publications not only the specific          |
+| version of the SumTrees program, but also the DendroPy library used in   |
+| your analysis. For your information, you are running DendroPy 4.5.1.     |
+\==========================================================================/
+
+SumTrees: Trees to be read from 1 source(s):
+SumTrees: - '/branchinecta/shared/physcraperex/data/ilex-test-
+            local/run_T1281-M2478/RAxML_bootstrap.BOOT2021-02-22'
+SumTrees: Running in serial mode
+SumTrees: Analyzing: '/branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_bootstrap.BOOT2021-02-22'
+SumTrees: '/branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_bootstrap.BOOT2021-02-22': tree at offset 0 (analyzing)
+SumTrees: Analysis of source trees completed in: 0.751411 seconds
+SumTrees: Total of 100 trees analyzed for summarization:
+SumTrees: - All trees were treated as unweighted
+SumTrees: - All trees were unrooted
+SumTrees: - 191 unique taxa across all trees
+SumTrees: - 2330 unique splits out of a total of 38000 splits
+SumTrees: - 2138 unique non-trivial splits counted out of a total of non-
+            trivial 18800 splits
+SumTrees: Summarizing onto target tree defined in '/branchinecta/shared/physcraperex/data/ilex-test-local/run_T1281-M2478/RAxML_bestTree.2021-02-22':
+SumTrees: - Support values expressed as proportions or probabilities
+SumTrees: [WARNING] Reporting support by proportions require that support will
+          be reported to at least 2 decimal places
+SumTrees: - Edge lengths as given on target trees
+SumTrees: - Support and other summarization annotations added to target trees
+            as metadata
+SumTrees: Collapsing clades or splits with support frequency less than 0.2
+SumTrees: Writing primary results to: '<stdout>'
+SumTrees: Summarization completed
+SumTrees: Started at: 2021-02-22 20:41:23.978863
+SumTrees: Ended at: 2021-02-22 20:41:24.822238
+SumTrees: Total elapsed time: 0.843375 seconds
+SumTrees: Actual analysis time: 0.751411 seconds
+Tree not rooted, root before running conflict analyses.
+Tree file written to /branchinecta/shared/physcraperex/data/ilex-test-local/outputs_T1281-M2478/updated_taxonname.tre
+Tree file written to /branchinecta/shared/physcraperex/data/ilex-test-local/outputs_T1281-M2478/labelled_T1281-M2478.tre
