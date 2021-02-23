@@ -72,14 +72,40 @@ ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pru
 write(paste(pruned_tree$tip.label, collapse = "\n"), file = "../data-raw/ilex-test/pruned_tree_tip_labels.txt")
 ```
 
+### Go to OpenTree's TNRS matching bulk tool
 
+Available at this link https://tree.opentreeoflife.org/curator/tnrs/
+
+
+
+# Pruning the alignment
+
+### Read the alignment
+
+```{r, echo=TRUE}
+ali_T1281_M2478 <- ape::read.nexus.data(file = "../data-raw/alignments/T1281-M2478.nex")
+names(ali_T1281_M2478)
+```
+
+### Prune it
+
+```{r, echo=TRUE}
+in_ali <- !names(ali_T1281_M2478) %in% todrop
+ali_T1281_M2478_pruned <- ali_T1281_M2478[in_ali]
+```
+
+### Save the pruned alignment
+
+```{r, echo = TRUE}
+ape::write.nexus.data(x = ali_T1281_M2478_pruned, file = "../data-raw/ilex-test/alignment_T1281_M2478_pruned.nex", interleaved = FALSE)
+```
 
 # Running the test
 
 ### Locally
 
 ```
-physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local-1
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local-1
 ```
 Trying it with the otu_info.csv file from a previous run:
 
