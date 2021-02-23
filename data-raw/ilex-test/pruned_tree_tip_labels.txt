@@ -1,10 +1,10 @@
 Helwingia_chinensis
 Helwingia_japonica
 Ilex_crenata
-Ilex_dumosa_var._dumosa
-Ilex_dumosa_var._guaranina
+Ilex_dumosa_dumosa
+Ilex_dumosa_guaranina
 Ilex_opaca
-Ilex_argentina_1
+Ilex_argentina_Gbk
 Ilex_cassine
 Ilex_collina
 Ilex_vomitoria
@@ -12,7 +12,7 @@ Ilex_rugosa
 Ilex_integra
 Ilex_beecheyi
 Ilex_mertensii
-Ilex_x_kiusiana
+Ilex_kiusiana
 Ilex_maximowicziana
 Ilex_cornuta
 Ilex_buergeri
@@ -29,11 +29,11 @@ Ilex_micrococca
 Ilex_pedunculosa
 Ilex_argentina
 Ilex_brasiliensis
-Ilex_theezans_1
 Ilex_theezans
+Ilex_theezans_Gbk
 Ilex_brevicuspis
 Ilex_taubertiana
-Ilex_microdonta_1
-Ilex_pseudobuxus
 Ilex_microdonta
+Ilex_pseudobuxus
+Ilex_microdonta_Gbk
 Ilex_paraguariensis

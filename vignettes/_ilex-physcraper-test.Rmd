@@ -4,7 +4,7 @@ output: rmarkdown::html_document
 ---
 
 To perform a test of Physcraper functionality, we pruned the Gottlieb et al. tree down ~20%, excluding the outgroups, corresponding to approximately 9 tips. We then performed a Physcraper run to test if we would recover the dropped tips.
-The input alignment will be automatically trimmed y Physcraper
+The input alignment will NOT be automatically trimmed by Physcraper
 
 We performed the following steps:
 
@@ -12,14 +12,14 @@ We performed the following steps:
 1. [Matching the names](#matching)
 1. [Running Physcraper](#running)
 1. [Checking the results](#checking)
-1. Analyzing Physcraper results
+1. Analyzing the results
 
 # Pruning the Gottlieb et al. tree
 
 ### Getting the tree from the Open Tree of Life database
 
 ```{r, echo = TRUE}
-tree6577_pg_2827 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
+tree6577_pg_2827 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "original_label")
 
 ```
 
@@ -71,12 +71,20 @@ ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pru
 
 write(paste(pruned_tree$tip.label, collapse = "\n"), file = "../data-raw/ilex-test/pruned_tree_tip_labels.txt")
 ```
+
+
+
 # Running the test
 
 ### Locally
 
 ```
-physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local-1
+```
+Trying it with the otu_info.csv file from a previous run:
+
+```
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data/ilex-local/run_T1281-M2478/otu_info_T1281-M2478.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
 ```
 
 ### Remotely
@@ -102,7 +110,7 @@ sum(!otu_info_T1281_M2478$`^physcraper:in_current_aln`)
 not_in_ali <- otu_info_T1281_M2478$`^ot:ottTaxonName`[!otu_info_T1281_M2478$`^physcraper:in_current_aln`]
 ```
 
-There are 6 tips on tree that are not in the alignment, corresponding to the following taxa: 
+There are 6 tips on tree that are not in the alignment, corresponding to the following taxa:
 
 `r paste0("\n- _", not_in_ali, "_", collapse = "\n")`
 

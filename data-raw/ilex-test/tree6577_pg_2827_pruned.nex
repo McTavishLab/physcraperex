@@ -1,5 +1,5 @@
 #NEXUS
-[R-package APE, Sat Feb 20 15:44:23 2021]
+[R-package APE, Tue Feb 23 14:48:21 2021]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX = 39;
@@ -7,10 +7,10 @@ BEGIN TAXA;
 		Helwingia_chinensis
 		Helwingia_japonica
 		Ilex_crenata
-		Ilex_dumosa_var._dumosa
-		Ilex_dumosa_var._guaranina
+		Ilex_dumosa_dumosa
+		Ilex_dumosa_guaranina
 		Ilex_opaca
-		Ilex_argentina_1
+		Ilex_argentina_Gbk
 		Ilex_cassine
 		Ilex_collina
 		Ilex_vomitoria
@@ -18,7 +18,7 @@ BEGIN TAXA;
 		Ilex_integra
 		Ilex_beecheyi
 		Ilex_mertensii
-		Ilex_x_kiusiana
+		Ilex_kiusiana
 		Ilex_maximowicziana
 		Ilex_cornuta
 		Ilex_buergeri
@@ -35,13 +35,13 @@ BEGIN TAXA;
 		Ilex_pedunculosa
 		Ilex_argentina
 		Ilex_brasiliensis
-		Ilex_theezans_1
 		Ilex_theezans
+		Ilex_theezans_Gbk
 		Ilex_brevicuspis
 		Ilex_taubertiana
-		Ilex_microdonta_1
-		Ilex_pseudobuxus
 		Ilex_microdonta
+		Ilex_pseudobuxus
+		Ilex_microdonta_Gbk
 		Ilex_paraguariensis
 	;
 END;
@@ -50,10 +50,10 @@ BEGIN TREES;
 		1	Helwingia_chinensis,
 		2	Helwingia_japonica,
 		3	Ilex_crenata,
-		4	Ilex_dumosa_var._dumosa,
-		5	Ilex_dumosa_var._guaranina,
+		4	Ilex_dumosa_dumosa,
+		5	Ilex_dumosa_guaranina,
 		6	Ilex_opaca,
-		7	Ilex_argentina_1,
+		7	Ilex_argentina_Gbk,
 		8	Ilex_cassine,
 		9	Ilex_collina,
 		10	Ilex_vomitoria,
@@ -61,7 +61,7 @@ BEGIN TREES;
 		12	Ilex_integra,
 		13	Ilex_beecheyi,
 		14	Ilex_mertensii,
-		15	Ilex_x_kiusiana,
+		15	Ilex_kiusiana,
 		16	Ilex_maximowicziana,
 		17	Ilex_cornuta,
 		18	Ilex_buergeri,
@@ -78,13 +78,13 @@ BEGIN TREES;
 		29	Ilex_pedunculosa,
 		30	Ilex_argentina,
 		31	Ilex_brasiliensis,
-		32	Ilex_theezans_1,
-		33	Ilex_theezans,
+		32	Ilex_theezans,
+		33	Ilex_theezans_Gbk,
 		34	Ilex_brevicuspis,
 		35	Ilex_taubertiana,
-		36	Ilex_microdonta_1,
+		36	Ilex_microdonta,
 		37	Ilex_pseudobuxus,
-		38	Ilex_microdonta,
+		38	Ilex_microdonta_Gbk,
 		39	Ilex_paraguariensis
 	;
 	TREE * UNTITLED = [&R] ((1,2),(39,((3,(4,5)),((6,(7,8)),(9,10),(11,((15,(12,(13,14))),((16,17),(18,19,20)))),21,(24,(22,23),(26,25,(27,28),(29,(30,((31,32),33,((34,35),(38,(36,37))))))))))));
