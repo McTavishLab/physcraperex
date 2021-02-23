@@ -16,32 +16,32 @@ We performed the following steps:
 
 # Pruning the Gottlieb et al. tree
 
-## Getting the tree from the Open Tree of Life database
+### Getting the tree from the Open Tree of Life database
 
 ```{r, echo = TRUE}
 tree6577_pg_2827 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "ott_taxon_name")
 
 ```
 
-## Identifying the outgroups
+### Identifying the outgroups
 ```{r, echo=TRUE}
 outgroup_index <- match(c("Helwingia_chinensis", "Helwingia_japonica"), tree6577_pg_2827$tip.label)
 ```
 
 
-## Getting the ingroup tip labels
+### Getting the ingroup tip labels
 ```{r, echo=TRUE}
 ingroup_tip.label <- tree6577_pg_2827$tip.label[-outgroup_index]
 ```
 
 
-## Calculating the number of tips to keep
+### Calculating the number of tips to keep
 ```{r, echo=TRUE}
 ingroup_ntip <- length(ingroup_tip.label)
 ingroup_ntip* 0.8
 ```
 
-## Choosing at random the ingroup tips to drop
+### Choosing at random the ingroup tips to drop
 ```{r, echo = TRUE}
 
 set.seed(19022021)
@@ -49,14 +49,14 @@ todrop <- sample(ingroup_tip.label, ingroup_ntip-37)
 todrop
 ```
 
-## Dropping the tips from the tree
+### Dropping the tips from the tree
 
 ```{r, echo=TRUE}
 pruned_tree <- ape::drop.tip(phy = tree6577_pg_2827, tip = todrop)
 pruned_tree
 ```
 
-## Saving the tree as newick and nexus
+### Saving the tree as newick and nexus
 
 ```{r, echo = TRUE}
 ape::write.tree(phy = pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.tre")
@@ -65,7 +65,7 @@ ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pru
 
 # Matching the tree tip labels
 
-## First generate a simple text file containing one tip label per line
+### First generate a simple text file containing one tip label per line
 
 ```{r, echo = TRUE}
 
@@ -73,13 +73,13 @@ write(paste(pruned_tree$tip.label, collapse = "\n"), file = "../data-raw/ilex-te
 ```
 # Running the test
 
-## Locally
+### Locally
 
 ```
 physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
 ```
 
-## Remotely
+### Remotely
 ```
 physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -o physcraperex/data/ilex-test-remote
 ```
@@ -87,7 +87,50 @@ physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tr
 
 # Checking the results of the test
 
-## Checking that the original alignment was appropriately trimmed
+### Getting some information from the otu_info table
+
+```{r, echo=TRUE, warning= FALSE}
+otu_info_T1281_M2478 <- readr::read_delim("../data/ilex-test-local/inputs_T1281-M2478/otu_info_T1281-M2478.csv", "\t", escape_double = FALSE, trim_ws = TRUE)
+DT::datatable(otu_info_T1281_M2478)
+```
+
+```{r}
+# Get the number of tips in input tree that are not in alignment
+sum(!otu_info_T1281_M2478$`^physcraper:in_current_aln`)
+
+# Get the taxon names of those tips
+not_in_ali <- otu_info_T1281_M2478$`^ot:ottTaxonName`[!otu_info_T1281_M2478$`^physcraper:in_current_aln`]
+```
+
+There are 6 tips on tree that are not in the alignment, corresponding to the following taxa: 
+
+`r paste0("\n- _", not_in_ali, "_", collapse = "\n")`
+
+Physcraper prunes these tips form the input tree, leaving it with 39 - 6 = 33 tips:
+
+```{r, echo = TRUE}
+taxonname_tre <- ape::read.tree(file = "../data/ilex-test-local/inputs_T1281-M2478/taxonname.tre")
+
+taxonname_tre
+
+physcraper_T1281_M2478_tre <- ape::read.tree(file = "../data/ilex-test-local/inputs_T1281-M2478/physcraper_T1281-M2478.tre")
+
+physcraper_T1281_M2478_tre
+```
 
 
+### Checking that the original alignment was appropriately trimmed
 
+```{r, echo=TRUE}
+taxonname_fas <- ape::read.dna(file = "../data/ilex-test-local/inputs_T1281-M2478/taxonname.fas", format = "fasta")
+taxonname_fas
+
+physcraper_T1281_M2478_fas <- ape::read.dna(file = "../data/ilex-test-local/inputs_T1281-M2478/physcraper_T1281-M2478.fas", format = "fasta")
+
+physcraper_T1281_M2478_fas
+```
+
+```{r, echo = TRUE}
+geiger::name.check(phy = taxonname_tre, data = taxonname_fas)
+geiger::name.check(phy = physcraper_T1281_M2478_tre, data = physcraper_T1281_M2478_fas)
+```
