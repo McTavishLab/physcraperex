@@ -94,10 +94,20 @@ in_ali <- !names(ali_T1281_M2478) %in% todrop
 ali_T1281_M2478_pruned <- ali_T1281_M2478[in_ali]
 ```
 
+### To upper case
+
+`dendropy` does not like this nexus format file.
+it needs to be uppercase, I think
+
+```{r, echo = TRUE}
+ali_T1281_M2478_pruned <- lapply(ali_T1281_M2478_pruned, toupper)
+```
+
 ### Save the pruned alignment
 
 ```{r, echo = TRUE}
 ape::write.nexus.data(x = ali_T1281_M2478_pruned, file = "../data-raw/ilex-test/alignment_T1281_M2478_pruned.nex", interleaved = FALSE)
+
 ```
 
 # Running the test
