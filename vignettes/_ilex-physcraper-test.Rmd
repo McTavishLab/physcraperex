@@ -94,33 +94,30 @@ in_ali <- !names(ali_T1281_M2478) %in% todrop
 ali_T1281_M2478_pruned <- ali_T1281_M2478[in_ali]
 ```
 
-### To upper case
-
-`dendropy` does not like this nexus format file.
-it needs to be uppercase, I think
-
-```{r, echo = TRUE}
-ali_T1281_M2478_pruned <- lapply(ali_T1281_M2478_pruned, toupper)
-```
-
 ### Save the pruned alignment
 
 ```{r, echo = TRUE}
 ape::write.nexus.data(x = ali_T1281_M2478_pruned, file = "../data-raw/ilex-test/alignment_T1281_M2478_pruned.nex", interleaved = FALSE)
 
+# dendropy.dataio.nexusreader.InvalidCharacterStateSymbolError: Error parsing data source 'physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex' on line 7 at column 33: Unrecognized character state symbol for state alphabet 'DNA' (DnaStateAlphabet) : '/'
 ```
+
+### Modify the slash added whrn multistate characters are present in the matrix
+
+I did this by hand, by looking for "/" symbol for example in "atcg/t-tct" and removing it and enclosing the adjacent bases within curly braces to indicate multistate character, "atc{gt}-tct"
+I found some cases with three different states, for example "atc/g/t-tct", would be "at{cgt}-tct"
 
 # Running the test
 
 ### Locally
 
 ```
-physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local-1
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex -as nexus -ti physcraperex/data-raw/ilex-test/pruned_tree_tip_labels_mapped/main.json -db /absolute/path/local_blast_db -nt 8 -o physcraperex/data/ilex-test-local-1
 ```
 Trying it with the otu_info.csv file from a previous run:
 
 ```
-physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data/ilex-local/run_T1281-M2478/otu_info_T1281-M2478.json -db local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
+physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tre -tfs newick -a physcraperex/data-raw/alignments/T1281-M2478.nex -as nexus -ti physcraperex/data/ilex-local/run_T1281-M2478/otu_info_T1281-M2478.json -db /absolute/path/local_blast_db -nt 8 -o physcraperex/data/ilex-test-local
 ```
 
 ### Remotely
