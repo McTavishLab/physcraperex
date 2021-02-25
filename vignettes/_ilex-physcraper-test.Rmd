@@ -20,7 +20,7 @@ We performed the following steps:
 
 ```{r, echo = TRUE}
 tree6577_pg_2827 <- rotl::get_study_tree(study_id = "pg_2827", tree_id = "tree6577", tip_label = "original_label")
-
+tree6577_pg_2827$tip.label
 ```
 
 ### Identifying the outgroups
@@ -58,7 +58,7 @@ pruned_tree
 
 ### Saving the tree as newick and nexus
 
-```{r, echo = TRUE}
+```{r, echo = TRUE, eval = FALSE}
 ape::write.tree(phy = pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.tre")
 ape::write.nexus(pruned_tree, file = "../data-raw/ilex-test/tree6577_pg_2827_pruned.nex")
 ```
@@ -102,7 +102,7 @@ ape::write.nexus.data(x = ali_T1281_M2478_pruned, file = "../data-raw/ilex-test/
 # dendropy.dataio.nexusreader.InvalidCharacterStateSymbolError: Error parsing data source 'physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex' on line 7 at column 33: Unrecognized character state symbol for state alphabet 'DNA' (DnaStateAlphabet) : '/'
 ```
 
-### Modify the slash added whrn multistate characters are present in the matrix
+### Modify the slash added when multistate characters are present in the matrix
 
 I did this by hand, by looking for "/" symbol for example in "atcg/t-tct" and removing it and enclosing the adjacent bases within curly braces to indicate multistate character, "atc{gt}-tct"
 I found some cases with three different states, for example "atc/g/t-tct", would be "at{cgt}-tct"
@@ -131,47 +131,57 @@ physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tr
 ### Getting some information from the otu_info table
 
 ```{r, echo=TRUE, warning= FALSE}
-otu_info_T1281_M2478 <- readr::read_delim("../data/ilex-test-local/inputs_T1281-M2478/otu_info_T1281-M2478.csv", "\t", escape_double = FALSE, trim_ws = TRUE)
+otu_info_T1281_M2478 <- readr::read_delim("../data/ilex-test-local-1/inputs_alignment_T1281_M2478_pruned/otu_info_alignment_T1281_M2478_pruned.csv", "\t", escape_double = FALSE, trim_ws = TRUE)
 DT::datatable(otu_info_T1281_M2478)
 ```
 
 ```{r}
-# Get the number of tips in input tree that are not in alignment
+# Verify that all tips in input tree are in alignment
 sum(!otu_info_T1281_M2478$`^physcraper:in_current_aln`)
-
-# Get the taxon names of those tips
-not_in_ali <- otu_info_T1281_M2478$`^ot:ottTaxonName`[!otu_info_T1281_M2478$`^physcraper:in_current_aln`]
 ```
 
-There are 6 tips on tree that are not in the alignment, corresponding to the following taxa:
 
-`r paste0("\n- _", not_in_ali, "_", collapse = "\n")`
+### Looking at the output otu info file
 
-Physcraper prunes these tips form the input tree, leaving it with 39 - 6 = 33 tips:
+```{r, echo=TRUE, warning= FALSE}
+
+otu_info_alignment_T1281_M2478_pruned <- readr::read_delim("../data/ilex-test-local-1/outputs_alignment_T1281_M2478_pruned/otu_info_alignment_T1281_M2478_pruned.csv", "\t", escape_double = FALSE, trim_ws = TRUE)
+DT::datatable(otu_info_alignment_T1281_M2478_pruned)
+```
+
+### Getting the ott ids of the dropped taxa
 
 ```{r, echo = TRUE}
-taxonname_tre <- ape::read.tree(file = "../data/ilex-test-local/inputs_T1281-M2478/taxonname.tre")
 
-taxonname_tre
-
-physcraper_T1281_M2478_tre <- ape::read.tree(file = "../data/ilex-test-local/inputs_T1281-M2478/physcraper_T1281-M2478.tre")
-
-physcraper_T1281_M2478_tre
+todrop_tnrs <- rotl::tnrs_match_names(names = todrop)
 ```
 
-
-### Checking that the original alignment was appropriately trimmed
-
-```{r, echo=TRUE}
-taxonname_fas <- ape::read.dna(file = "../data/ilex-test-local/inputs_T1281-M2478/taxonname.fas", format = "fasta")
-taxonname_fas
-
-physcraper_T1281_M2478_fas <- ape::read.dna(file = "../data/ilex-test-local/inputs_T1281-M2478/physcraper_T1281-M2478.fas", format = "fasta")
-
-physcraper_T1281_M2478_fas
-```
+### Looking for the dropped taxa in the otu info table
 
 ```{r, echo = TRUE}
-geiger::name.check(phy = taxonname_tre, data = taxonname_fas)
-geiger::name.check(phy = physcraper_T1281_M2478_tre, data = physcraper_T1281_M2478_fas)
+
+# Using the OTT id:
+todrop_tnrs$ott_id %in% otu_info_alignment_T1281_M2478_pruned$`^ot:ottId` 
+
+# Using the unique taxon name:
+todrop_tnrs$unique_name %in% otu_info_alignment_T1281_M2478_pruned$`^ot:ottTaxonName`
+
+# Getting the taxa in original tree that are not in the updated tree
+notinupdated <- todrop_tnrs$unique_name[!todrop_tnrs$ott_id %in% otu_info_alignment_T1281_M2478_pruned$`^ot:ottId`]
+
 ```
+The following taxa were in original tree but were not recovered with this Physcraper run:
+
+`r paste0("- _", notinupdated, "_", collapse = "\n ")`
+
+
+
+
+
+
+
+
+updated_taxonname.tree and labelled_tag.tre are exactly the same tree
+
+
+
