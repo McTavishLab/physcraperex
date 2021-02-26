@@ -96,7 +96,7 @@ ali_T1281_M2478_pruned <- ali_T1281_M2478[in_ali]
 
 ### Save the pruned alignment
 
-```{r, echo = TRUE}
+```{r, echo = TRUE, eval = FALSE}
 ape::write.nexus.data(x = ali_T1281_M2478_pruned, file = "../data-raw/ilex-test/alignment_T1281_M2478_pruned.nex", interleaved = FALSE)
 
 # dendropy.dataio.nexusreader.InvalidCharacterStateSymbolError: Error parsing data source 'physcraperex/data-raw/ilex-test/alignment_T1281_M2478_pruned.nex' on line 7 at column 33: Unrecognized character state symbol for state alphabet 'DNA' (DnaStateAlphabet) : '/'
