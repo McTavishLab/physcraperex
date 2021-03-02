@@ -3,7 +3,7 @@ title: "ilex-physcraper-test"
 output: rmarkdown::html_document
 ---
 
-To perform a test of Physcraper functionality, we pruned the Gottlieb et al. tree down ~20%, excluding the outgroups, corresponding to approximately 9 tips. We then performed a Physcraper run to test if we would recover the dropped tips.
+To perform a test of Physcraper functionality, we pruned the Gottlieb et al. tree down ~20%, excluding the outgroups, corresponding to 9 tips. We then performed a Physcraper run to test if we would recover the dropped tips.
 The input alignment will NOT be automatically trimmed by Physcraper
 
 We performed the following steps:
@@ -128,7 +128,7 @@ physcraper_run.py -tf physcraperex/data-raw/ilex-test/tree6577_pg_2827_pruned.tr
 
 # Checking the results of the test
 
-### Getting some information from the otu_info table
+### Getting information from the OTU info table
 
 ```{r, echo=TRUE, warning= FALSE}
 otu_info_T1281_M2478 <- readr::read_delim("../data/ilex-test-local-1/inputs_alignment_T1281_M2478_pruned/otu_info_alignment_T1281_M2478_pruned.csv", "\t", escape_double = FALSE, trim_ws = TRUE)
@@ -141,7 +141,7 @@ sum(!otu_info_T1281_M2478$`^physcraper:in_current_aln`)
 ```
 
 
-### Looking at the output otu info file
+### Looking at the output OTU info file
 
 ```{r, echo=TRUE, warning= FALSE}
 
@@ -149,14 +149,14 @@ otu_info_alignment_T1281_M2478_pruned <- readr::read_delim("../data/ilex-test-lo
 DT::datatable(otu_info_alignment_T1281_M2478_pruned)
 ```
 
-### Getting the ott ids of the dropped taxa
+### Getting the OTT ids of the dropped taxa
 
 ```{r, echo = TRUE}
 
 todrop_tnrs <- rotl::tnrs_match_names(names = todrop)
 ```
 
-### Looking for the dropped taxa in the otu info table
+### Looking for the dropped taxa in the OTU info table
 
 ```{r, echo = TRUE}
 
@@ -177,12 +177,12 @@ The following taxa were in original tree but were not recovered with this Physcr
 
 ### Why does this happens?
 
-We looked for the NCBI accession numbers reported in the [supplementary material of the original publication](https://bsapubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.3732%2Fajb.92.2.352&file=ajb20352-sup-0002.pdf) for
+We looked for the NCBI GenBank accession numbers reported in the [supplementary material of the original publication](https://bsapubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.3732%2Fajb.92.2.352&file=ajb20352-sup-0002.pdf) for
 the ITS sequences of each of the missed taxa,
 _Ilex warburgii_, _I. dimorphophylla_ and _I. percoriacea_. The first too have updated the originally reported accession numbers from U92600/U92601 and U92592/U92593 to a single accession number [AH007153](https://www.ncbi.nlm.nih.gov/nuccore/AH007153.2?expand-gaps=on) and
 [AH007149](https://www.ncbi.nlm.nih.gov/nuccore/AH007149), respectively.
 For _I. percoriacea_, the NCBI accession number reported in the priginal alignment is [AH007156](https://www.ncbi.nlm.nih.gov/nuccore/AH007156), and it remains the same (as of `r format(Sys.time(), "%a %b %d, %Y")`).
-Inspecting the sequences, all three contain a gap in the middle of 100 undetermined nucleotide bases (Ns). The original alignment removed these Ns, however, Physcraper drops these sequence because they are unalignable without any manual curation.
+Inspecting the sequences, all three contain a middle gap of 100 undetermined nucleotide bases (Ns). These Ns were not present in these sequences in the original alignment. Physcraper drops these sequence because they are unalignable without any manual curation.
 
 
 
@@ -192,4 +192,4 @@ Inspecting the sequences, all three contain a gap in the middle of 100 undetermi
 
 
 
-updated_taxonname.tree and labelled_tag.tre are exactly the same tree
+Note: updated_taxonname.tree and labelled_tag.tre are exactly the same tree
