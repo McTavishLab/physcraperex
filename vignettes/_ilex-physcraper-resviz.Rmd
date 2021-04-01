@@ -3,6 +3,9 @@ title: "ilex-physcraper-resviz"
 output: rmarkdown::html_document
 ---
 ```{r echo = FALSE}
+source("../R/plots.R")
+updated_sumtree <- ape::read.tree(file = "../data/pg_2827_tree6577/outputs_pg_2827tree6577/physcraper_pg_2827tree6577.tre")
+updated_sumtree_drop <- ape::drop.tip(updated_sumtree, c("otu420083", "otu420099"))
 updated_sumtree_drop <- ape::ladderize(updated_sumtree_drop)
 internal_edges <- updated_sumtree_drop$edge[,2] > ape::Ntip(updated_sumtree_drop)
 tip_edges <- updated_sumtree_drop$edge[,2] <= ape::Ntip(updated_sumtree_drop)
@@ -24,7 +27,7 @@ ss <- sapply(bb+ape::Ntip(updated_sumtree_drop)-1, function(x)
 ```
 ### *Visualizing new tips and taxa*
 
-An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and branches from those new tips with a highlighting color. We will use a function defined in this package to do so.
+An easy way to visualize the new tips added into the updated tree compared to the original tree is coloring the tips and branches from those new tips with a highlighting color. We will use the function `plot_branches` defined in this package to do so.
 
 The function takes as argument the paths to both the tree and the OTU info files:
 
@@ -42,6 +45,9 @@ plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram"
 mtext(expression(Updated~italic(Ilex) ~ plain("gene tree - 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
 ape::nodelabels(node=bb+ape::Ntip(updated_sumtree_drop)-1, pch =8, cex = 0.1, col = "green")
 ```
+
+The green nodes mark branches with a length < 0.00001 and a bootstrap support > 0.75
+
 Let's get the summary of new tips:
 
 ```{r ilex-summary, message = TRUE, eval = TRUE}
