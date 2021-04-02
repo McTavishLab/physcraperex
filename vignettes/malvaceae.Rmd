@@ -2,7 +2,7 @@
 title: "Physcraper Examples: the Malvaceae"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{malvaceae}
+  %\VignetteIndexEntry{Physcraper Examples: the Malvaceae}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 knitr::opts_knit$set(
   global.par = TRUE
   )
+options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
@@ -72,14 +73,14 @@ knitr::kable(studies, caption = "Studies with the genus *Malvaceae* as focal cla
 
 None of these trees are in the synthetic tree. Still, the family does not appear as a politomy and has phylogenetic information in the Open Tree of Life synthetic tree. Where is this information coming from?
 
-It is probbaly coming from studies with focal clades that might be either above or below the particular clade you are interested in!
+It is probably coming from studies with focal clades that might be either above or below the particular clade we are interested in!
 
-You can get supporting trees with the Open Tree of Life API, and you can currently do it now using some hidden `rotl` functions:
+You can get supporting trees with the Open Tree of Life API, and you can currently do it now using a hidden `rotl` function:
 
 ```{r}
 res <- rotl:::.tol_subtree(ott_id=279960)
-studies <- rotl:::studies_from_otl(res)
-studies
+# studies <- rotl:::studies_from_otl(res) # not supported anymore as of April 2021
+# studies
 ```
 
 

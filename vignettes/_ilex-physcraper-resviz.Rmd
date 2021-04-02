@@ -46,7 +46,7 @@ mtext(expression(Updated~italic(Ilex) ~ plain("gene tree - 4 BLAST cycles")), si
 ape::nodelabels(node=bb+ape::Ntip(updated_sumtree_drop)-1, pch =8, cex = 0.1, col = "green")
 ```
 
-The green nodes mark branches with a length < 0.00001 and a bootstrap support > 0.75
+The green nodes highlight branches with a length < 0.00001 and a bootstrap support > 0.75
 
 Let's get the summary of new tips:
 
@@ -78,10 +78,13 @@ hist(updated_sumtree_drop$edge.length, breaks=1400, col = "skyblue3",
      main = "Updated Gottlieb2005 tree \n branch length frequency distribution")
 ```
 
+This branch length distribution excludes the outgroup branches, it contains branches from the ingroup only.
+
 The updated tree is `r round(updated_sumtree_drop$Nnode/ape::Ntip(updated_sumtree_drop), digits=2)*100`% resolved, with `r sum(updated_sumtree_drop$edge.length<0.01)`
 branches that are <0.01 and `r sum(updated_sumtree_drop$edge.length<0.00001)` are < 0.00001, effectively negligible.
 The longest branch is `r max(updated_sumtree_drop$edge.length)` and the smallest
 branch is `r min(updated_sumtree_drop$edge.length)`
+
 
 ### *Visualizing changes in phylogenetic relationships*
 

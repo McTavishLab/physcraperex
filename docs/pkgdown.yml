@@ -1,17 +1,10 @@
-pandoc: 2.2.3.2
-pkgdown: 1.4.1
-pkgdown_sha: ~
+pandoc: 2.7.3
+pkgdown: 1.6.1.9000
+pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
 articles:
-  _general-ack: _general-ack.html
-  _ilex-find-a-tree: _ilex-find-a-tree.html
-  _ilex-get-alignment: _ilex-get-alignment.html
-  _ilex-physcraper-res: _ilex-physcraper-res.html
-  _ilex-physcraper-resviz-extras: _ilex-physcraper-resviz-extras.html
-  _ilex-physcraper-resviz: _ilex-physcraper-resviz.html
-  _ilex-physcraper-run: _ilex-physcraper-run.html
-  _ilex-toc: _ilex-toc.html
   ilex: ilex.html
   malvaceae: malvaceae.html
   schoch: schoch.html
   todo: todo.html
+last_built: 2021-04-02T00:12Z
 
