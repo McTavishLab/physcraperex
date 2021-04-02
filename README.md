@@ -38,3 +38,19 @@ library(physcraperex)
 ## basic example code
 ```
 -->
+
+
+## Building this website
+
+To build this website, we used the R package `pkgdown`. 
+We ran once:
+
+```
+usethis::use_pkgdown()
+```
+
+And then the following every time we wanted to update the package:
+
+```
+pkgdown::build_site()
+```
