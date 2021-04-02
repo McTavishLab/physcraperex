@@ -69,6 +69,16 @@ knitr::include_graphics("ilex-snow.jpg")
 
 ***
 
+## V. Comparing the Physcraper results
+
+```{r child="_ilex-physcraper-comparisons.Rmd"}
+
+```
+
+***
+
+***
+
 ## Acknowledgments
 
 ```{r child="_general-ack.Rmd"}
