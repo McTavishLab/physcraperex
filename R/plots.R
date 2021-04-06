@@ -112,13 +112,16 @@ get_tip_values <- function(treefile, otufile){
 
 }
 
-#' Plot a tree with branches colored according to molecular data, method 1
+#' Plot a tree with branches colored according to availability of molecular data, method 1
 #'
 #' @param x A list from get_tip_values
 #' @param tip_label A character vector. Can be one of "otu" or "taxon"
 #' @param drop_outgroup Boolean
 #' @param ladderize_tree Boolean
 #' @param type From plot.phylo
+#' @param color Color to use for new tip labels. Old tip labels are always colored black.
+#' @param edge_length Boolean. Whether to plot edge length values to branches or not.
+#' @param font From plot.phylo
 #' @return a plot
 #' @examples
 #' treefile = 'data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
@@ -131,6 +134,7 @@ plot_branches_method1 <- function(x,
                                   type = "cladogram",
                                   color = "red",
                                   edge_length=TRUE,
+                                  font = 3,
                                   ...){
 
   phytree <- x$phytree
@@ -186,11 +190,21 @@ plot_branches_method1 <- function(x,
                               cex=cex,
                               type=type,
                               ...)
-
-  ape::tiplabels(text=tip_labels_final, col=tip_color, cex=cex, frame="none", adj = c(-0.1,0.5))
+  # the final tip labels are added here:
+  ape::tiplabels(text=tip_labels_final,
+                 col=tip_color,
+                 cex=cex,
+                 frame="none",
+                 adj = c(-0.1,0.5),
+                 font = font)
+  # the bootstrap values are added here:
   if(!is.null(phytree$node.label)){
-    ape::nodelabels(text=phytree$node.label, cex=cex*0.7, frame="none", adj = c(-0.1,0.5))
+    ape::nodelabels(text=as.numeric(phytree$node.label)*100,
+                    cex=cex*0.7,
+                    frame="none",
+                    adj = c(-0.1,0.5))
   }
+  # the branch lengths are added here:
   if(edge_length){
     zz <- round(phytree$edge.length, digits=3)
     w <- zz>0.01

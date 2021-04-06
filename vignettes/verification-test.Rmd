@@ -175,7 +175,7 @@ The following taxa were in original tree but were not recovered with this Physcr
 `r paste0("- _", notinupdated, "_", collapse = "\n ")`
 
 
-### Why does this happens?
+### Why does this happen?
 
 We looked for the NCBI GenBank accession numbers reported in the [supplementary material of the original publication](https://bsapubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.3732%2Fajb.92.2.352&file=ajb20352-sup-0002.pdf) for
 the ITS sequences of each of the missed taxa,
