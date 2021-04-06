@@ -118,6 +118,7 @@ get_tip_values <- function(treefile, otufile){
 #' @param tip_label A character vector. Can be one of "otu" or "taxon"
 #' @param drop_outgroup Boolean
 #' @param ladderize_tree Boolean
+#' @param type From plot.phylo
 #' @return a plot
 #' @examples
 #' treefile = 'data/pg_2827_tree6577/run_pg_2827tree6577_run4/RAxML_bestTree.2020-07-31'
@@ -127,6 +128,7 @@ plot_branches_method1 <- function(x,
                                   tip_label = "otu",
                                   drop_outgroup = TRUE,
                                   ladderize_tree = TRUE,
+                                  type = "cladogram",
                                   color = "red",
                                   edge_length=TRUE,
                                   ...){
@@ -182,6 +184,7 @@ plot_branches_method1 <- function(x,
                               tip.color="#fcfcfc00",
                               label.offset=0.1,
                               cex=cex,
+                              type=type,
                               ...)
 
   ape::tiplabels(text=tip_labels_final, col=tip_color, cex=cex, frame="none", adj = c(-0.1,0.5))

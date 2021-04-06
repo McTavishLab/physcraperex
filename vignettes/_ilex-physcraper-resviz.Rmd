@@ -40,8 +40,8 @@ myotuinfofile = '../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_28
 
 And uses `phytools::plotBranchbyTrait`, so it takes all arguments from `ape::plot.phylo`, too:
 
-```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=2, fig.height=10}
-plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "phylogram", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
+```{r plot-tips-and-branches, message = FALSE, eval = TRUE, dpi = 200, fig.retina = 2, results="asis", out.width="100%",  out.extra='style="background-color: #DCDCDC; padding:10px; display: inline-block;"', fig.width=4, fig.height=4}
+plot_branches(treefile = mytreefile, otufile = myotuinfofile, type = "fan", cex = 0.25, edge.width = 0.5, tip_label = "taxon")
 mtext(expression(Updated~italic(Ilex) ~ plain("gene tree - 4 BLAST cycles")), side= 3, line=-1, cex = 0.5)
 ape::nodelabels(node=bb+ape::Ntip(updated_sumtree_drop)-1, pch =8, cex = 0.1, col = "green")
 ```

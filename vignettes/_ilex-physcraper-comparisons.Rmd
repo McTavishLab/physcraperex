@@ -53,3 +53,29 @@ The following figure shows results from the conflict analysis on the Yao2020 tre
 
 knitr::include_graphics("ilex-tree1-physcraper-conflict-vs-synth.png")
 ```
+
+
+With Python:
+
+```
+from opentree import OT
+import physcraper
+
+gottleib_updated = physcraper.treetaxon.generate_TreeTax_from_run("../physcraperex/data/ilex-local/")
+gottleib_updated.write_labelled(path = "gott_taxonlab.tre",label = '^ot:ottTaxonName', norepeats=False)
+```
+
+The following generates a tree with tip labels with spaces instead of underscores.
+```
+yao = OT.get_tree(study_id="ot_1984", tree_id="tree1",tree_format = "newick", label_format='ot:ottTaxonName')
+fi = open("yao.tre", "w")
+fi.write(yao.response_dict['content'].decode())
+fi.close() 
+```
+
+Use the tree comparison script:
+
+```
+tree_comparison.py -t1 gott_taxonlab.tre -t2 yao.tre -og otu468906 otu1030991 -otu data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv -o ilex_comparison
+
+```

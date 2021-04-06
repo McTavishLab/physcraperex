@@ -59,6 +59,9 @@
     <li>
       <a href="../articles/todo.html">TODO</a>
     </li>
+    <li>
+      <a href="../articles/verification-test.html">ilex-physcraper-test</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -146,15 +149,6 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">pg_2827</td>
-<td align="left">2</td>
-<td align="left">tree6576, tree6577</td>
-<td align="left">tree6577</td>
-<td align="left">2003</td>
-<td align="left">Molecular analyses of the genus Ilex (Aquifoliaceae) in southern South America, evidence from AFLP and ITS sequence data</td>
-<td align="left"><a href="http://dx.doi.org/10.3732/ajb.92.2.352" class="uri">http://dx.doi.org/10.3732/ajb.92.2.352</a></td>
-</tr>
-<tr class="even">
 <td align="left">ot_1984</td>
 <td align="left">1</td>
 <td align="left">tree1</td>
@@ -162,6 +156,15 @@
 <td align="left">2020</td>
 <td align="left"></td>
 <td align="left"><a href="http://dx.doi.org/10.1111/jse.12567" class="uri">http://dx.doi.org/10.1111/jse.12567</a></td>
+</tr>
+<tr class="even">
+<td align="left">pg_2827</td>
+<td align="left">2</td>
+<td align="left">tree6576, tree6577</td>
+<td align="left">tree6577</td>
+<td align="left">2005</td>
+<td align="left">Molecular analyses of the genus Ilex (Aquifoliaceae) in southern South America, evidence from AFLP and ITS sequence data</td>
+<td align="left"><a href="http://dx.doi.org/10.3732/ajb.92.2.352" class="uri">http://dx.doi.org/10.3732/ajb.92.2.352</a></td>
 </tr>
 </tbody>
 </table>
@@ -305,7 +308,7 @@
 <span class="va">myotuinfofile</span> <span class="op">=</span> <span class="st">'../data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv'</span></pre></div>
 <p>And uses <code><a href="https://rdrr.io/pkg/phytools/man/plotBranchbyTrait.html">phytools::plotBranchbyTrait</a></code>, so it takes all arguments from <code><a href="https://rdrr.io/pkg/ape/man/plot.phylo.html">ape::plot.phylo</a></code>, too:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="fu"><a href="../reference/plot_branches.html">plot_branches</a></span><span class="op">(</span>treefile <span class="op">=</span> <span class="va">mytreefile</span>, otufile <span class="op">=</span> <span class="va">myotuinfofile</span>, type <span class="op">=</span> <span class="st">"phylogram"</span>, cex <span class="op">=</span> <span class="fl">0.25</span>, edge.width <span class="op">=</span> <span class="fl">0.5</span>, tip_label <span class="op">=</span> <span class="st">"taxon"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/plot_branches.html">plot_branches</a></span><span class="op">(</span>treefile <span class="op">=</span> <span class="va">mytreefile</span>, otufile <span class="op">=</span> <span class="va">myotuinfofile</span>, type <span class="op">=</span> <span class="st">"fan"</span>, cex <span class="op">=</span> <span class="fl">0.25</span>, edge.width <span class="op">=</span> <span class="fl">0.5</span>, tip_label <span class="op">=</span> <span class="st">"taxon"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/mtext.html">mtext</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">Updated</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/grDevices/plotmath.html">italic</a></span><span class="op">(</span><span class="va">Ilex</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/plotmath.html">plain</a></span><span class="op">(</span><span class="st">"gene tree - 4 BLAST cycles"</span><span class="op">)</span><span class="op">)</span>, side<span class="op">=</span> <span class="fl">3</span>, line<span class="op">=</span><span class="op">-</span><span class="fl">1</span>, cex <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>
 <span class="fu">ape</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ape/man/nodelabels.html">nodelabels</a></span><span class="op">(</span>node<span class="op">=</span><span class="va">bb</span><span class="op">+</span><span class="fu">ape</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ape/man/summary.phylo.html">Ntip</a></span><span class="op">(</span><span class="va">updated_sumtree_drop</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span>, pch <span class="op">=</span><span class="fl">8</span>, cex <span class="op">=</span> <span class="fl">0.1</span>, col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></pre></div>
 <p><img src="ilex_files/figure-html/plot-tips-and-branches-1.png" width="100%" style="background-color: #DCDCDC; padding:10px; display: inline-block;"></p>
@@ -352,12 +355,17 @@
 <p><img src="ilex_files/figure-html/hist-1.png" width="100%" style="background-color: #DCDCDC; padding:10px; display: inline-block;"></p>
 <p>This branch length distribution excludes the outgroup branches, it contains branches from the ingroup only.</p>
 <p>The updated tree is 75% resolved, with 249 branches that are &lt;0.01 and 107 are &lt; 0.00001, effectively negligible. The longest branch is 0.2416085 and the smallest branch is 1.000000510^{-6}</p>
+<hr>
 </div>
+</div>
+<div id="v--comparing-the-physcraper-results" class="section level2">
+<h2 class="hasAnchor">
+<a href="#v--comparing-the-physcraper-results" class="anchor"></a>V. Comparing the Physcraper results</h2>
 <div id="visualizing-changes-in-phylogenetic-relationships" class="section level3">
 <h3 class="hasAnchor">
 <a href="#visualizing-changes-in-phylogenetic-relationships" class="anchor"></a><em>Visualizing changes in phylogenetic relationships</em>
 </h3>
-<p>How does the phylogenetic relationships from the updated tree compare to those from the original tree and other <em>Ilex</em> trees?</p>
+<p>How do the phylogenetic relationships from the updated tree compare to those from the original tree and other <em>Ilex</em> trees?</p>
 <p>We will use the conflict tool of the OpenTree to visualize this.</p>
 <p>The next figure shows in green the nodes resolved by the Gottlieb2005 tree and in blue the nodes that align with taxonomy: <img src="ilex-tree6577-conflict-vs-taxonomy.png" width="100%"></p>
 <p>The following figure shows results from the conflict analysis in the updated <em>Ilex</em> tree. The blue nodes either align with phylogenetic relationships from the Gottlieb2005 tree or with taxonomy; the green nodes (approximately 20) resolve phylogenetic relationships that were not solved by Gottlieb2005; and the orange nodes conflict either with phylogenetic relationships shown in Gottlieb2005 or with taxonomy.</p>
@@ -385,6 +393,21 @@
 <span class="co">#&gt; It is 0.99% resolved.</span></pre></div>
 <p>The following figure shows results from the conflict analysis on the Yao2020 tree. Again, the blue nodes align either with Gottlieb2005 or with taxonomy, the green nodes (approximately 80) resolve phylogenetic relationships that were not solved by Gottlieb2005, and the orange nodes conflict either with phylogenetic relationships from Gottlieb2005 or with taxonomy.</p>
 <p><img src="ilex-tree1-physcraper-conflict-vs-synth.png" width="100%"></p>
+<p>With Python:</p>
+<pre><code>from opentree import OT
+import physcraper
+
+gottleib_updated = physcraper.treetaxon.generate_TreeTax_from_run("../physcraperex/data/ilex-local/")
+gottleib_updated.write_labelled(path = "gott_taxonlab.tre",label = '^ot:ottTaxonName', norepeats=False)</code></pre>
+<p>The following generates a tree with tip labels with spaces instead of underscores.</p>
+<pre><code>yao = OT.get_tree(study_id="ot_1984", tree_id="tree1",tree_format = "newick", label_format='ot:ottTaxonName')
+fi = open("yao.tre", "w")
+fi.write(yao.response_dict['content'].decode())
+fi.close() </code></pre>
+<p>Use the tree comparison script:</p>
+<pre><code>tree_comparison.py -t1 gott_taxonlab.tre -t2 yao.tre -og otu468906 otu1030991 -otu data/pg_2827_tree6577/outputs_pg_2827tree6577/otu_info_pg_2827tree6577.csv -o ilex_comparison
+</code></pre>
+<hr>
 <hr>
 </div>
 </div>
